@@ -1,0 +1,13 @@
+{
+  "name": "myfs",
+  "version": "1.0.0",
+  "description": "My simplifeid methods for manipulating file and folders syncronously.",
+  "keywords" : "fs, file, folder, dir, directory, path, easy, simple, basic",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bobtherobot/myfs"
+  },
+  "author": "Michael Gieson <mgieson@plaino.com> (http://www.gieson.com)",
+  "license": "MIT"
+}
