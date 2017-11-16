@@ -220,7 +220,13 @@ if (typeof require !== 'undefined') {
 		 * @param      {boolean}   [binary=false]  - Is this a binary file? (We assume it's a text file.)
 		 * @return     {string | binary}
 		 */
-		open: fu.open,
+		read: fu.read,
+
+
+		/**
+		 * @method open alias for [read](#read)
+		 */
+		open: fu.read,
 
 
 		/**
