@@ -1,0 +1,2391 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		
+    	<title>Layout</title>
+		<meta name="description" content="A layout splitter for web apps that need resizable panels.">
+
+		 <!-- Normalize -->
+	    <link rel="stylesheet" href="assets/vendor/normalize.css">
+
+	    
+	    <!-- prettify -->
+	    <link rel="stylesheet" href="assets/vendor/prettify/codamike.css">
+	    
+		<script src="assets/vendor/prettify/prettify.js"></script>
+
+		<!-- Documon Pages Info. (Used by various classes to identify this page.) -->
+		<script>
+	    var pageCtx = {
+	    	id : "jbeeb.utils.Layout",
+	    	name: "Layout"
+	    }
+	    </script>
+
+	    <!-- theme -->
+	    <link rel="stylesheet" href="assets/css/pages-fonts.css">
+	    <link rel="stylesheet" href="assets/css/pages.css">
+	    <script src="assets/vendor/storage/Storage.js"></script>
+	    <script src="assets/js/documon/Access.js"></script>
+	    <script src="assets/js/documon/Pages.js"></script>
+
+	</head>
+
+
+
+	<body>
+
+		<div class="page">
+			
+			<div class="main-method">
+				
+							<a name="methods"></a>
+		            		<div class="part-methods">
+					            
+					            
+					<a name="jbeeb.utils.Layout"></a><a name="Layout"></a>
+					<div class="member"  >
+
+					    <div class="member-name">
+					    	Layout () 
+					    	
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>A layout splitter for web apps that need resizable panels.</p>
+
+<p>DIVs can have the following data-atts: <br>
+- <strong>data-layout</strong>      (required) (string) - &#8220;row&#8221; &#8220;col&#8221; <br>
+- <strong>data-size</strong>            (optional) (number | string for percent) - assume pixel when number, use &#8220;!00%&#8221; for percent vals <br>
+- <strong>data-min</strong>         (optional) (number | string for percent) <br>
+- <strong>data-fixed</strong>       (optional) - attaches panel to current position (e.g. a fixed-size righ-hand panel) <br>
+- <strong>data-remember</strong>        (optional) - remembers panels open/closed/position when page is reloaded <br>
+- <strong>data-noresize</strong>        (optional) - prevents resizing when exists <br>
+- <strong>data-noscroll</strong>        (optional) - prevents scrolling when exists <br>
+- <strong>data-onresize</strong>        (optional) (string) - funciton identifier as a string (e.g. &#8220;myFunc&#8221;) <br>
+- <strong>data-onresizecomplete</strong>    (optional) (string) - funciton identifier as a string (e.g. &#8220;myFunc&#8221;)</p>
+
+<h4>Example</h4>
+
+<pre class="prettyprint">&lt;div data-layout="col"&gt;
+    &lt;div data-layout="row" data-size=100&gt;frank&lt;/div&gt;
+
+    &lt;!-- no size, layout will auto-determine the size --&gt;
+    &lt;div data-layout="row"&gt;bob&lt;/div&gt; 
+
+    &lt;!-- "fixed" = attached to bottom --&gt;
+    &lt;div data-layout="row" data-size=100 data-fixed&gt;sally&lt;/div&gt;
+&lt;/div&gt;</pre>
+
+<h4>Notes</h4>
+
+<ul>
+<li>There should be one &#8220;root&#8221; element, which can be either a &#8220;row&#8221; or &#8220;col&#8221;.</li>
+<li>The parent of the root (e.g. <body> or wrapping <div>) must have a width and height (style or css). </li>
+<li>Only div&#8217;s with an ID attribute will be automatically restored.</li>
+</ul>
+
+							
+
+						    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">object</span>
+					</div>
+			      	     	<div class="member"><p>A handle to the layout object for initialization and access to built-in functions.</p></div>
+				
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+				            </div>
+						
+						
+			</div>
+
+		    <div class="parts">
+		        
+		        <a name="events"></a>
+			    	<div class="part-events">
+				    	
+				    	<div class="heading-part">Events</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		<a name="jbeeb.utils.Layout.globalResize"></a><a name="globalResize"></a>
+						        	<span class="member-name">globalResize</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>Dispatched globally for any resize event.</p>
+
+<pre class="prettyprint">    function didResize(obj){
+        console.log("didResize");
+}
+    beeb.utils.Layout.addListener("globalResize", this, didResize);</pre>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		<a name="jbeeb.utils.Layout.globalResizeComplete"></a><a name="globalResizeComplete"></a>
+						        	<span class="member-name">globalResizeComplete</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>Dispatched globally for any resize event.</p>
+
+<pre class="prettyprint">    function didResizeComplete(obj){
+        console.log("didResizeComplete");
+}
+    beeb.utils.Layout.addListener("globalResizeComplete", this, didResizeComplete);</pre>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr data-access="private" >
+
+						    	<td>
+						    		<a name="jbeeb.utils.Layout.handleOnResize"></a><a name="handleOnResize"></a>
+						        	<span class="member-name">handleOnResize (<span class="method-arguments">obj</span>) </span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	<span class="flag private">private</span>  <!-- public private protected -->
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>A callback triggered while a user changes the size of the panel. <br>
+Note that to establish this callback, we incorporate the function name as a string in the HTML,  <br>
+so it&#8217;s not really a function per-se, rather it&#8217;s a string that we convert to a function call. </p>
+
+<p>The object (obj) returned is the internal object maintained for this panel and includes the following properties: <br>
+- <strong>amRoot</strong>    - (boolean) Whether or not this is the root panel. <br>
+- <strong>canScroll</strong>     - (boolean)  <br>
+- <strong>children</strong>  - (array)  <br>
+- <strong>clickToggle</strong> - (um) <br>
+- <strong>color</strong>         - (um) <br>
+- <strong>elem</strong>      - (DOM Element) The panel&#8217;s HTML DOM Element  <br>
+- <strong>first</strong>         - (boolean) If this is the first panel in a row or column <br>
+- <strong>fixed</strong>         - (boolean) If this panel is fixed position <br>
+- <strong>h</strong>             - (number) A shortcut to height <br>
+- <strong>height</strong>    - (number) The height <br>
+- <strong>id</strong>        - (string) Should be the same as the DOM Element id, or randomly generated if no ELEMENT id. <br>
+- <strong>last</strong>      - (boolean) If this is the last panel in a row or column <br>
+- <strong>left</strong>      - (number) The position (will be left or top depending on row or column) <br>
+- <strong>top</strong>       - (number) The position (will be left or top depending on row or column) <br>
+- <strong>max</strong>       - (number) The maximum size the panel can be <br>
+- <strong>min</strong>       - (number) The minimum size the panel can be <br>
+- <strong>minSource</strong>     - (number) The maximum size the panel can be as specified by user at startup <br>
+- <strong>next</strong>      - (object) The next object <br>
+- <strong>nextElem</strong>  - (DOM Element) The next object&#8217;s element <br>
+- <strong>onResize</strong>  -  <br>
+- <strong>onResizeComplete</strong> -  <br>
+- <strong>padding</strong>   - (number)  <br>
+- <strong>parent</strong>    - (object) The parent object (if this panel is embedded inside another panel). <br>
+- <strong>parentElem</strong> - (DOM Element) The parent object&#8217;s element. <br>
+- <strong>prev</strong>      - (object) The previous object <br>
+- <strong>prevElem</strong>  - (DOM Element) The previous object&#8217;s element <br>
+- <strong>remember</strong>  - (boolean)  <br>
+- <strong>resizeble</strong>     - (boolean)  <br>
+- <strong>root</strong>      - (object) The root object <br>
+- <strong>rootElem</strong>  - (DOM Element) The root object&#8217;s element <br>
+- <strong>row</strong>       - (boolean) Used to determine if this panel is a row or a column. <br>
+- <strong>splitterElem</strong> - (DOM Element)  <br>
+- <strong>splitterHandleELem</strong> - (DOM Element)  <br>
+- <strong>toggleState</strong> - (boolean)  <br>
+- <strong>units</strong>         - (string) If using &#8220;px&#8221; or &#8220;%&#8221; units <br>
+- <strong>w</strong>             - (number) A shortcut to width <br>
+- <strong>width</strong>         - (number) The width</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr data-access="private" >
+
+						    	<td>
+						    		<a name="jbeeb.utils.Layout.handleOnResizeComplete"></a><a name="handleOnResizeComplete"></a>
+						        	<span class="member-name">handleOnResizeComplete (<span class="method-arguments">obj</span>) </span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	<span class="flag private">private</span>  <!-- public private protected -->
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>A callback that is pinged when a user completes changing the size of the panel. <br>
+Note that to establish this callback, we incorporate the function name as a string in the HTML, so it&#8217;s not really a function per-se, rather it&#8217;s a string that we convert to a function call. </p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+		        
+							<a name="methods"></a>
+		            		<div class="part-methods">
+					            <div class="heading-part">Methods</div>
+					            
+					<a name="jbeeb.utils.Layout.addDomElemListenerWithArgs"></a><a name="addDomElemListenerWithArgs"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	addDomElemListenerWithArgs (<span class="method-arguments">elem</span>, <span class="method-arguments">evt</span>, <span class="method-arguments">func</span>, <span class="method-arguments">vars</span>) 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Description</p>
+
+							
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">elem</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>elem</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">evt</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>evt</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">func</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>func</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">vars</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>vars</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+						    
+			       		 	<div class="heading-returns">Returns	</div>
+			      	     	<div class="member"><p>f f</p></div>
+				
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.datasetExistBool"></a><a name="datasetExistBool"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	datasetExistBool (<span class="method-arguments">elem</span>, <span class="method-arguments">key</span>) 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Description</p>
+
+							
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">elem</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>elem</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">key</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>key</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+						    
+			       		 	<div class="heading-returns">Returns	</div>
+			      	     	<div class="member"><p>Literal Literal</p></div>
+				
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.dealWithPadding"></a><a name="dealWithPadding"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	dealWithPadding (<span class="method-arguments">obj</span>, <span class="method-arguments">remove</span>) 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Description</p>
+
+							
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">obj</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>obj</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">remove</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>remove</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+						    
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.findObjFromElem"></a><a name="findObjFromElem"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	findObjFromElem (<span class="method-arguments">elem</span>) 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Description</p>
+
+							
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">elem</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>elem</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+						    
+			       		 	<div class="heading-returns">Returns	</div>
+			      	     	<div class="member"><p>obj obj</p></div>
+				
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.findSibs"></a><a name="findSibs"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	findSibs (<span class="method-arguments">elem</span>) 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Description</p>
+
+							
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">elem</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>elem</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+						    
+			       		 	<div class="heading-returns">Returns	</div>
+			      	     	<div class="member"><p>ret ret</p></div>
+				
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.finishMove"></a><a name="finishMove"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	finishMove () 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Description</p>
+
+							
+
+						    
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.formatPanels"></a><a name="formatPanels"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	formatPanels (<span class="method-arguments">fromResize</span>) 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Description</p>
+
+							
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">fromResize</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>fromResize</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+						    
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.getScrollbarSize"></a><a name="getScrollbarSize"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	getScrollbarSize () 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Description</p>
+
+							
+
+						    
+			       		 	<div class="heading-returns">Returns	</div>
+			      	     	<div class="member"><p>BinaryExpression BinaryExpression</p></div>
+				
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.handleOnResize"></a><a name="handleOnResize"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	handleOnResize (<span class="method-arguments">obj</span>) 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>A callback triggered while a user changes the size of the panel. <br>
+Note that to establish this callback, we incorporate the function name as a string in the HTML,  <br>
+so it&#8217;s not really a function per-se, rather it&#8217;s a string that we convert to a function call. </p>
+
+<p>The object (obj) returned is the internal object maintained for this panel and includes the following properties: <br>
+- <strong>amRoot</strong>    - (boolean) Whether or not this is the root panel. <br>
+- <strong>canScroll</strong>     - (boolean)  <br>
+- <strong>children</strong>  - (array)  <br>
+- <strong>clickToggle</strong> - (um) <br>
+- <strong>color</strong>         - (um) <br>
+- <strong>elem</strong>      - (DOM Element) The panel&#8217;s HTML DOM Element  <br>
+- <strong>first</strong>         - (boolean) If this is the first panel in a row or column <br>
+- <strong>fixed</strong>         - (boolean) If this panel is fixed position <br>
+- <strong>h</strong>             - (number) A shortcut to height <br>
+- <strong>height</strong>    - (number) The height <br>
+- <strong>id</strong>        - (string) Should be the same as the DOM Element id, or randomly generated if no ELEMENT id. <br>
+- <strong>last</strong>      - (boolean) If this is the last panel in a row or column <br>
+- <strong>left</strong>      - (number) The position (will be left or top depending on row or column) <br>
+- <strong>top</strong>       - (number) The position (will be left or top depending on row or column) <br>
+- <strong>max</strong>       - (number) The maximum size the panel can be <br>
+- <strong>min</strong>       - (number) The minimum size the panel can be <br>
+- <strong>minSource</strong>     - (number) The maximum size the panel can be as specified by user at startup <br>
+- <strong>next</strong>      - (object) The next object <br>
+- <strong>nextElem</strong>  - (DOM Element) The next object&#8217;s element <br>
+- <strong>onResize</strong>  -  <br>
+- <strong>onResizeComplete</strong> -  <br>
+- <strong>padding</strong>   - (number)  <br>
+- <strong>parent</strong>    - (object) The parent object (if this panel is embedded inside another panel). <br>
+- <strong>parentElem</strong> - (DOM Element) The parent object&#8217;s element. <br>
+- <strong>prev</strong>      - (object) The previous object <br>
+- <strong>prevElem</strong>  - (DOM Element) The previous object&#8217;s element <br>
+- <strong>remember</strong>  - (boolean)  <br>
+- <strong>resizeble</strong>     - (boolean)  <br>
+- <strong>root</strong>      - (object) The root object <br>
+- <strong>rootElem</strong>  - (DOM Element) The root object&#8217;s element <br>
+- <strong>row</strong>       - (boolean) Used to determine if this panel is a row or a column. <br>
+- <strong>splitterElem</strong> - (DOM Element)  <br>
+- <strong>splitterHandleELem</strong> - (DOM Element)  <br>
+- <strong>toggleState</strong> - (boolean)  <br>
+- <strong>units</strong>         - (string) If using &#8220;px&#8221; or &#8220;%&#8221; units <br>
+- <strong>w</strong>             - (number) A shortcut to width <br>
+- <strong>width</strong>         - (number) The width</p>
+
+							
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">obj</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+							<span class="type">string</span>
+				
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>The internal model used for the panel.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+						    
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.handleOnResizeComplete"></a><a name="handleOnResizeComplete"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	handleOnResizeComplete (<span class="method-arguments">obj</span>) 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>A callback that is pinged when a user completes changing the size of the panel. <br>
+Note that to establish this callback, we incorporate the function name as a string in the HTML, so it&#8217;s not really a function per-se, rather it&#8217;s a string that we convert to a function call. </p>
+
+							
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">obj</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+							<span class="type">string</span>
+				
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>The internal model used for the panel.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+						    
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.handleScroll"></a><a name="handleScroll"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	handleScroll (<span class="method-arguments">e</span>) 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Description</p>
+
+							
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">e</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+							<span class="type">Event</span>
+				
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>e</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+						    
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.init"></a><a name="init"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	init () 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Initializes the page layout. This is called automatically via document.addEventListener(&#8220;DOMContentLoaded&#8221;, jbeeb.Layout.init)</p>
+
+							
+
+						    
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.mouse_down"></a><a name="mouse_down"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	mouse_down (<span class="method-arguments">e</span>, <span class="method-arguments">obj</span>) 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Description</p>
+
+							
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">e</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>e</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">obj</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>obj</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+						    
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.mouse_move"></a><a name="mouse_move"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	mouse_move (<span class="method-arguments">e</span>, <span class="method-arguments">manual</span>) 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Description</p>
+
+							
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">e</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>e</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">manual</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>manual</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+						    
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.mouse_up"></a><a name="mouse_up"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	mouse_up (<span class="method-arguments">e</span>) 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Description</p>
+
+							
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">e</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>e</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+						    
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.moveTo"></a><a name="moveTo"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	moveTo (<span class="method-arguments">obj</span>, <span class="method-arguments">pos</span>, <span class="method-arguments">resizing</span>) 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Description</p>
+
+							
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">obj</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>obj</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">pos</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>pos</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">resizing</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>resizing</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+						    
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.parseNumUnits"></a><a name="parseNumUnits"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	parseNumUnits (<span class="method-arguments">val</span>) 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Description</p>
+
+							
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">val</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>val</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+						    
+			       		 	<div class="heading-returns">Returns	</div>
+			      	     	<div class="member"><p>ObjectExpression ObjectExpression</p></div>
+				
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.pauseEvent"></a><a name="pauseEvent"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	pauseEvent (<span class="method-arguments">e</span>) 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Description</p>
+
+							
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">e</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>e</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+						    
+			       		 	<div class="heading-returns">Returns	</div>
+			      	     	<div class="member"><p>Literal Literal</p></div>
+				
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.positionPanels"></a><a name="positionPanels"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	positionPanels () 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Description</p>
+
+							
+
+						    
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.prepRoots"></a><a name="prepRoots"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	prepRoots (<span class="method-arguments">fromResize</span>) 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Description</p>
+
+							
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">fromResize</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>fromResize</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+						    
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.prepSizes"></a><a name="prepSizes"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	prepSizes (<span class="method-arguments">obj</span>, <span class="method-arguments">fromResize</span>) 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Beginning at root, work way up and establish sizes</p>
+
+							
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">obj</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>obj</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">fromResize</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>fromResize</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+						    
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.remember"></a><a name="remember"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	remember (<span class="method-arguments">obj</span>) 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Description</p>
+
+							
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">obj</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>obj</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+						    
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.resize"></a><a name="resize"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	resize () 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Description</p>
+
+							
+
+						    
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.resizeLast"></a><a name="resizeLast"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	resizeLast (<span class="method-arguments">obj</span>, <span class="method-arguments">diff_w</span>, <span class="method-arguments">diff_h</span>) 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Description</p>
+
+							
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">obj</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>obj</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">diff_w</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>diff_w</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">diff_h</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>diff_h</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+						    
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.resizePanel"></a><a name="resizePanel"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	resizePanel (<span class="method-arguments">elem</span>, <span class="method-arguments">size</span>) 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Manually (via javascript) resize a panel.</p>
+
+							
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">elem</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+							<span class="type">DOMelement | DOMid</span>
+				
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>The DOM element to resize (must be an existing layout DIV). Use the DIV&#8217;s ID, otherwise send the actual DOM element.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">size</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+							<span class="type">number</span>
+				
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>The pixel value to set the new size.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+						    
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.restore"></a><a name="restore"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	restore () 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Description</p>
+
+							
+
+						    
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.ripDoc"></a><a name="ripDoc"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	ripDoc () 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Description</p>
+
+							
+
+						    
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+					<a name="jbeeb.utils.Layout.scrollPanel"></a><a name="scrollPanel"></a>
+					<div class="member" data-access="private" >
+
+					    <div class="member-name">
+					    	scrollPanel (<span class="method-arguments">elem</span>, <span class="method-arguments">x</span>, <span class="method-arguments">y</span>) 
+					    	<span class="flag private">private</span>  <!-- public private protected -->
+						    
+					    </div>
+
+					    <div class="member-description">
+					    	
+							<p>Manually scroll a panel.</p>
+
+							
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">elem</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+							<span class="type">DOMelement | DOMid</span>
+				
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>The DOM element to resize (must be an existing layout DIV). Use the DIV&#8217;s ID, otherwise send the actual DOM element.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">x</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+							<span class="type">nunmber</span>
+				
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>The scroll x position to go to.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">y</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta">
+						        	
+							<span class="type">nunmber</span>
+				
+						        	</div>
+						        	<div class="param-description">
+						        	
+									
+							<div class="member-description">
+      				 		 	<p>The scroll y position to go to.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+						    
+
+						    
+
+						    
+						    
+						</div>
+
+					    
+					    
+					    
+					    
+					</div>
+			
+				            </div>
+						
+						
+		    </div>
+		
+		</div>
+
+		<div class="footer">Generated by <a href="http://www.documon.net" target="_blank">Documon</a></div>
+
+	</body>
+
+
+</html>

@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		
+    	<title>README.md</title>
+		<meta name="description" content="more.readme_md">
+
+		 <!-- Normalize -->
+	    <link rel="stylesheet" href="assets/vendor/normalize.css">
+
+	    
+	    <!-- prettify -->
+	    <link rel="stylesheet" href="assets/vendor/prettify/codamike.css">
+	    
+		<script src="assets/vendor/prettify/prettify.js"></script>
+
+		<!-- Documon Pages Info. (Used by various classes to identify this page.) -->
+		<script>
+	    var pageCtx = {
+	    	id : "more.readme_md",
+	    	name: "README.md"
+	    }
+	    </script>
+
+	    <!-- theme 
+	    <link rel="stylesheet" href="assets/fonts/Fira_Sans/FiraSans.css">
+	    <link rel="stylesheet" href="assets/fonts/Inconsolata/inconsolata.css">
+	    -->
+	    <link rel="stylesheet" href="assets/css/pages.css">
+	    <script src="assets/js/documon/Storage.js"></script>
+	    <script src="assets/js/documon/Access.js"></script>
+	    <script src="assets/js/documon/Pages.js"></script>
+
+	    
+	    
+
+	</head>
+
+
+
+	<body>
+
+		<div class="page">
+			<div class="more"><h1>myfs</h1>
+
+<p>My simplified, cross-platform methods for manipulating files and folders syncronously with Node.js.</p>
+
+<h3>Install</h3>
+
+<pre>npm install myfs --save
+... or
+yarn add myfs</pre>
+
+<h3>Usage</h3>
+
+<pre>var myfs = require('myfs');
+var data = myfs.open("/path/to/file.txt");</pre>
+
+<h3>Docs</h3>
+
+<p>See the "docs" folder for better details than this md file can provide.</p>
+
+<h4>Properties</h4>
+
+<table>
+<thead>
+<tr>
+  <th>Property</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tr>
+  <td><strong>sep</strong></td>
+  <td>The kind of seperator used in paths. Windows = \ or POSIX = /</td>
+</tr>
+<tr>
+  <td><strong>delimiter</strong></td>
+  <td>Platform environment $PATH delimiter.</td>
+</tr>
+<tr>
+  <td><strong>du</strong></td>
+  <td>Access to the underlaying directory utility class for access to additional methods that are not so common.</td>
+</tr>
+<tr>
+  <td><strong>fu</strong></td>
+  <td>Access to the underlaying file utility class for access to additional methods that are not so common.</td>
+</tr>
+<tr>
+  <td><strong>path</strong></td>
+  <td>Access to the underlaying path utility class for access to additional methods that are not so common.</td>
+</tr>
+</table>
+
+
+<h4>Methods</h4>
+
+<p>NOTE: We're not including arguments because including the params here makes things visually complicated. See the DOCs folder for details. This is just a quick reference.</p>
+
+<h5>File &amp; Folder stuff</h5>
+
+<table>
+<thead>
+<tr>
+  <th>Method</th>
+  <th>Arguments</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tr>
+  <td><strong>copy</strong></td>
+  <td>src, dest, binary</td>
+  <td>Copies a file from one location to another.</td>
+</tr>
+<tr>
+  <td><strong>cp</strong></td>
+  <td>src, dest, binary</td>
+  <td>alias for copy</td>
+</tr>
+<tr>
+  <td><strong>cpdir</strong></td>
+  <td>from, to</td>
+  <td>Copies the entire folder's heirarchy folder from one location to another. If the other location doesn't exists, it will be constructed.</td>
+</tr>
+<tr>
+  <td><strong>empty</strong></td>
+  <td>who, dryRun</td>
+  <td>Recursively empties a folder of all it's contents (and all the sub-folder's contents), but leaves the source folder.</td>
+</tr>
+<tr>
+  <td><strong>exists</strong></td>
+  <td>src</td>
+  <td>Checks to see if a file exists. Note this also checks if a folder of the same name exists too.</td>
+</tr>
+<tr>
+  <td><strong>launch</strong></td>
+  <td>target, opts</td>
+  <td>A file launcher. Opens stuff like websites, files, executables.</td>
+</tr>
+<tr>
+  <td><strong>list</strong></td>
+  <td>from, filter, recursive, store</td>
+  <td>A file launcher. Opens stuff like websites, files, executables. Cross-platform.</td>
+</tr>
+<tr>
+  <td><strong>listExt</strong></td>
+  <td>from, exts, recursive</td>
+  <td>Collects files from a folder based on the specified extension (or extensions). Can be used to search recursively through all sub-folders, and can search multiple extensions.</td>
+</tr>
+<tr>
+  <td><strong>ls</strong></td>
+  <td></td>
+  <td>alias for list</td>
+</tr>
+<tr>
+  <td><strong>makedir</strong></td>
+  <td>destination</td>
+  <td>Creates a folder at the specified location. The sub-folder heirarchy is constructed as needed.</td>
+</tr>
+<tr>
+  <td><strong>move</strong></td>
+  <td>src</td>
+  <td>Moves a file or folder.</td>
+</tr>
+<tr>
+  <td><strong>open</strong></td>
+  <td>src, binary</td>
+  <td>Reads the data out of a file.</td>
+</tr>
+<tr>
+  <td><strong>rm</strong></td>
+  <td>src</td>
+  <td>Deletes a file from the system.</td>
+</tr>
+<tr>
+  <td><strong>rmdir</strong></td>
+  <td>who, dryRun</td>
+  <td>Recursively removes a folder and all of it's sub-folders as well.</td>
+</tr>
+<tr>
+  <td><strong>write</strong></td>
+  <td>src, data, binary</td>
+  <td>Saves text data to a file. Overwrites entire file with provided data.</td>
+</tr>
+</table>
+
+
+<h5>Path Stuff</h5>
+
+<table>
+<thead>
+<tr>
+  <th>Method</th>
+  <th>Arguments</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tr>
+  <td><strong>addSlash</strong></td>
+  <td>path</td>
+  <td>Adds a trailing slash from path (if doesn't exist).</td>
+</tr>
+<tr>
+  <td><strong>addTrailingSlash</strong></td>
+  <td></td>
+  <td>alias for addSlash</td>
+</tr>
+<tr>
+  <td><strong>removeSlash</strong></td>
+  <td>path</td>
+  <td>Removes a trailing slash from path (if exists).</td>
+</tr>
+<tr>
+  <td><strong>removeTrailingSlash</strong></td>
+  <td>path</td>
+  <td>alias for removeSlash</td>
+</tr>
+<tr>
+  <td><strong>resolve</strong></td>
+  <td>path...</td>
+  <td>Generates an absolute path based on the provided arguments.</td>
+</tr>
+<tr>
+  <td><strong>base</strong></td>
+  <td>name</td>
+  <td>alias for basename</td>
+</tr>
+<tr>
+  <td><strong>basename</strong></td>
+  <td>path, ext</td>
+  <td>Returns the last portion of a path, generally the "filename".</td>
+</tr>
+<tr>
+  <td><strong>clean</strong></td>
+  <td>arg</td>
+  <td>Normalizes slashes by converting double \ to single \ and / to \ or \ tp / based on the current platform requirements.</td>
+</tr>
+<tr>
+  <td><strong>dir</strong></td>
+  <td></td>
+  <td>alias for dirname</td>
+</tr>
+<tr>
+  <td><strong>ext</strong></td>
+  <td>src</td>
+  <td>Returns the bare, base extension (no dot).</td>
+</tr>
+<tr>
+  <td><strong>filename</strong></td>
+  <td>src</td>
+  <td>alias for basename</td>
+</tr>
+<tr>
+  <td><strong>format</strong></td>
+  <td>obj</td>
+  <td>Combines the elements of an object into a string. The opposite of path.parse().</td>
+</tr>
+<tr>
+  <td><strong>isAbsolute</strong></td>
+  <td>src</td>
+  <td>Determines if path is an absolute path.</td>
+</tr>
+<tr>
+  <td><strong>join</strong></td>
+  <td>paths...</td>
+  <td>Joins path segments and resolves relativity.</td>
+</tr>
+<tr>
+  <td><strong>name</strong></td>
+  <td>path</td>
+  <td>npath.name("/foo/bar/bob.txt") --> "bob"</td>
+</tr>
+<tr>
+  <td><strong>normalize</strong></td>
+  <td>path</td>
+  <td>Resolves ".." and "." portions of a path. Reduces double slashes to single (e.g. // -> / ). Forces back-slashes to forward slashes (e.g. \ -> / ). Retains trailing slash if exists.</td>
+</tr>
+<tr>
+  <td><strong>parent</strong></td>
+  <td>path</td>
+  <td>Returns the path to the parent folder that the item resides within.</td>
+</tr>
+<tr>
+  <td><strong>parse</strong></td>
+  <td>path</td>
+  <td>Note that this uses the mind-warping name, basename, ext of the default Node.path.parse() plus some props that don't hurt my brain. Extracts basic path and file parts. root, dir, base, ext, name, ext2, extension, basename, filename, parent</td>
+</tr>
+<tr>
+  <td><strong>relative</strong></td>
+  <td>from, to</td>
+  <td>Creates a relative path between "from" and "to"</td>
+</tr>
+</table>
+
+
+<h3>License</h3>
+
+<p>MIT - Mike Gieson</p></div>
+		</div>
+
+		<div class="footer">Generated by <a href="http://www.documon.net" target="_blank">Documon</a></div>
+
+	</body>
+
+
+</html>

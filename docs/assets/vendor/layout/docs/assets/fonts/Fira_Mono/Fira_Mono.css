@@ -1,0 +1,20 @@
+
+@font-face{
+    font-family: 'Fira Mono';
+    src: url('FiraMono-Regular.eot');
+    src: url('FiraMono-Regular.eot') format('embedded-opentype'),
+         url('FiraMono-Regular.woff') format('woff'),
+         url('FiraMono-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fira Mono';
+    src: url('FiraMono-Bold.eot');
+    src: url('FiraMono-Bold.eot') format('embedded-opentype'),
+         url('FiraMono-Bold.woff') format('woff'),
+         url('FiraMono-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}

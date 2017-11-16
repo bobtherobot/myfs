@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Glyphs</title>
+
+	<!-- Layout -->
+    <script src="layout.js"></script>
+    <link href="layout.css" rel="stylesheet">
+
+    <script>
+    	function didResize(obj){
+    		console.log("didResize");
+    	}
+    jbeeb.utils.Layout.addListener("globalResizeComplete", this, didResize);
+    </script>
+
+<style>
+html, body {
+	width : 100%;
+	height : 100%;
+	overflow : hidden;
+}
+.header {
+	background-color : #D3E1EA;
+	padding : 5px;
+}
+.menu {
+	background-color : #EAE6C0;
+	padding : 10px;
+}
+.content {
+	background-color : #D2ECC0;
+	padding : 20px;
+}
+.footer {
+	background-color : #E3C7E4;
+	padding : 5px;
+}
+
+</style>
+</head>
+
+<body>
+	
+<!-- NOTE: Our body style has the overflow hidden to prevent scrollbars for the page. -->
+
+<div data-layout="col" data-noscroll data-noresize >
+
+	<!-- header -->
+	<div class="header" data-layout="row" data-size="40" data-noscroll>
+
+		header
+
+	</div>
+
+	<!-- main -->
+	<div data-layout="row" data-noscroll >
+
+		<!-- menu -->
+		<div id="menu" class="menu" data-layout="col" data-size="200" >
+			menu (has id, so will remember)
+		</div>
+
+		<!-- content -->
+		<div class="content" data-layout="col">
+			content
+		</div>
+		
+		<!-- right menu -->
+		<div class="menu" data-layout="col" data-size=200 data-fixed >
+			right menu (no id, so will not remember)
+		</div>
+
+	</div>
+	
+	<!-- footer -->
+	<div class="footer" data-layout="row" data-size="50" data-fixed data-noscroll >
+		footer (no id, so will not remember)
+	</div>
+
+</div>
+	
+	
+</body>
+
+</html>
