@@ -423,9 +423,9 @@ var MenuData = [
 		"kind": "methods",
 		"children": [
 			{
-				"id": "root.launch",
-				"url": "root.html#root.launch",
-				"label": "launch",
+				"id": "root.list",
+				"url": "root.html#root.list",
+				"label": "list",
 				"kind": "methods-item",
 				"access": "public",
 				"inherits": 0
@@ -559,17 +559,17 @@ var MenuData = [
 				"inherits": 0
 			},
 			{
-				"id": "root.addTrailingSlash",
-				"url": "root.html#root.addTrailingSlash",
-				"label": "addTrailingSlash",
+				"id": "root.launch",
+				"url": "root.html#root.launch",
+				"label": "launch",
 				"kind": "methods-item",
 				"access": "public",
 				"inherits": 0
 			},
 			{
-				"id": "root.list",
-				"url": "root.html#root.list",
-				"label": "list",
+				"id": "root.addTrailingSlash",
+				"url": "root.html#root.addTrailingSlash",
+				"label": "addTrailingSlash",
 				"kind": "methods-item",
 				"access": "public",
 				"inherits": 0
@@ -618,6 +618,14 @@ var MenuData = [
 				"id": "root.normalize",
 				"url": "root.html#root.normalize",
 				"label": "normalize",
+				"kind": "methods-item",
+				"access": "public",
+				"inherits": 0
+			},
+			{
+				"id": "root.open",
+				"url": "root.html#root.open",
+				"label": "open",
 				"kind": "methods-item",
 				"access": "public",
 				"inherits": 0
@@ -690,6 +698,14 @@ var MenuData = [
 				"id": "root.rmdir",
 				"url": "root.html#root.rmdir",
 				"label": "rmdir",
+				"kind": "methods-item",
+				"access": "public",
+				"inherits": 0
+			},
+			{
+				"id": "root.save",
+				"url": "root.html#root.save",
+				"label": "save",
 				"kind": "methods-item",
 				"access": "public",
 				"inherits": 0
