@@ -14,9 +14,6 @@ My lightweight, Node-specific, no dependancy, simplified, cross-platform methods
 	var myfs = require('myfs');
 	var data = myfs.open("/path/to/file.txt");
 
-
-### Common Examples
-
 Listing files from a folder
 
 	var mylist = myfs.list("/path/to/folder");
