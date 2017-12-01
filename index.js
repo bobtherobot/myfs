@@ -93,8 +93,22 @@ if (typeof require !== 'undefined') {
 
 
 		/**
-		 * Read a folder and returns an object containing all of the files and
-		 *  folder in arrays.
+		 * Read a folder and returns an object containing a "files" array and a "dirs" array with full system paths.
+		 *
+		 * 		{
+		 * 			files : [
+		 * 						"/path/to/file1.txt",
+		 * 						"/path/to/file2.txt",
+		 * 						"/path/to/file3.txt"
+		 * 					],
+		 * 			dirs : [
+		 * 						"/path/to/folder1",
+		 * 						"/path/to/folder2",
+		 * 						"/path/to/folder3"
+		 * 					]
+		 * 		}
+		 * 			
+		 * 						
 		 * 
 		 * __Alias__ for [du.copydir](myfs.dirutils.readdir)
 		 * 
@@ -230,7 +244,7 @@ if (typeof require !== 'undefined') {
 
 
 		/**
-		 * Saves text data to a file. Overwrites entire file with provided data.
+		 * Saves text or binary data to a file. Overwrites entire file with provided data.
 		 *
 		 * __Alias__ for [fu.write](myfs.fu.write)
 		 *

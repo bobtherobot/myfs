@@ -1,5 +1,6 @@
 # myfs
-My simplified, cross-platform methods for manipulating files and folders syncronously with Node.js.
+My lightweight, Node-specific, no dependancy, simplified, cross-platform methods for manipulating files and folders syncronously with Node.js.
+
 
 ### Install
 
@@ -13,9 +14,66 @@ My simplified, cross-platform methods for manipulating files and folders syncron
 	var myfs = require('myfs');
 	var data = myfs.open("/path/to/file.txt");
 
-### Docs
-See the "docs" folder for better details than this md file can provide.
 
+### Common Examples
+
+Listing files from a folder
+
+	var mylist = myfs.list("/path/to/folder");
+	//
+	// Yeilds
+	//
+	// {
+	// 		files : [
+	// 					"/path/to/folder/file1.txt",
+	// 					"/path/to/folder/file2.txt",
+	// 					"/path/to/folder/file3.txt"
+	// 					],
+	// 		dirs : [
+	// 					"/path/to/folder/folder1",
+	// 					"/path/to/folder/folder2",
+	// 					"/path/to/folder/folder3"
+	// 					]
+	// 	}
+
+
+Listing only files of X extension.
+
+	var mylist = myfs.listExt("/path/to/folder", "txt");
+	//
+	// Yeilds
+	// 		[
+	// 			"/path/to/folder/file1.txt",
+	// 			"/path/to/folder/file2.txt",
+	// 			"/path/to/folder/file3.txt"
+	// 		]
+
+
+Listing files of X & Y extension
+
+	var mylist = myfs.listExt("/path/to/folder", ["txt", "foo"]);
+	//
+	// Yeilds
+	// 		[
+	// 			"/path/to/folder/file1.txt",
+	// 			"/path/to/folder/file2.txt",
+	// 			"/path/to/folder/bob1.foo",
+	// 			"/path/to/folder/bob2.foo"
+	// 		]
+
+Open / Read 
+
+	var myfile = myfs.open("/path/to/folder/file1.txt"); // Yeilds the text contents of the file.
+	var myfile = myfs.read("/path/to/folder/file1.txt"); // same as above
+
+Save / Write
+
+	var myfile = myfs.save("/path/to/folder/file1.txt", data); // Wites the text data to the file.
+	var myfile = myfs.write("/path/to/folder/file1.txt", data); // same as above
+
+
+# Quick Reference
+See the "docs" folder for better details than this MD file can provide.
 
 #### Properties
 | Property | Description |
@@ -24,11 +82,11 @@ See the "docs" folder for better details than this md file can provide.
 |__delimiter__ | Platform environment $PATH delimiter.
 |__du__ | Access to the underlaying directory utility class for access to additional methods that are not so common.
 |__fu__ | Access to the underlaying file utility class for access to additional methods that are not so common.
-|__path__ | Access to the underlaying path utility class for access to additional methods that are not so common.
+|__path__ | Essentially the same as Node's built-in path, but has a few extras and unified cross-platform'd. This provides access to the underlaying path utility class for access to additional methods that are not so common.
 
 #### Methods
 
-NOTE: We're not including arguments because including the params here makes things visually complicated. See the DOCs folder for details. This is just a quick reference.
+NOTE: See the DOCs folder for details. This is just a quick reference.
 
 
 ##### File & Folder stuff
@@ -39,17 +97,18 @@ NOTE: We're not including arguments because including the params here makes thin
 |__cp__|src, dest, binary|alias for copy|
 |__cpdir__|from, to|Copies the entire folder's heirarchy folder from one location to another. If the other location doesn't exists, it will be constructed.|
 |__empty__|who, dryRun|Recursively empties a folder of all it's contents (and all the sub-folder's contents), but leaves the source folder.|
-|__exists__|src|Checks to see if a file exists. Note this also checks if a folder of the same name exists too.|
-|__launch__|target, opts|A file launcher. Opens stuff like websites, files, executables.|
-|__list__ |from, filter, recursive, store| A file launcher. Opens stuff like websites, files, executables. Cross-platform.|
-|__listExt__|from, exts, recursive|Collects files from a folder based on the specified extension (or extensions). Can be used to search recursively through all sub-folders, and can search multiple extensions.|
+|__exists__|src|Checks to see if a file or folder exists. |
+|__launch__|target, opts|A file launcher. Opens stuff like websites, files, executables using the native system program.|
+|__list__ |from, filter, recursive, store| Read a folder and returns an object containing a "files" array and a "dirs" array. Each array lists full system paths.|
+|__listExt__|from, exts, recursive|Returns an array of paths for files that have the extension(s). The ext argument can be an array to return multiple extensions.|
 |__ls__||alias for list|
 |__makedir__|destination|Creates a folder at the specified location. The sub-folder heirarchy is constructed as needed. |
 |__move__|src|Moves a file or folder. |
-|__open__|src, binary|Reads the data out of a file.|
+|__open__|src, binary|Reads the text or binary data out of a file. Use the "binary" (boolean) argument for non-text files. |
 |__rm__|src|Deletes a file from the system.|
 |__rmdir__|who, dryRun|Recursively removes a folder and all of it's sub-folders as well.|
-|__write__|src, data, binary|Saves text data to a file. Overwrites entire file with provided data.|
+|__save__|src, data, binary|Saves text data to a file. Overwrites entire file with provided data.|
+|__write__|src, data, binary|Alias for save.|
 
 
 ##### Path Stuff
