@@ -382,6 +382,27 @@ function addTrailingSlash(dpath){
 	return dpath;
 }
 
+/**
+ * Returns current working directory.
+ * @method     cwd
+ * @private
+ * @param      {string}    tack    Appends or (resolves)[resolve] additional context to the current working directory as needed.
+ *
+ *		var example = myfs.cwd("../"); // will back up one folder
+ *		var example = myfs.cwd("foo/bar"); // will tack onto the end /system/path/to/foo/bar
+ *		
+ * @return     {string}            The resolved path.
+ */
+function cwd(tack){
+	var cwd = process.cwd()
+	if(tack){
+		return resolve(cwd, tack);
+	} else {
+		return cwd;
+	}
+	
+}
+
 
 module.exports = {
 	clean 		: clean,
@@ -410,5 +431,6 @@ module.exports = {
 	posix 		: path.posix,	// leave as is
 
 	removeTrailingSlash : removeTrailingSlash,
-	addTrailingSlash : addTrailingSlash
+	addTrailingSlash : addTrailingSlash,
+	cwd
 };

@@ -1004,7 +1004,7 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 						        		<span class="member-name-left">
 								    		
 							<span class="default-value">
-      				 		 	false
+      				 		 	false]
        						 </span>
        			
 							<span class="type">boolean</span>
@@ -1197,6 +1197,99 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 			
 
 							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.cwd"></a><a name="cwd"></a>
+
+						<div class="member" data-access="private" >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		cwd (<span class="method-arguments">tack</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="flag private">private</span>  <!-- public private protected -->
+						    		
+						    		<span class="member-line-number">
+						    			593
+						    		</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>Returns current working directory.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">tack</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>Appends or (resolves)[resolve] additional context to the current working directory as needed.</p>
+
+<pre class="prettyprint">    var example = myfs.cwd("../"); // will back up one folder
+    var example = myfs.cwd("foo/bar"); // will tack onto the end /system/path/to/foo/bar</pre>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"><p>The resolved path.</p></div>
+				
 
 					
 								
@@ -2640,41 +2733,6 @@ npath.normalize("./foo/") --&gt; "/current/working/dir/foo/"</pre>
 
 							<div class="member-name clearfix">
 								<span class="member-name-left">
-						    		open () 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-line-number">
-						    			242
-						    		</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>alias for <a href="#read">read</a></p>
-
-					
-								
-
-							    
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="root.open"></a><a name="open"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
 						    		open (<span class="method-arguments">src</span>, <span class="method-arguments method-arg-optional">binary</span>) 
 						    	</span>
 								<span class="member-name-right">
@@ -2753,7 +2811,7 @@ npath.normalize("./foo/") --&gt; "/current/working/dir/foo/"</pre>
 						        		<span class="member-name-left">
 								    		
 							<span class="default-value">
-      				 		 	false
+      				 		 	false]
        						 </span>
        			
 							<span class="type">boolean</span>
@@ -2793,6 +2851,41 @@ npath.normalize("./foo/") --&gt; "/current/working/dir/foo/"</pre>
 					</div>
 			      	     	<div class="member"></div>
 				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.open"></a><a name="open"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		open () 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-line-number">
+						    			242
+						    		</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>alias for <a href="#read">read</a></p>
+
+					
+								
+
+							    
 
 					
 								
@@ -3591,6 +3684,41 @@ npath.dirname("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 
 							<div class="member-name clearfix">
 								<span class="member-name-left">
+						    		save () 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-line-number">
+						    			260
+						    		</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>alias for <a href="#write">write</a></p>
+
+					
+								
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.save"></a><a name="save"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
 						    		save (<span class="method-arguments">src</span>, <span class="method-arguments">data</span>, <span class="method-arguments method-arg-optional">binary</span>) 
 						    	</span>
 								<span class="member-name-right">
@@ -3705,7 +3833,7 @@ npath.dirname("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						        		<span class="member-name-left">
 								    		
 							<span class="default-value">
-      				 		 	false
+      				 		 	false]
        						 </span>
        			
 							<span class="type">boolean</span>
@@ -3738,41 +3866,6 @@ npath.dirname("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 				
 					</div>
 			
-
-							    
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="root.save"></a><a name="save"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		save () 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-line-number">
-						    			260
-						    		</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>alias for <a href="#write">write</a></p>
-
-					
-								
 
 							    
 

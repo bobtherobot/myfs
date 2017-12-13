@@ -255,6 +255,14 @@ var MenuData = [
 												"inherits": 0
 											},
 											{
+												"id": "myfs.npath.cwd",
+												"url": "myfs.npath.html#myfs.npath.cwd",
+												"label": "cwd",
+												"kind": "methods-item",
+												"access": "private",
+												"inherits": 0
+											},
+											{
 												"id": "myfs.npath.dirname",
 												"url": "myfs.npath.html#myfs.npath.dirname",
 												"label": "dirname",
@@ -484,6 +492,14 @@ var MenuData = [
 				"label": "cpdir",
 				"kind": "methods-item",
 				"access": "public",
+				"inherits": 0
+			},
+			{
+				"id": "root.cwd",
+				"url": "root.html#root.cwd",
+				"label": "cwd",
+				"kind": "methods-item",
+				"access": "private",
 				"inherits": 0
 			},
 			{

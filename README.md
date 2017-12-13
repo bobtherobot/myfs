@@ -131,6 +131,7 @@ NOTE: See the DOCs folder for details. This is just a quick reference.
 |__parent__|path|Returns the path to the parent folder that the item resides within.|
 |__parse__|path|Note that this uses the mind-warping name, basename, ext of the default Node.path.parse() plus some props that don't hurt my brain. Extracts basic path and file parts. root, dir, base, ext, name, ext2, extension, basename, filename, parent|
 |__relative__|from, to|Creates a relative path between "from" and "to"|
+|__cwd__|tack|Gets the current working directory. Resolves the argument to the path. |
 
 
 ### License

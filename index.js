@@ -399,14 +399,14 @@ if (typeof require !== 'undefined') {
 
 
 		/**
- * Normalizes slashes by converting double \\ to single \ and / to \\ or \\ tp / based on the current platform requirements.
- * 
- * @method clean
- *
- * @param  {string | array} arg
- *
- * @return {string}
- */
+		 * Normalizes slashes by converting double \\ to single \ and / to \\ or \\ tp / based on the current platform requirements.
+		 * 
+		 * @method clean
+		 *
+		 * @param  {string | array} arg
+		 *
+		 * @return {string}
+		 */
 		clean: path.clean,
 
 		/**
@@ -578,7 +578,20 @@ if (typeof require !== 'undefined') {
 		/**
 		 * @method  addTrailingSlash - alias for [addSlash](#addSlash)
 		 */
-		addTrailingSlash: path.addTrailingSlash
+		addTrailingSlash: path.addTrailingSlash,
+
+		/**
+		 * Returns current working directory.
+		 * @method     cwd
+		 * @private
+		 * @param      {string}    tack    Appends or (resolves)[resolve] additional context to the current working directory as needed.
+		 *
+		 *		var example = myfs.cwd("../"); // will back up one folder
+		 *		var example = myfs.cwd("foo/bar"); // will tack onto the end /system/path/to/foo/bar
+		 *		
+		 * @return     {string}            The resolved path.
+		 */
+		cwd: path.cwd
 
 	}
 
