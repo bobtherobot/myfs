@@ -133,6 +133,14 @@ var MenuData = [
 												"inherits": 0
 											},
 											{
+												"id": "myfs.fileutils.isFile",
+												"url": "myfs.fileutils.html#myfs.fileutils.isFile",
+												"label": "isFile",
+												"kind": "methods-item",
+												"access": "public",
+												"inherits": 0
+											},
+											{
 												"id": "myfs.fileutils.Open",
 												"url": "myfs.fileutils.html#myfs.fileutils.Open",
 												"label": "Open",
@@ -252,6 +260,14 @@ var MenuData = [
 												"label": "clean",
 												"kind": "methods-item",
 												"access": "public",
+												"inherits": 0
+											},
+											{
+												"id": "myfs.npath.cwd",
+												"url": "myfs.npath.html#myfs.npath.cwd",
+												"label": "cwd",
+												"kind": "methods-item",
+												"access": "private",
 												"inherits": 0
 											},
 											{
@@ -423,9 +439,9 @@ var MenuData = [
 		"kind": "methods",
 		"children": [
 			{
-				"id": "root.list",
-				"url": "root.html#root.list",
-				"label": "list",
+				"id": "root.launch",
+				"url": "root.html#root.launch",
+				"label": "launch",
 				"kind": "methods-item",
 				"access": "public",
 				"inherits": 0
@@ -484,6 +500,14 @@ var MenuData = [
 				"label": "cpdir",
 				"kind": "methods-item",
 				"access": "public",
+				"inherits": 0
+			},
+			{
+				"id": "root.cwd",
+				"url": "root.html#root.cwd",
+				"label": "cwd",
+				"kind": "methods-item",
+				"access": "private",
 				"inherits": 0
 			},
 			{
@@ -551,6 +575,30 @@ var MenuData = [
 				"inherits": 0
 			},
 			{
+				"id": "root.isDir",
+				"url": "root.html#root.isDir",
+				"label": "isDir",
+				"kind": "methods-item",
+				"access": "public",
+				"inherits": 0
+			},
+			{
+				"id": "root.isFile",
+				"url": "root.html#root.isFile",
+				"label": "isFile",
+				"kind": "methods-item",
+				"access": "public",
+				"inherits": 0
+			},
+			{
+				"id": "root.isFolder",
+				"url": "root.html#root.isFolder",
+				"label": "isFolder",
+				"kind": "methods-item",
+				"access": "public",
+				"inherits": 0
+			},
+			{
 				"id": "root.join",
 				"url": "root.html#root.join",
 				"label": "join",
@@ -559,17 +607,17 @@ var MenuData = [
 				"inherits": 0
 			},
 			{
-				"id": "root.launch",
-				"url": "root.html#root.launch",
-				"label": "launch",
+				"id": "root.addTrailingSlash",
+				"url": "root.html#root.addTrailingSlash",
+				"label": "addTrailingSlash",
 				"kind": "methods-item",
 				"access": "public",
 				"inherits": 0
 			},
 			{
-				"id": "root.addTrailingSlash",
-				"url": "root.html#root.addTrailingSlash",
-				"label": "addTrailingSlash",
+				"id": "root.list",
+				"url": "root.html#root.list",
+				"label": "list",
 				"kind": "methods-item",
 				"access": "public",
 				"inherits": 0
@@ -631,14 +679,6 @@ var MenuData = [
 				"inherits": 0
 			},
 			{
-				"id": "root.open",
-				"url": "root.html#root.open",
-				"label": "open",
-				"kind": "methods-item",
-				"access": "public",
-				"inherits": 0
-			},
-			{
 				"id": "root.parent",
 				"url": "root.html#root.parent",
 				"label": "parent",
@@ -650,6 +690,14 @@ var MenuData = [
 				"id": "root.parse",
 				"url": "root.html#root.parse",
 				"label": "parse",
+				"kind": "methods-item",
+				"access": "public",
+				"inherits": 0
+			},
+			{
+				"id": "root.read",
+				"url": "root.html#root.read",
+				"label": "read",
 				"kind": "methods-item",
 				"access": "public",
 				"inherits": 0
@@ -674,6 +722,14 @@ var MenuData = [
 				"id": "root.removeTrailingSlash",
 				"url": "root.html#root.removeTrailingSlash",
 				"label": "removeTrailingSlash",
+				"kind": "methods-item",
+				"access": "public",
+				"inherits": 0
+			},
+			{
+				"id": "root.rename",
+				"url": "root.html#root.rename",
+				"label": "rename",
 				"kind": "methods-item",
 				"access": "public",
 				"inherits": 0
@@ -711,9 +767,9 @@ var MenuData = [
 				"inherits": 0
 			},
 			{
-				"id": "root.save",
-				"url": "root.html#root.save",
-				"label": "save",
+				"id": "root.write",
+				"url": "root.html#root.write",
+				"label": "write",
 				"kind": "methods-item",
 				"access": "public",
 				"inherits": 0

@@ -101,11 +101,14 @@ NOTE: See the DOCs folder for details. This is just a quick reference.
 |__ls__||alias for list|
 |__makedir__|destination|Creates a folder at the specified location. The sub-folder heirarchy is constructed as needed. |
 |__move__|src|Moves a file or folder. |
+|__rename__|src|Alias for move. |
 |__open__|src, binary|Reads the text or binary data out of a file. Use the "binary" (boolean) argument for non-text files. |
 |__rm__|src|Deletes a file from the system.|
 |__rmdir__|who, dryRun|Recursively removes a folder and all of it's sub-folders as well.|
 |__save__|src, data, binary|Saves text data to a file. Overwrites entire file with provided data.|
 |__write__|src, data, binary|Alias for save.|
+|__isFile__|src|Checks to see if src is a file, as opposed to exists, which checks if either file OR folder exists.|
+|__isDir__|src|Checks to see if src is a folder, as opposed to exists, which checks if either file OR folder exists.|
 
 
 ##### Path Stuff
@@ -131,6 +134,7 @@ NOTE: See the DOCs folder for details. This is just a quick reference.
 |__parent__|path|Returns the path to the parent folder that the item resides within.|
 |__parse__|path|Note that this uses the mind-warping name, basename, ext of the default Node.path.parse() plus some props that don't hurt my brain. Extracts basic path and file parts. root, dir, base, ext, name, ext2, extension, basename, filename, parent|
 |__relative__|from, to|Creates a relative path between "from" and "to"|
+|__cwd__|tack|Gets the current working directory. Resolves the argument to the path. |
 
 
 ### License

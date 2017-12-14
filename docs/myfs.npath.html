@@ -478,6 +478,99 @@ POSIX   = : </pre>
 
 							</div>
 						</div>
+				<a name="myfs.npath.cwd"></a><a name="cwd"></a>
+
+						<div class="member" data-access="private" >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		cwd (<span class="method-arguments">tack</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="flag private">private</span>  <!-- public private protected -->
+						    		
+						    		<span class="member-line-number">
+						    			395
+						    		</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>Returns current working directory.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">tack</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>Appends or (resolves)[resolve] additional context to the current working directory as needed.</p>
+
+<pre class="prettyprint">    var example = myfs.cwd("../"); // will back up one folder
+    var example = myfs.cwd("foo/bar"); // will tack onto the end /system/path/to/foo/bar</pre>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"><p>The resolved path.</p></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
 				<a name="myfs.npath.dirname"></a><a name="dirname"></a>
 
 						<div class="member"  >

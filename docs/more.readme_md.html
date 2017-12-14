@@ -60,8 +60,6 @@ yarn add myfs</pre>
 <pre>var myfs = require('myfs');
 var data = myfs.open("/path/to/file.txt");</pre>
 
-<h3>Common Examples</h3>
-
 <p>Listing files from a folder</p>
 
 <pre>var mylist = myfs.list("/path/to/folder");
@@ -351,6 +349,11 @@ var myfile = myfs.write("/path/to/folder/file1.txt", data); // same as above</pr
   <td><strong>relative</strong></td>
   <td>from, to</td>
   <td>Creates a relative path between "from" and "to"</td>
+</tr>
+<tr>
+  <td><strong>cwd</strong></td>
+  <td>tack</td>
+  <td>Gets the current working directory. Resolves the argument to the path.</td>
 </tr>
 </table>
 
