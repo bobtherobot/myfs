@@ -192,8 +192,16 @@ if (typeof require !== 'undefined') {
 
 
 
-
-
+		/**
+		 * FYI: [dirUtils.exists](dirUtils.exists) only validates true on folder, if src is file and exists, will STILL return false. In other words, du.exists doesn't conduct a global "exists" (Note that fileUtils.exists does).
+ 	 	 * @method isFolder alias for [exists](#exists)
+		 */
+		isFolder : du.exists,
+		
+		/**
+	 	 * @method isDir alias for [isFolder](#isFolder)
+		 */
+		isDir : du.exists,
 
 
 
@@ -208,7 +216,7 @@ if (typeof require !== 'undefined') {
 
 		/**
 		 * 
-		 * Checks to see if a file exists. Note this also checks if a folder of the same name exists too.
+		 * Checks to see if a file or folder exists. To validate either file or folder use [isFile](#isFile) or [isDir](isDir).
 		 * 
 		 * @method     exists
 		 * @private
@@ -229,7 +237,7 @@ if (typeof require !== 'undefined') {
 		 *
 		 * __Alias__ for [fu.read](myfs.fu.read)
 		 *
-		 * @method     open
+		 * @method     read
 		 * @param      {string}    src    - The source file path.
 		 * @param      {boolean}   [binary=false]  - Is this a binary file? (We assume it's a text file.)
 		 * @return     {string | binary}
@@ -285,17 +293,36 @@ if (typeof require !== 'undefined') {
 		rm: fu.remove,
 
 		/**
-		 * Moves a file or folder.
+		 * Moves (or renames) a file or folder.
 		 * 
-		 * __Alias__ for [fu.rename](myfs.fileutils.rename)
+		 * __Alias__ for [rename](rename)
 		 * 
 		 * @method     move
-		 * @param      {string}    src    - The source file path. The destination file path.
+		 * @param      {string}    from    	- The source file path.
+		 * @param      {string}    to    	- The destination file path.
 		 */
-		move: fu.move,
+		move: fu.rename,
 
 
+		/**
+		 * Moves (or renames) a file or folder.
+		 * 
+		 * __Alias__ for [rename](rename)
+		 * 
+		 * @method     rename
+		 * @param      {string}    from    	- The source file path.
+		 * @param      {string}    to    	- The destination file path.
+		 */
+		rename: fu.rename,
 
+
+		
+		/**
+		 * Validates if a file exists AND that it's not a folder. If the src is a folder, this method will yeil false.
+		 * @method     isFile
+		 * @param      {string}    src     - The source file path.
+		 */
+		isFile: fu.isFile,
 
 
 
