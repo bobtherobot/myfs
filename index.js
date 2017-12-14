@@ -93,8 +93,22 @@ if (typeof require !== 'undefined') {
 
 
 		/**
-		 * Read a folder and returns an object containing all of the files and
-		 *  folder in arrays.
+		 * Read a folder and returns an object containing a "files" array and a "dirs" array with full system paths.
+		 *
+		 * 		{
+		 * 			files : [
+		 * 						"/path/to/file1.txt",
+		 * 						"/path/to/file2.txt",
+		 * 						"/path/to/file3.txt"
+		 * 					],
+		 * 			dirs : [
+		 * 						"/path/to/folder1",
+		 * 						"/path/to/folder2",
+		 * 						"/path/to/folder3"
+		 * 					]
+		 * 		}
+		 * 			
+		 * 						
 		 * 
 		 * __Alias__ for [du.copydir](myfs.dirutils.readdir)
 		 * 
@@ -178,8 +192,16 @@ if (typeof require !== 'undefined') {
 
 
 
-
-
+		/**
+		 * FYI: [dirUtils.exists](dirUtils.exists) only validates true on folder, if src is file and exists, will STILL return false. In other words, du.exists doesn't conduct a global "exists" (Note that fileUtils.exists does).
+ 	 	 * @method isFolder alias for [exists](#exists)
+		 */
+		isFolder : du.exists,
+		
+		/**
+	 	 * @method isDir alias for [isFolder](#isFolder)
+		 */
+		isDir : du.exists,
 
 
 
@@ -194,7 +216,7 @@ if (typeof require !== 'undefined') {
 
 		/**
 		 * 
-		 * Checks to see if a file exists. Note this also checks if a folder of the same name exists too.
+		 * Checks to see if a file or folder exists. To validate either file or folder use [isFile](#isFile) or [isDir](isDir).
 		 * 
 		 * @method     exists
 		 * @private
@@ -215,20 +237,26 @@ if (typeof require !== 'undefined') {
 		 *
 		 * __Alias__ for [fu.read](myfs.fu.read)
 		 *
-		 * @method     open
+		 * @method     read
 		 * @param      {string}    src    - The source file path.
 		 * @param      {boolean}   [binary=false]  - Is this a binary file? (We assume it's a text file.)
 		 * @return     {string | binary}
 		 */
-		open: fu.open,
+		read: fu.read,
 
 
 		/**
-		 * Saves text data to a file. Overwrites entire file with provided data.
+		 * @method open alias for [read](#read)
+		 */
+		open: fu.read,
+
+
+		/**
+		 * Saves text or binary data to a file. Overwrites entire file with provided data.
 		 *
 		 * __Alias__ for [fu.write](myfs.fu.write)
 		 *
-		 * @method     save
+		 * @method     write
 		 * @param      {string}    src    - The source file path.
 		 * @param      {string}    data    - The text data to save.
 		 * @param      {boolean}   [binary=false]  - Is this a binary file? (We assume it's a text file.)
@@ -265,17 +293,36 @@ if (typeof require !== 'undefined') {
 		rm: fu.remove,
 
 		/**
-		 * Moves a file or folder.
+		 * Moves (or renames) a file or folder.
 		 * 
-		 * __Alias__ for [fu.rename](myfs.fileutils.rename)
+		 * __Alias__ for [rename](rename)
 		 * 
 		 * @method     move
-		 * @param      {string}    src    - The source file path. The destination file path.
+		 * @param      {string}    from    	- The source file path.
+		 * @param      {string}    to    	- The destination file path.
 		 */
-		move: fu.move,
+		move: fu.rename,
 
 
+		/**
+		 * Moves (or renames) a file or folder.
+		 * 
+		 * __Alias__ for [rename](rename)
+		 * 
+		 * @method     rename
+		 * @param      {string}    from    	- The source file path.
+		 * @param      {string}    to    	- The destination file path.
+		 */
+		rename: fu.rename,
 
+
+		
+		/**
+		 * Validates if a file exists AND that it's not a folder. If the src is a folder, this method will yeil false.
+		 * @method     isFile
+		 * @param      {string}    src     - The source file path.
+		 */
+		isFile: fu.isFile,
 
 
 
@@ -379,14 +426,14 @@ if (typeof require !== 'undefined') {
 
 
 		/**
- * Normalizes slashes by converting double \\ to single \ and / to \\ or \\ tp / based on the current platform requirements.
- * 
- * @method clean
- *
- * @param  {string | array} arg
- *
- * @return {string}
- */
+		 * Normalizes slashes by converting double \\ to single \ and / to \\ or \\ tp / based on the current platform requirements.
+		 * 
+		 * @method clean
+		 *
+		 * @param  {string | array} arg
+		 *
+		 * @return {string}
+		 */
 		clean: path.clean,
 
 		/**
@@ -558,7 +605,20 @@ if (typeof require !== 'undefined') {
 		/**
 		 * @method  addTrailingSlash - alias for [addSlash](#addSlash)
 		 */
-		addTrailingSlash: path.addTrailingSlash
+		addTrailingSlash: path.addTrailingSlash,
+
+		/**
+		 * Returns current working directory.
+		 * @method     cwd
+		 * @private
+		 * @param      {string}    tack    Appends or (resolves)[resolve] additional context to the current working directory as needed.
+		 *
+		 *		var example = myfs.cwd("../"); // will back up one folder
+		 *		var example = myfs.cwd("foo/bar"); // will tack onto the end /system/path/to/foo/bar
+		 *		
+		 * @return     {string}            The resolved path.
+		 */
+		cwd: path.cwd
 
 	}
 

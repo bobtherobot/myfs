@@ -42,6 +42,33 @@ function copy( src, dest, binary ) {
 
 
 /**
+ * Validates if a file exists AND that it's not a folder. If the src is a folder, this method will yeil false.
+ * @method     isFile
+ * @param      {string}    src     - The source file path.
+ */
+function isFile(src){
+	if( ! exists(src) ){
+		return false;
+	}
+	var val = false;
+	var obj;
+	try {
+		//var obj = fs.lstatSync(who);
+		var obj = fs.statSync(who); // dereference symlinks (follows symbolic links)
+		if(obj){
+			val = ! obj.isDirectory();
+		}
+		
+	} catch(e){
+		// ignore 
+		// val = false;
+	}
+
+	return val;
+}
+
+
+/**
  * Reads the entire file as a string. NOTE: This is an alias for [read](#read).
  *
  * @method     Open
@@ -106,9 +133,10 @@ function exists( src ) {
 }
 
 /**
- * Renames a file or folder
+ * Renames (or moves) a file or folder.
  * @method     rename
- * @param      {string}    src    - The source file path. The destination file path.
+ * @param      {string}    from    	- The source file path.
+ * @param      {string}    to    	- The destination file path.
  */
 function rename( from, to ) {
 	fs.rename( from, to, function( err ) {
@@ -131,5 +159,6 @@ module.exports = {
 	remove: remove,
 	exists: exists,
 	rename: rename,
-	move: rename // alias
+	move: rename, // alias
+	isFile : isFile
 }

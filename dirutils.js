@@ -327,6 +327,7 @@ function rename( from, to ) {
 
 
 
+
 module.exports = {
 	make : makedir,
 	mkdir : makedir, 	// alias
@@ -339,5 +340,7 @@ module.exports = {
 	empty : emptydir,
 	remove : removedir,
 	exists : exists,
+	isFolder : exists, // alias (only validates true on folder, if src is file and exists, will still retrun false)
+	isDir : exists, // alias
 	rename : rename
 }
