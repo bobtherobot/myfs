@@ -27,6 +27,7 @@ var SearchData = {
 	"root.exists": "exists : Checks file exists Note this also checks folder same name existsexists source file path True exists false file folder exists",
 	"root.exist": "exist : alias exists exists pluralalias exists exists plural",
 	"root.open": "open : alias read readalias read read",
+	"root.write": "write : Saves text binary data file Overwrites entire file with provided data Alias write myfs writewrite source file path text data save this binary file assume text file",
 	"root.save": "save : alias write writealias write write",
 	"root.cp": "cp : alias copy copyalias copy copy",
 	"root.copy": "copy : Copies file from location another Alias copy myfs copycopy source file path destination copy source this binary file assume text file",

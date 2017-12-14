@@ -248,7 +248,7 @@ if (typeof require !== 'undefined') {
 		 *
 		 * __Alias__ for [fu.write](myfs.fu.write)
 		 *
-		 * @method     save
+		 * @method     write
 		 * @param      {string}    src    - The source file path.
 		 * @param      {string}    data    - The text data to save.
 		 * @param      {boolean}   [binary=false]  - Is this a binary file? (We assume it's a text file.)

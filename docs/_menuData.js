@@ -727,9 +727,9 @@ var MenuData = [
 				"inherits": 0
 			},
 			{
-				"id": "root.save",
-				"url": "root.html#root.save",
-				"label": "save",
+				"id": "root.write",
+				"url": "root.html#root.write",
+				"label": "write",
 				"kind": "methods-item",
 				"access": "public",
 				"inherits": 0
