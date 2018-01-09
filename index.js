@@ -115,7 +115,12 @@ if (typeof require !== 'undefined') {
 		 * @method list
 		 *
 		 * @param  {string}  	from      	- The path to the folder to read.
-		 * @param  {function}  	filter   	- A custom filter funciton.
+		 * @param  {function}  	filter   	- A custom filter funciton should return boolean for inclusion. The function will be set arguments fo the following signature:
+		 * 
+		 *     filter( isFolder [boolean], file [URI string], stats [instance of Node's statSync] );
+		 *     
+		 *     // See Node's statSync : https://nodejs.org/api/fs.html#fs_class_fs_stats
+		 * 
 		 * @param  {boolean}  	recursive 	- Should we retrieve sub-folders too?
 		 * @param  {object}  	store     	- Used internally to store recursive findings.
 		 Note that you may also provide this argument and readdir will populate your
@@ -287,6 +292,16 @@ if (typeof require !== 'undefined') {
 
 		/**
 		 * Deletes a file from the system.
+		
+			__Alias__ for [fu.remove](myfs.fu.remove)
+			
+		 * @method     remove
+		 * @param      {string}    src    - The source file path.
+		 */
+		remove: fu.remove,
+		
+		/**
+			__Alias__ for [remove](#remove)
 		 * @method     rm
 		 * @param      {string}    src    - The source file path.
 		 */

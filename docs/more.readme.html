@@ -6,8 +6,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 		
-    	<title>README.md</title>
-		<meta name="description" content="more.readme_md">
+    	<title>README</title>
+		<meta name="description" content="more.readme">
 
 		 <!-- Normalize -->
 	    <link rel="stylesheet" href="assets/vendor/normalize.css">
@@ -21,8 +21,8 @@
 		<!-- Documon Pages Info. (Used by various classes to identify this page.) -->
 		<script>
 	    var pageCtx = {
-	    	id : "more.readme_md",
-	    	name: "README.md"
+	    	id : "more.readme",
+	    	name: "README"
 	    }
 	    </script>
 
@@ -218,6 +218,11 @@ var myfile = myfs.write("/path/to/folder/file1.txt", data); // same as above</pr
   <td>Moves a file or folder.</td>
 </tr>
 <tr>
+  <td><strong>rename</strong></td>
+  <td>src</td>
+  <td>Alias for move.</td>
+</tr>
+<tr>
   <td><strong>open</strong></td>
   <td>src, binary</td>
   <td>Reads the text or binary data out of a file. Use the "binary" (boolean) argument for non-text files.</td>
@@ -241,6 +246,16 @@ var myfile = myfs.write("/path/to/folder/file1.txt", data); // same as above</pr
   <td><strong>write</strong></td>
   <td>src, data, binary</td>
   <td>Alias for save.</td>
+</tr>
+<tr>
+  <td><strong>isFile</strong></td>
+  <td>src</td>
+  <td>Checks to see if src is a file, as opposed to exists, which checks if either file OR folder exists.</td>
+</tr>
+<tr>
+  <td><strong>isDir</strong></td>
+  <td>src</td>
+  <td>Checks to see if src is a folder, as opposed to exists, which checks if either file OR folder exists.</td>
 </tr>
 </table>
 

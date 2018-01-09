@@ -1,9 +1,9 @@
 var MenuData = [
 	{
-		"id": "more.readme_md",
-		"url": "more.readme_md.html",
-		"label": "README.md",
-		"name": "README.md",
+		"id": "more.readme",
+		"url": "more.readme.html",
+		"label": "README",
+		"name": "README",
 		"kind": "more-file",
 		"basepath": "more/README",
 		"parentID": "more"
@@ -706,6 +706,14 @@ var MenuData = [
 				"id": "root.relative",
 				"url": "root.html#root.relative",
 				"label": "relative",
+				"kind": "methods-item",
+				"access": "public",
+				"inherits": 0
+			},
+			{
+				"id": "root.remove",
+				"url": "root.html#root.remove",
+				"label": "remove",
 				"kind": "methods-item",
 				"access": "public",
 				"inherits": 0

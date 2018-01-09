@@ -113,7 +113,12 @@ function readExt(from, exts, recursive){
  * @method readdir
  *
  * @param  {string}  	from      	- The path to the folder to read.
- * @param  {function}  	filter   	- A custom filter funciton.
+ * @param  {function}  	filter   	- A custom filter funciton should return boolean for inclusion. The function will be set arguments fo the following signature:
+		 * 
+		 *     filter( isFolder [boolean], file [URI string], stats [instance of Node's statSync] );
+		 *     
+		 *     // See Node's statSync : https://nodejs.org/api/fs.html#fs_class_fs_stats
+		 * 
  * @param  {boolean}  	recursive 	- Should we retrieve sub-folders too?
  * @param  {object}  	store     	- Used internally to store recursive findings.
  Note that you may also provide this argument and readdir will populate your
