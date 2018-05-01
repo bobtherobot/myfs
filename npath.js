@@ -412,7 +412,9 @@ function cwd(tack){
  * @return     {sring}               The new path.
  */
 function swapExt(path, newExt){
-	return parent(path) + sep + name(path) + "." + newExt;
+	var Apath = path.split(".");
+	Apath.pop();
+	return Apath.join(".") + "." + newExt;
 }
 
 
@@ -444,6 +446,6 @@ module.exports = {
 
 	removeTrailingSlash : removeTrailingSlash,
 	addTrailingSlash : addTrailingSlash,
-	swapExt : swapExt
+	swapExt : swapExt,
 	cwd
 };

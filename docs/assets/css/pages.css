@@ -461,12 +461,16 @@ members
 	float : right;
 }
 
-.member-line-number {
+.member-file, .member-line-number {
 	font-size : 10px;
 	color : #8C8C8C;
 }
 .member-line-number:before {
-	content : 'line: ';
+	font-weight : bold;
+	content : ' - line: ';
+}
+.member-file {
+
 }
 
 .param-description {

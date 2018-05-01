@@ -6,8 +6,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 		
-    	<title>log</title>
-		<meta name="description" content="Writes to the console. Will accept an object or array as well as string, boolena and other and prepare them for proper presentation to the console.">
+    	<title>Storage</title>
+		<meta name="description" content="Set/Get convienence methods for localStorage.">
 
 		 <!-- Normalize -->
 	    <link rel="stylesheet" href="assets/vendor/normalize.css">
@@ -21,8 +21,8 @@
 		<!-- Documon Pages Info. (Used by various classes to identify this page.) -->
 		<script>
 	    var pageCtx = {
-	    	id : "myfs.log",
-	    	name: "log"
+	    	id : "gieson.Storage",
+	    	name: "Storage"
 	    }
 	    </script>
 
@@ -54,31 +54,79 @@
 							<a name="methods"></a>
 		            		<div class="part-methods">
 					            
-					            <a name="myfs.log"></a><a name="log"></a>
+					            <a name="gieson.Storage"></a><a name="Storage"></a>
 
 						<div class="member"  >
 
 							<div class="member-name clearfix">
 								<span class="member-name-left">
-						    		log (<span class="method-arguments">data</span>, <span class="method-arguments">title</span>, <span class="method-arguments">quiet</span>) 
+						    		Storage () 
 						    	</span>
 								<span class="member-name-right">
 						    		
 						    		
-						    		<span class="member-file">myfs/log.js</span>
+						    		<span class="member-file">myfs/docs/assets/js/documon/Storage.js</span>
 						    		
-						    		<span class="member-line-number">34</span>
+						    		<span class="member-line-number">16</span>
 						    	</span>
 						    </div>
 
 
 						   	<div class="member-description">
 						   		<div class="meta-block meta-block-klass">
-				<div class="meta-line"><span class="meta-label" >xpath</span> <span class="meta-target">myfs.log<span></div>
-				<div class="meta-line"><span class="meta-label" >file</span> <span class="meta-target">myfs/log.js<span></div>
+				<div class="meta-line"><span class="meta-label" >xpath</span> <span class="meta-target">gieson.Storage<span></div>
+				<div class="meta-line"><span class="meta-label" >file</span> <span class="meta-target">myfs/docs/assets/js/documon/Storage.js<span></div>
 			</div>
 						   		
-								<p>Writes to the console. Will accept an object or array as well as string, boolena and other and prepare them for proper presentation to the console.</p>
+								<p>Set/Get convienence methods for localStorage.</p>
+
+					
+								
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				
+				            </div>
+						
+						
+			</div>
+
+		    <div class="parts">
+		        
+		        
+		        
+							<a name="methods"></a>
+		            		<div class="part-methods">
+					            <div class="heading-part">Methods</div>
+					            <a name="gieson.Storage.getStore"></a><a name="getStore"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		getStore (<span class="method-arguments">name</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/docs/assets/js/documon/Storage.js</span>
+						    		
+						    		<span class="member-line-number">44</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>Retrieves an item from browser's local storage.</p>
 
 					
 								
@@ -95,43 +143,7 @@
 
 						    	<td>
 						    		
-						        	<span class="member-name">data</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="type">any</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>A string, array or object to output</p>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">title</span>
+						        	<span class="member-name">name</span>
 						        </td>
 						        <td>
 						        	<div class="param-meta clearfix">
@@ -152,7 +164,97 @@
 						        		
 									
 							<div class="member-description">
-      				 		 	<p>A title for the message</p>
+      				 		 	<p>The name of the "thing" you want to get.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">any</span>
+					</div>
+			      	     	<div class="member"><p>The stored data</p></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="gieson.Storage.setStore"></a><a name="setStore"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		setStore (<span class="method-arguments">name</span>, <span class="method-arguments">val</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/docs/assets/js/documon/Storage.js</span>
+						    		
+						    		<span class="member-line-number">26</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>Stores data. Can store string, number, boolean and objects.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">name</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>The name of the "thing" to store. (We use this to get it out later)</p>
        						 </div>
        			
 						        	
@@ -167,14 +269,14 @@
 
 						    	<td>
 						    		
-						        	<span class="member-name">quiet</span>
+						        	<span class="member-name">val</span>
 						        </td>
 						        <td>
 						        	<div class="param-meta clearfix">
 
 						        		<span class="member-name-left">
 								    		
-							<span class="type">type</span>
+							<span class="type">any</span>
 				
 								    	</span>
 										<span class="member-name-right">
@@ -188,7 +290,7 @@
 						        		
 									
 							<div class="member-description">
-      				 		 	<p>Disables logging (prevents console output.</p>
+      				 		 	<p>The actual thing to store.</p>
        						 </div>
        			
 						        	
@@ -208,20 +310,7 @@
 							    
 
 					
-								<div class="example-block">
-	    		<pre class="prettyprint">var log = require("log");
-log(["foo", "bar"], "Some Title", false);</pre>
-
-<p>prints:</p>
-
-<pre class="prettyprint">    --------------------
-    Some Title
-    --------------------
-    [
-        'foo',
-        'bar'
-    ]</pre>
-	        </div>
+								
 
 							    
 
@@ -231,12 +320,6 @@ log(["foo", "bar"], "Some Title", false);</pre>
 				            </div>
 						
 						
-			</div>
-
-		    <div class="parts">
-		        
-		        
-		        
 		    </div>
 		
 		</div>

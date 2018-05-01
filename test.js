@@ -242,7 +242,13 @@ if( myfs.resolve("here.jpg") != __dirname + "/here.jpg" ){
 }
 
 
+if( myfs.swapExt("here.jpg", "png") != "here.png" ){
+	failed("fail: swapExt 1", myfs.swapExt("here.jpg", "png"));
+}
 
+if( myfs.swapExt("/path/to/here.jpg", "png") != "/path/to/here.png" ){
+	failed("fail: swapExt 2");
+}
 
 
 // Launch
