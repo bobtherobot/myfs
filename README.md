@@ -135,7 +135,13 @@ NOTE: See the DOCs folder for details. This is just a quick reference.
 |__parse__|path|Note that this uses the mind-warping name, basename, ext of the default Node.path.parse() plus some props that don't hurt my brain. Extracts basic path and file parts. root, dir, base, ext, name, ext2, extension, basename, filename, parent|
 |__relative__|from, to|Creates a relative path between "from" and "to"|
 |__cwd__|tack|Gets the current working directory. Resolves the argument to the path. |
+|__swapExt__|src|Changes the path's (or filename's) extension.
 
+
+### Change log
+
+1.0.8 - May 1, 2018
+: Added __swapExt__
 
 ### License
 MIT - Mike Gieson
