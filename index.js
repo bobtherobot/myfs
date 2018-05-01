@@ -389,8 +389,8 @@ if (typeof require !== 'undefined') {
 		/**
 		 * Returns the path to the parent folder that the item resides within.
 		 * 	
-		 * 		npath.dirname("/foo/bar/bob.txt") --> "/foo/bar"
-		 *   	npath.dirname("/foo/sally/yoyo/boob") --> "/foo/sally/yoyo"
+		 * 		npath.parent("/foo/bar/bob.txt") --> "/foo/bar"
+		 *   	npath.parent("/foo/sally/yoyo/boob") --> "/foo/sally/yoyo"
 		 * 
 		 * @method parent
 		 * @param  {string} Vpath - The path to parse.
@@ -621,6 +621,18 @@ if (typeof require !== 'undefined') {
 		 * @method  addTrailingSlash - alias for [addSlash](#addSlash)
 		 */
 		addTrailingSlash: path.addTrailingSlash,
+
+
+		/**
+		 * Changes a path's extension. Can apply to a basic filename or a full path.
+		 * @method     swapExt
+		 * @private
+		 * @param      {string}     path      The original path.
+		 * @param      {string}     newExt    The new extenion to use.
+		 * @return     {sring}               The new path.
+		 */
+		swapExt: path.swapExt,
+
 
 		/**
 		 * Returns current working directory.

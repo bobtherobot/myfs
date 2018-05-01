@@ -403,6 +403,18 @@ function cwd(tack){
 	
 }
 
+/**
+ * Changes a path's extension. Can apply to a basic filename or a full path.
+ * @method     swapExt
+ * @private
+ * @param      {string}     path      The original path.
+ * @param      {string}     newExt    The new extenion to use.
+ * @return     {sring}               The new path.
+ */
+function swapExt(path, newExt){
+	return parent(path) + sep + name(path) + "." + newExt;
+}
+
 
 module.exports = {
 	clean 		: clean,
@@ -432,5 +444,6 @@ module.exports = {
 
 	removeTrailingSlash : removeTrailingSlash,
 	addTrailingSlash : addTrailingSlash,
+	swapExt : swapExt
 	cwd
 };
