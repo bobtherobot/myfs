@@ -32,12 +32,16 @@ function copy( src, dest, binary ) {
 	// if just folder provided, tack on the file name.
 	if ( du.exists( dest ) ) {
 		var name = path.basename( src );
-		console.log("copy: dest", dest);
 		dest = path.removeTrailingSlash( dest ) + "/" + name;
-		console.log("copy: dest", dest);
+	}
+
+	var destParent = path.parent(dest);
+	if ( ! du.exists( destParent ) ) {
+		du.mkdir(destParent);
 	}
 
 	fs.writeFileSync( dest, data, binary ? null : "UTF-8" );
+	
 }
 
 
