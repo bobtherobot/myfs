@@ -264,8 +264,8 @@ if (typeof require !== 'undefined') {
 		 * @method     write
 		 * @param      {string}    src    - The source file path.
 		 * @param      {string}    data    - The text data to save.
-		 * @param      {boolean}   [binary=false]  - Is this a binary file? (We assume it's a text file.)
-		 */
+		 * @param      {string|boolean}   [binary=false]  - Is this a binary file? (We assume it's a text file.) Honors the string "binary" or just use a boolean. If you use a string, only "binary" is recognized, anything other than "binary" will default down to "UTF-8".
+ 		*/
 		write: fu.write,
 
 		/**

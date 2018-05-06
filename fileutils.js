@@ -110,9 +110,18 @@ function read( src, binary ) {
  * @method     write
  * @param      {string}    src    - The source file path.
  * @param      {string}    data    - The text data to save.
- * @param      {boolean}   [binary=false]  - Is this a binary file? (We assume it's a text file.)
+ * @param      {string|boolean}   [binary=false]  - Is this a binary file? (We assume it's a text file.) Honors the string "binary" or just use a boolean. If you use a string, only "binary" is recognized, anything other than "binary" will default down to "UTF-8".
  */
 function write( src, data, binary ) {
+	if(binary){
+		if(typeof binary == 'string'){
+			if(binary.toLowerCase() == "binary"){
+				binary = true;
+			} else {
+				binary = false;
+			}
+		}
+	}
 	fs.writeFileSync( src, data, binary ? "binary" : "UTF-8" );
 }
 

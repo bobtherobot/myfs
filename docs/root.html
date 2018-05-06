@@ -4465,7 +4465,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
       				 		 	false]
        						 </span>
        			
-							<span class="type">boolean</span>
+							<span class="type">string|boolean</span>
 				
 								    	</span>
 										<span class="member-name-right">
@@ -4479,7 +4479,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						        		
 									
 							<div class="member-description">
-      				 		 	<p>Is this a binary file? (We assume it's a text file.)</p>
+      				 		 	<p>Is this a binary file? (We assume it's a text file.) Honors the string "binary" or just use a boolean. If you use a string, only "binary" is recognized, anything other than "binary" will default down to "UTF-8".</p>
        						 </div>
        			
 						        	
