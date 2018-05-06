@@ -35,13 +35,24 @@ function copy( src, dest, binary ) {
 		dest = path.removeTrailingSlash( dest ) + "/" + name;
 	}
 
-	var destParent = path.parent(dest);
-	if ( ! du.exists( destParent ) ) {
-		du.mkdir(destParent);
-	}
+	ensureParentExists(dest);
 
 	fs.writeFileSync( dest, data, binary ? null : "UTF-8" );
 	
+}
+
+/**
+ * Ensures a file's parent folder exists so when we attempt to write, there's a folder ot write into.
+ * The associated mkdir constructs the entire heirarchy as needed.
+ * @method     ensureParentExists
+ * @private
+ * @param      {type}                src    - the path
+ */
+function ensureParentExists(src){
+	var par = path.parent(src);
+	if ( ! du.exists( par ) ) {
+		du.mkdir(par);
+	}
 }
 
 
@@ -122,6 +133,8 @@ function write( src, data, binary ) {
 			}
 		}
 	}
+
+	ensureParentExists(src);
 	fs.writeFileSync( src, data, binary ? "binary" : "UTF-8" );
 }
 
