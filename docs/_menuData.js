@@ -377,6 +377,14 @@ var MenuData = [
 												"inherits": 0
 											},
 											{
+												"id": "myfs.fileutils.ensureParentExists",
+												"url": "myfs.fileutils.html#myfs.fileutils.ensureParentExists",
+												"label": "ensureParentExists",
+												"kind": "methods-item",
+												"access": "private",
+												"inherits": 0
+											},
+											{
 												"id": "myfs.fileutils.exists",
 												"url": "myfs.fileutils.html#myfs.fileutils.exists",
 												"label": "exists",
