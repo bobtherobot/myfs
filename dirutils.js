@@ -279,10 +279,12 @@ function emptydir(who, dryRun) {
 function removedir(who, dryRun){
 	var removed = emptydir(who, dryRun);
 
-	removed.push(who);
-    if( ! dryRun ){
-       fs.rmdirSync(who);
-    }
+	if( exists(who) ) {
+		removed.push(who);
+	    if( ! dryRun ){
+	       fs.rmdirSync(who);
+	    }
+	}
 
     return removed;
 }
