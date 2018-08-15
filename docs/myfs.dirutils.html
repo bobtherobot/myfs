@@ -118,7 +118,7 @@
 						    		
 						    		<span class="member-file">myfs/dirutils.js</span>
 						    		
-						    		<span class="member-line-number">356</span>
+						    		<span class="member-line-number">367</span>
 						    	</span>
 						    </div>
 
@@ -153,7 +153,7 @@
 						    		
 						    		<span class="member-file">myfs/dirutils.js</span>
 						    		
-						    		<span class="member-line-number">351</span>
+						    		<span class="member-line-number">362</span>
 						    	</span>
 						    </div>
 
@@ -188,7 +188,7 @@
 						    		
 						    		<span class="member-file">myfs/dirutils.js</span>
 						    		
-						    		<span class="member-line-number">346</span>
+						    		<span class="member-line-number">357</span>
 						    	</span>
 						    </div>
 
@@ -223,7 +223,7 @@
 						    		
 						    		<span class="member-file">myfs/dirutils.js</span>
 						    		
-						    		<span class="member-line-number">236</span>
+						    		<span class="member-line-number">247</span>
 						    	</span>
 						    </div>
 
@@ -349,7 +349,7 @@
 						    		
 						    		<span class="member-file">myfs/dirutils.js</span>
 						    		
-						    		<span class="member-line-number">303</span>
+						    		<span class="member-line-number">314</span>
 						    	</span>
 						    </div>
 
@@ -439,7 +439,7 @@
 						    		
 						    		<span class="member-file">myfs/dirutils.js</span>
 						    		
-						    		<span class="member-line-number">371</span>
+						    		<span class="member-line-number">382</span>
 						    	</span>
 						    </div>
 
@@ -474,7 +474,7 @@
 						    		
 						    		<span class="member-file">myfs/dirutils.js</span>
 						    		
-						    		<span class="member-line-number">366</span>
+						    		<span class="member-line-number">377</span>
 						    	</span>
 						    </div>
 
@@ -509,7 +509,7 @@
 						    		
 						    		<span class="member-file">myfs/dirutils.js</span>
 						    		
-						    		<span class="member-line-number">200</span>
+						    		<span class="member-line-number">211</span>
 						    	</span>
 						    </div>
 
@@ -630,7 +630,7 @@
 						    		
 						    		<span class="member-file">myfs/dirutils.js</span>
 						    		
-						    		<span class="member-line-number">361</span>
+						    		<span class="member-line-number">372</span>
 						    	</span>
 						    </div>
 
@@ -765,7 +765,7 @@
 						    		
 						    		<span class="member-file">myfs/dirutils.js</span>
 						    		
-						    		<span class="member-line-number">341</span>
+						    		<span class="member-line-number">352</span>
 						    	</span>
 						    </div>
 
@@ -800,7 +800,7 @@
 						    		
 						    		<span class="member-file">myfs/dirutils.js</span>
 						    		
-						    		<span class="member-line-number">150</span>
+						    		<span class="member-line-number">161</span>
 						    	</span>
 						    </div>
 
@@ -1017,14 +1017,14 @@
 
 							<div class="member-name clearfix">
 								<span class="member-name-left">
-						    		readExt (<span class="method-arguments">from</span>, <span class="method-arguments method-arg-optional">exts</span>, <span class="method-arguments method-arg-optional">recursive</span>) 
+						    		readExt (<span class="method-arguments">from</span>, <span class="method-arguments method-arg-optional">exts</span>, <span class="method-arguments method-arg-optional">recursive</span>, <span class="method-arguments method-arg-optional">filter</span>) 
 						    	</span>
 								<span class="member-name-right">
 						    		
 						    		
 						    		<span class="member-file">myfs/dirutils.js</span>
 						    		
-						    		<span class="member-line-number">80</span>
+						    		<span class="member-line-number">83</span>
 						    	</span>
 						    </div>
 
@@ -1111,8 +1111,7 @@
 						        		
 									
 							<div class="member-description">
-      				 		 	<p>The extension to look for (e.g. "jpg"). To <br>
- search for multiple extensions, use an array e.g. ["jpg", "png", "gif"]</p>
+      				 		 	<p>The extension to look for (e.g. "jpg"). To search for multiple extensions, use an array e.g. ["jpg", "png", "gif"]</p>
        						 </div>
        			
 						        	
@@ -1148,8 +1147,47 @@
 						        		
 									
 							<div class="member-description">
-      				 		 	<p>Find all matching files in all <br>
- sub-folders.</p>
+      				 		 	<p>Find all matching files in all sub-folders.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">filter</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">function</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		<span class="flag optional">optional</span>
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>A function to filter items on. The signature for this function's arguments is: <br>
+ - isFolder (boolean): Whether the item is a folder or not <br>
+ - file (string): The URI to the file <br>
+ - stats (object) : Info for the file such as time. See Node's <a href="https://nodejs.org/api/fs.html#fs_class_fs_stats">statSync</a> <br>
+ - pathInfo (object) :  Since we're already parsing the path via <a href="path.parse">path.parse</a>, we're sending the results fo thsi object to you.</p>
        						 </div>
        			
 						        	
@@ -1194,7 +1232,7 @@
 						    		
 						    		<span class="member-file">myfs/dirutils.js</span>
 						    		
-						    		<span class="member-line-number">279</span>
+						    		<span class="member-line-number">290</span>
 						    	</span>
 						    </div>
 

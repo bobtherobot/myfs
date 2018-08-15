@@ -69,40 +69,51 @@ function makedir(dest) {
 
  * @method readExt
  *
- * @param  {string}		from 		- The path to search
- * @param  {string | array} [exts] 	- The extension to look for (e.g. "jpg"). To
- search for multiple extensions, use an array e.g. ["jpg", "png", "gif"]
- * @param  {boolean}	[recursive] - Find all matching files in all
- sub-folders.
+ * @param  {string}			from 		- The path to search
+ * @param  {string | array} [exts] 		- The extension to look for (e.g. "jpg"). To search for multiple extensions, use an array e.g. ["jpg", "png", "gif"]
+ * @param  {boolean}		[recursive] - Find all matching files in all sub-folders.
+ * @param  {function}		[filter] 	- A function to filter items on. The signature for this function's arguments is:
+ - isFolder (boolean): Whether the item is a folder or not
+ - file (string): The URI to the file
+ - stats (object) : Info for the file such as time. See Node's [statSync](https://nodejs.org/api/fs.html#fs_class_fs_stats)
+ - pathInfo (object) :  Since we're already parsing the path via [path.parse](path.parse), we're sending the results fo thsi object to you.
  *
  * @return {array} - The resulting array contains only files that mathc the
  specified extension(s).
  */
 
-function readExt(from, exts, recursive){
+function readExt(from, exts, recursive, filter){
 
-	var filter;
+	var extFilter;
 	if( Array.isArray(exts) ){
-		filter = function(isFolder, file, stats){
+		extFilter = function(isFolder, file, stats){
 			if( isFolder ){
 				return false;
 			} else {
 				var item = path.parse( file );
-				return exts.indexOf(item.ext.substr(1)) > -1;
+				var ok = exts.indexOf(item.ext.substr(1)) > -1;
+				if(filter && ok){
+					ok = filter(isFolder, file, stats, item);
+				}
+				return ok;
 			}
 		}
 	} else {
-		filter = function(isFolder, file, stats){
+		extFilter = function(isFolder, file, stats){
 			if( isFolder ){
 				return false;
 			} else {
 				var item = path.parse( file );
-				return item.ext.substr(1) == exts;
+				var ok = item.ext.substr(1) == exts;
+				if(filter && ok){
+					ok = filter(isFolder, file, stats, item);
+				}
+				return ok;
 			}
 		}
 	}
 
-	var obj = readdir(from, filter, recursive);
+	var obj = readdir(from, extFilter, recursive);
 
 	return obj.files;
 }

@@ -143,11 +143,15 @@ Listing files of X & Y extension
 
 ### Change log
 
+1.0.14 - August 14, 2018
+
+- added filter to the ```readExt```
+
 1.0.13 - August 14, 2018
 
 - Check if dir exists before attempt to delete
 - ```copy``` now copies folders too.
-- Added __touch__ 
+- Added ```touch```
 
 1.0.12 - May 1, 2018
 

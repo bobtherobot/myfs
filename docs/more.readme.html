@@ -380,13 +380,28 @@ var myfile = myfs.write("/path/to/folder/file1.txt", data); // same as above</pr
 
 <h3>Change log</h3>
 
-<dl>
-<dt>1.0.12 - May 1, 2018</dt>
-<dd>Added <strong>swapExt</strong></dd>
+<p>1.0.14 - August 14, 2018</p>
 
-<dt>1.0.8 - May 1, 2018</dt>
-<dd>Added <strong>swapExt</strong></dd>
-</dl>
+<ul>
+<li>Check if dir exists before attempt to delete</li>
+<li><pre>copy</pre> now copies folders too.</li>
+<li>Added <pre>touch</pre></li>
+<li>added filter to the <pre>readExt</pre></li>
+</ul>
+
+<p>1.0.12 - May 1, 2018</p>
+
+<ul>
+<li>ensure exists added into a couple other places in fileutils</li>
+<li>fileutils.write now honors a string in the binary argument</li>
+<li>added better documentation on readdir filter </li>
+</ul>
+
+<p>1.0.8 - May 1, 2018</p>
+
+<ul>
+<li>Added <strong>swapExt</strong></li>
+</ul>
 
 <h3>License</h3>
 
