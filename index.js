@@ -279,7 +279,7 @@ if (typeof require !== 'undefined') {
 		cp: fu.copy,
 
 		/**
-		 * Copies a file from one location to another.
+		 * Copies a file or folder from one location to another.
 		 *
 		 * __Alias__ for [fu.copy](myfs.fu.copy)
 		 *
@@ -339,6 +339,20 @@ if (typeof require !== 'undefined') {
 		 */
 		isFile: fu.isFile,
 
+
+
+		/**
+		 * Creates or updates the timestamp on a specific file or folder.
+		 * 
+		 * To specify that you want to touch a directory, include a trailing slash on the path, or set the isFolder argument to true, otherwise we assume your toughing a file.
+		 * 
+		 * @method     touch
+		 * @param      {string}    path    	- The file or folder path.
+		 * @param      {boolean}   isFolder - Whether your trying to touch a folder. A trailing slash on the path is assume isFolder=true
+		 * @param      {Date}   	[date=now] - To specify a specific date, use a Date object, otherwise time "now" is used.
+		 */
+
+		 touch : fu.touch,
 
 
 

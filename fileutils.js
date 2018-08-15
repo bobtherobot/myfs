@@ -17,6 +17,8 @@ var du = require( './dirutils' );
 
 /**
  * Copies a file from one location to another.
+ * 
+ * Will also copy a folder if the provided src is a folder. But this is just a convieneince, I recommend using dir.copy or dir.cp directly.
  *
  * @method     copy
  * @param      {string}    src     - The source file path.
@@ -27,6 +29,11 @@ function copy( src, dest, binary ) {
 	if ( !exists( src ) ) {
 		return false;
 	}
+
+	if ( du.exists( src ) ) {
+		return du.copy(src, dest);
+	}
+
 	var data = fs.readFileSync( src, binary ? null : "UTF-8" );
 
 	// if just folder provided, tack on the file name.
@@ -176,7 +183,68 @@ function rename( from, to ) {
 	} );
 }
 
+/**
+ * Creates or updates the timestamp on a specific file or folder.
+
+To specify that you want to touch a directory, include a trailing slash on the path, or set the isFolder argument to true, otherwise we assume your toughing a file.
+
+ * @method     touch
+ * @param      {string}    path    	- The file or folder path.
+ * @param      {boolean}   isFolder - Whether your trying to touch a folder. A trailing slash on the path is assume isFolder=true
+ * @param      {Date}   	[date=now] - To specify a specific date, use a Date object, otherwise time "now" is used.
+
+ */
+
+ var sep = path.sep;
+function touch( path, isFolder, date ) {
+
+	const stamp = parseInt(new Date(date || Date.now()).getTime() / 1000);
+
+	if( typeof isFolder === 'undefined'){
+		isFolder = (path.substr(-1) == sep);
+	}
+
+	if( exists(path) ) {
+
+		fs.utimesSync(path, stamp, stamp);
+
+	} else {
+
+		if(isFolder){
+			fs.mkdirSync(path);
+		} else {
+			var fd = fs.openSync(path, 'a+');
+			fs.closeSync(fd);
+		}
+
+	}
+
+}
+
+
+/**
+ * Alias for [copy](#copy)
+ * @method     cp
+ */
+
+
+/**
+ * Alias for [read](#read)
+ * @method     open
+ */
+
+ /**
+ * Alias for [write](#write)
+ * @method     save
+ */
+
+ /**
+ * Alias for [rename](#rename)
+ * @method     move
+ */
+
 module.exports = {
+	cp: copy, // alias
 	copy: copy,
 	read: read,
 	open: read, // alias
@@ -186,5 +254,6 @@ module.exports = {
 	exists: exists,
 	rename: rename,
 	move: rename, // alias
-	isFile : isFile
+	isFile : isFile,
+	touch : touch
 }

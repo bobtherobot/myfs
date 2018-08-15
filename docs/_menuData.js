@@ -295,9 +295,25 @@ var MenuData = [
 										"kind": "methods",
 										"children": [
 											{
-												"id": "myfs.dirutils.copydir",
-												"url": "myfs.dirutils.html#myfs.dirutils.copydir",
-												"label": "copydir",
+												"id": "myfs.dirutils.list",
+												"url": "myfs.dirutils.html#myfs.dirutils.list",
+												"label": "list",
+												"kind": "methods-item",
+												"access": "public",
+												"inherits": 0
+											},
+											{
+												"id": "myfs.dirutils.copy",
+												"url": "myfs.dirutils.html#myfs.dirutils.copy",
+												"label": "copy",
+												"kind": "methods-item",
+												"access": "public",
+												"inherits": 0
+											},
+											{
+												"id": "myfs.dirutils.cp",
+												"url": "myfs.dirutils.html#myfs.dirutils.cp",
+												"label": "cp",
 												"kind": "methods-item",
 												"access": "public",
 												"inherits": 0
@@ -307,7 +323,7 @@ var MenuData = [
 												"url": "myfs.dirutils.html#myfs.dirutils.emptydir",
 												"label": "emptydir",
 												"kind": "methods-item",
-												"access": "public",
+												"access": "private",
 												"inherits": 0
 											},
 											{
@@ -319,9 +335,49 @@ var MenuData = [
 												"inherits": 0
 											},
 											{
+												"id": "myfs.dirutils.isDir",
+												"url": "myfs.dirutils.html#myfs.dirutils.isDir",
+												"label": "isDir",
+												"kind": "methods-item",
+												"access": "public",
+												"inherits": 0
+											},
+											{
+												"id": "myfs.dirutils.isFolder",
+												"url": "myfs.dirutils.html#myfs.dirutils.isFolder",
+												"label": "isFolder",
+												"kind": "methods-item",
+												"access": "public",
+												"inherits": 0
+											},
+											{
+												"id": "myfs.dirutils.copydir",
+												"url": "myfs.dirutils.html#myfs.dirutils.copydir",
+												"label": "copydir",
+												"kind": "methods-item",
+												"access": "private",
+												"inherits": 0
+											},
+											{
+												"id": "myfs.dirutils.listExt",
+												"url": "myfs.dirutils.html#myfs.dirutils.listExt",
+												"label": "listExt",
+												"kind": "methods-item",
+												"access": "public",
+												"inherits": 0
+											},
+											{
 												"id": "myfs.dirutils.makedir",
 												"url": "myfs.dirutils.html#myfs.dirutils.makedir",
 												"label": "makedir",
+												"kind": "methods-item",
+												"access": "private",
+												"inherits": 0
+											},
+											{
+												"id": "myfs.dirutils.mkdir",
+												"url": "myfs.dirutils.html#myfs.dirutils.mkdir",
+												"label": "mkdir",
 												"kind": "methods-item",
 												"access": "public",
 												"inherits": 0
@@ -331,7 +387,7 @@ var MenuData = [
 												"url": "myfs.dirutils.html#myfs.dirutils.readdir",
 												"label": "readdir",
 												"kind": "methods-item",
-												"access": "public",
+												"access": "private",
 												"inherits": 0
 											},
 											{
@@ -347,7 +403,7 @@ var MenuData = [
 												"url": "myfs.dirutils.html#myfs.dirutils.removedir",
 												"label": "removedir",
 												"kind": "methods-item",
-												"access": "public",
+												"access": "private",
 												"inherits": 0
 											}
 										]
@@ -368,6 +424,14 @@ var MenuData = [
 										"label": "methods",
 										"kind": "methods",
 										"children": [
+											{
+												"id": "myfs.fileutils.open",
+												"url": "myfs.fileutils.html#myfs.fileutils.open",
+												"label": "open",
+												"kind": "methods-item",
+												"access": "public",
+												"inherits": 0
+											},
 											{
 												"id": "myfs.fileutils.copy",
 												"url": "myfs.fileutils.html#myfs.fileutils.copy",
@@ -401,9 +465,25 @@ var MenuData = [
 												"inherits": 0
 											},
 											{
+												"id": "myfs.fileutils.move",
+												"url": "myfs.fileutils.html#myfs.fileutils.move",
+												"label": "move",
+												"kind": "methods-item",
+												"access": "public",
+												"inherits": 0
+											},
+											{
 												"id": "myfs.fileutils.Open",
 												"url": "myfs.fileutils.html#myfs.fileutils.Open",
 												"label": "Open",
+												"kind": "methods-item",
+												"access": "public",
+												"inherits": 0
+											},
+											{
+												"id": "myfs.fileutils.cp",
+												"url": "myfs.fileutils.html#myfs.fileutils.cp",
+												"label": "cp",
 												"kind": "methods-item",
 												"access": "public",
 												"inherits": 0
@@ -436,6 +516,22 @@ var MenuData = [
 												"id": "myfs.fileutils.save",
 												"url": "myfs.fileutils.html#myfs.fileutils.save",
 												"label": "save",
+												"kind": "methods-item",
+												"access": "public",
+												"inherits": 0
+											},
+											{
+												"id": "myfs.fileutils.save",
+												"url": "myfs.fileutils.html#myfs.fileutils.save",
+												"label": "save",
+												"kind": "methods-item",
+												"access": "public",
+												"inherits": 0
+											},
+											{
+												"id": "myfs.fileutils.touch",
+												"url": "myfs.fileutils.html#myfs.fileutils.touch",
+												"label": "touch",
 												"kind": "methods-item",
 												"access": "public",
 												"inherits": 0
@@ -1322,6 +1418,14 @@ var MenuData = [
 				"label": "swapExt",
 				"kind": "methods-item",
 				"access": "private",
+				"inherits": 0
+			},
+			{
+				"id": "root.touch",
+				"url": "root.html#root.touch",
+				"label": "touch",
+				"kind": "methods-item",
+				"access": "public",
 				"inherits": 0
 			},
 			{

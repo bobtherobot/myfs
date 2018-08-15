@@ -23,6 +23,7 @@ var path = require("path");
  */
 var sep = path.sep;
 
+
 /**
  * Platform environment PATH delimiter.
  *
@@ -375,9 +376,15 @@ function removeTrailingSlash(dpath){
  * @return  {string} 
  */
 function addTrailingSlash(dpath){
+	if( ! dpath ){
+		return sep;
+	}
 	dpath = clean(dpath);
 	if( dpath.substr(-sep.length) != sep ){
 		dpath = dpath + sep;
+	}
+	if(!dpath) {
+		dpath = sep;
 	}
 	return dpath;
 }
@@ -439,7 +446,7 @@ module.exports = {
 	resolve 	: resolve,
 
 	delimiter 	: delimiter,
-	sep 		: path.sep, // provide what node says is slash, but interally, we always force forard slash "/"
+	sep 		: sep, // provide what node says is slash, but interally, we always force forard slash "/"
 
 	win32 		: path.win32, 	// leave as is
 	posix 		: path.posix,	// leave as is
@@ -447,5 +454,5 @@ module.exports = {
 	removeTrailingSlash : removeTrailingSlash,
 	addTrailingSlash : addTrailingSlash,
 	swapExt : swapExt,
-	cwd
+	cwd : cwd
 };

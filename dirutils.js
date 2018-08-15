@@ -39,6 +39,7 @@ var path = require('./npath');
   ... Then the "sub/one/two/three" tree will be constructed inside "/path/to/folder")
 
  * @method makedir
+ * @private
  * @param  {string}  dest="path/to/make" The destination folder to create
  */
 
@@ -111,7 +112,7 @@ function readExt(from, exts, recursive){
  folder in arrays.
 
  * @method readdir
- *
+ * @private
  * @param  {string}  	from      	- The path to the folder to read.
  * @param  {function}  	filter   	- A custom filter funciton should return boolean for inclusion. The function will be set arguments fo the following signature:
 		 * 
@@ -193,12 +194,13 @@ function readdir(from, filter, recursive, store){
  * Copies the entire folder's heirarchy folder from one location to another. If the other location doesn't exists, it will be constructed.
  *
  * @method copydir
- *
+ * @private
  * @param  {string}  from - The source folder
  * @param  {string}  to   - The destination folder (get's created if not exist)
  */
 
 function copydir(from, to) {
+
     var list = readdir(from, null, true);
 
     if(	! exists(to) ){
@@ -226,7 +228,7 @@ function copydir(from, to) {
  * Recursively empties a folder of all it's contents (and all the sub-folder's contents), but leaves the source folder.
  *
  * @method emptydir
- *
+ * @private
  * @param  {string}   	who    - The source folder
  * @param  {boolean}   	dryRun - Prevents actual deletion, but still allows the return list to display what "will" be deleted.
  *
@@ -269,7 +271,7 @@ function emptydir(who, dryRun) {
  * Recursively removes a folder and all of it's sub-folders as well.
  *
  * @method removedir
- *
+ * @private
  * @param  {string}		who    	- The path to the folder
  * @param  {boolean}	dryRun 	- Prevents actual deletion, but still allows the return to return the list of items that "will" be deleted.
  *
@@ -333,6 +335,40 @@ function rename( from, to ) {
 }
 
 
+/**
+* Alias for [makedir](#makedir)
+* @method     mkdir
+*/
+
+/**
+* Alias for [copydir](#copydir)
+* @method     cp
+*/
+
+/**
+* Alias for [copydir](#copydir)
+* @method     copy
+*/
+
+/**
+* Alias for [readdir](#readdir)
+* @method     list
+*/
+
+/**
+* Alias for [readExt](#readExt)
+* @method     listExt
+*/
+
+/**
+* Alias for [exists](#exists)
+* @method     isFolder
+*/
+
+/**
+* Alias for [exists](#exists)
+* @method     isDir
+*/
 
 
 module.exports = {
@@ -351,3 +387,5 @@ module.exports = {
 	isDir : exists, // alias
 	rename : rename
 }
+
+

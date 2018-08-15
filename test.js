@@ -82,6 +82,14 @@ if( ! myfs.exists(testDir2) ){
 	failed("fail: cpdir");
 }
 
+// copy (fu bump to du)
+var testDir2 = testDir + "2"
+myfs.copy(testDir, testDir2);
+
+if( ! myfs.exists(testDir2) ){
+	failed("fail: copy (fu bump to du)");
+}
+
 // list
 var list = myfs.list(testDir2);
 if( ! list.files.length ){
@@ -119,12 +127,12 @@ myfs.rmdir(testDir2);
 
 
 
-
-
 // removeSlash
 var pathExample = "this/is/a/path";
 var pathExampleBald = pathExample;
 var pathExampleHair = pathExample + "/";
+var pathExampleEmpty = "";
+var pathExampleNull = null;
 
 if( myfs.removeSlash(pathExampleHair) !== pathExampleBald ){
 	failed("fail: removeSlash");
@@ -141,6 +149,14 @@ if( myfs.addSlash(pathExampleBald) !== pathExampleHair ){
 
 if( myfs.addSlash(pathExampleHair) !== pathExampleHair ){
 	failed("fail: addSlash - has trailing slash already");
+}
+
+if( myfs.addSlash(pathExampleEmpty) !== "/" ){
+	failed("fail: addSlash - empty string should return slash");
+}
+
+if( myfs.addSlash(pathExampleNull) !== "/" ){
+	failed("fail: addSlash - null should return slash");
 }
 
 // base
@@ -250,6 +266,38 @@ if( myfs.swapExt("/path/to/here.jpg", "png") != "/path/to/here.png" ){
 	failed("fail: swapExt 2");
 }
 
+var touchFile = "./touch.txt";
+
+if( myfs.touch(touchFile) ) {
+	if( ! myfs.exists(touchFile) ) {
+		failed("fail: touch failed to create file");
+	}
+}
+
+var touchDir = "./touch/";
+
+if( myfs.touch(touchDir) ) {
+	if( ! myfs.exists(touchDir) ) {
+		failed("fail: touch failed to create folder (with trailing slash)");
+	}
+}
+
+var stampStr = '1995-12-17T03:24:00';
+var stamp = new Date(stampStr);
+
+if( myfs.touch(touchFile, false, stamp) ) {
+
+	var stats = fs.statSync(touchFile);
+
+	if( stats.atime != stampStr ) {
+		failed("fail: touch failed timestamp: " + stats);
+	}
+}
+
+
+if( myfs.cwd() != "/Volumes/Drives/projects/myfs" ){
+	failed("fail: cwd :" + myfs.cwd());
+}
 
 // Launch
 myfs.launch("README.md");
@@ -293,6 +341,8 @@ parent
 relative
 parse
 resolve
+cwd
+touch
 */
 
 

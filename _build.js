@@ -1,9 +1,10 @@
 
 /*
 
-npm install documon --save-dev
-// or 
-yarn add documon
+# run
+
+cd /Volumes/Drives/projects/myfs
+node ./_build.js
 
 */
 
