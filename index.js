@@ -158,27 +158,30 @@ if (typeof require !== 'undefined') {
 		ls: du.list,
 
 		/**
-		 * Collects files from a folder based on the specified extension (or
+		 Collects files from a folder based on the specified extension (or
 		 extensions). Can be used to search recursively through all sub-folders, and can
 		 search multiple extensions.
 
-		 Provided as shortcut for [readdir](#readdir) with your own
-		 extension-checking filter.
+		 NOTE: Extension filtering is case-insensative, so files with both upper and lower-case extensions will be captured.
 
-		 __Alias__ for [du.copydir](myfs.dirutils.readExt)
+		 Provided as shortcut for [readdir](#readdir) with your own extension-checking filter.
 
-		 * @method listExt
+		 * @method readExt
 		 *
-		 * @param  {string}		from 		- The path to search
-		 * @param  {string | array} [exts] 	- The extension to look for (e.g. "jpg"). To
-		 search for multiple extensions, use an array e.g. ["jpg", "png", "gif"]
-		 * @param  {boolean}	[recursive] - Find all matching files in all
-		 sub-folders.
+		 * @param  {string}			from 		- The path to search
+		 * @param  {string | array} [exts] 		- The extension to look for (e.g. "jpg"). To search for multiple extensions, use an array e.g. ["jpg", "png", "gif"]. 
+		 * @param  {boolean}		[recursive] - Find all matching files in all sub-folders.
+		 * @param  {function}		[filter] 	- A function to filter items on. The signature for this function's arguments is:
+		 - isFolder (boolean): Whether the item is a folder or not
+		 - file (string): The URI to the file
+		 - stats (object) : Info for the file such as time. See Node's [statSync](https://nodejs.org/api/fs.html#fs_class_fs_stats)
+		 - pathInfo (object) :  Since we're already parsing the path via [path.parse](path.parse), we're sending the results fo thsi object to you.
 		 *
 		 * @return {array} - The resulting array contains only files that mathc the
 		 specified extension(s).
 		 */
-		listExt: du.listExt,
+
+		listExt: du.readExt,
 
 		/**
 		 * Recursively empties a folder of all it's contents (and all the sub-folder's contents), but leaves the source folder.
@@ -468,10 +471,14 @@ if (typeof require !== 'undefined') {
 		/**
 		Extracts basic path and file parts.
 
+		@method  parse
+		@param   {string}  Vpath - The path to parse.
+		@return  {object} - An object containing the following properties:
+
 			path.parse('/home/user/dir/file.txt')
-
-			// Yeilds 
-
+			
+			// Yeilds:
+			
 			{
 				// (traditional node proerties)
 				root	: "/",
@@ -481,23 +488,13 @@ if (typeof require !== 'undefined') {
 				name	: "file"
 
 				// additional "for my brain" labels:
-				ext2		: "txt" 			// no dot
-				extension	: "txt" 		// alias
+				ext2		: "txt" 		// no dot
+				extension	: "txt" 		// alias to above
 				basename	: "file" 	
 				filename	: "file.txt"
 				parent		: "/home/user/dir"
-			}
-
-		@method  parse
-		@param   {string}  Vpath - The path to parse.
-		@return  {object} - An object containing the following properties:
-
-			{
-				root : "/",
-				dir : "/home/user/dir",
-				base : "file.txt",
-				ext : ".txt",
-				name : "file"
+				path		: "/home/user/dir/file.txt" 	// the original source path string
+				src			: "/home/user/dir/file.txt" 	// same as above
 			}
 
 		*/

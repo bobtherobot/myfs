@@ -1261,14 +1261,6 @@ var MenuData = [
 				"inherits": 0
 			},
 			{
-				"id": "root.listExt",
-				"url": "root.html#root.listExt",
-				"label": "listExt",
-				"kind": "methods-item",
-				"access": "public",
-				"inherits": 0
-			},
-			{
 				"id": "root.ls",
 				"url": "root.html#root.ls",
 				"label": "ls",
@@ -1336,6 +1328,14 @@ var MenuData = [
 				"id": "root.read",
 				"url": "root.html#root.read",
 				"label": "read",
+				"kind": "methods-item",
+				"access": "public",
+				"inherits": 0
+			},
+			{
+				"id": "root.readExt",
+				"url": "root.html#root.readExt",
+				"label": "readExt",
 				"kind": "methods-item",
 				"access": "public",
 				"inherits": 0
