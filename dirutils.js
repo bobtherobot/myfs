@@ -60,17 +60,18 @@ function makedir(dest) {
  */
 
 /**
- * Collects files from a folder based on the specified extension (or
+ Collects files from a folder based on the specified extension (or
  extensions). Can be used to search recursively through all sub-folders, and can
  search multiple extensions.
 
- Provided as shortcut for [readdir](#readdir) with your own
- extension-checking filter.
+ NOTE: Use lower-case when defining extension(s). (When we compare, we lower-case the source to do the comparison, which allows for files that contain either upper or lower case to be captured)
+
+ Provided as shortcut for [readdir](#readdir) with your own extension-checking filter.
 
  * @method readExt
  *
  * @param  {string}			from 		- The path to search
- * @param  {string | array} [exts] 		- The extension to look for (e.g. "jpg"). To search for multiple extensions, use an array e.g. ["jpg", "png", "gif"]
+ * @param  {string | array} [exts] 		- The extension to look for (e.g. "jpg"). To search for multiple extensions, use an array e.g. ["jpg", "png", "gif"]. IMPORTANT: Use lower-case only, see not above).
  * @param  {boolean}		[recursive] - Find all matching files in all sub-folders.
  * @param  {function}		[filter] 	- A function to filter items on. The signature for this function's arguments is:
  - isFolder (boolean): Whether the item is a folder or not
@@ -91,7 +92,7 @@ function readExt(from, exts, recursive, filter){
 				return false;
 			} else {
 				var item = path.parse( file );
-				var ok = exts.indexOf(item.ext.substr(1)) > -1;
+				var ok = exts.indexOf(item.ext.substr(1).toLowerCase()) > -1;
 				if(filter && ok){
 					ok = filter(isFolder, file, stats, item);
 				}
@@ -104,7 +105,7 @@ function readExt(from, exts, recursive, filter){
 				return false;
 			} else {
 				var item = path.parse( file );
-				var ok = item.ext.substr(1) == exts;
+				var ok = item.ext.substr(1).toLowerCase() == exts;
 				if(filter && ok){
 					ok = filter(isFolder, file, stats, item);
 				}
