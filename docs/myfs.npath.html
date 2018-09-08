@@ -311,7 +311,7 @@ POSIX   = : </pre>
 						    		
 						    		<span class="member-file">myfs/npath.js</span>
 						    		
-						    		<span class="member-line-number">377</span>
+						    		<span class="member-line-number">374</span>
 						    	</span>
 						    </div>
 
@@ -491,7 +491,7 @@ POSIX   = : </pre>
 						    		
 						    		<span class="member-file">myfs/npath.js</span>
 						    		
-						    		<span class="member-line-number">402</span>
+						    		<span class="member-line-number">399</span>
 						    	</span>
 						    </div>
 
@@ -860,7 +860,7 @@ npath.extname("/foo/sally/yoyo/boob") --&gt; ""</pre>
 						    		
 						    		<span class="member-file">myfs/npath.js</span>
 						    		
-						    		<span class="member-line-number">303</span>
+						    		<span class="member-line-number">300</span>
 						    	</span>
 						    </div>
 
@@ -1093,7 +1093,7 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 						    		
 						    		<span class="member-file">myfs/npath.js</span>
 						    		
-						    		<span class="member-line-number">319</span>
+						    		<span class="member-line-number">316</span>
 						    	</span>
 						    </div>
 
@@ -1374,7 +1374,7 @@ npath.normalize("./foo/") --&gt; "/current/working/dir/foo/"</pre>
 						    		
 						    		<span class="member-file">myfs/npath.js</span>
 						    		
-						    		<span class="member-line-number">248</span>
+						    		<span class="member-line-number">242</span>
 						    	</span>
 						    </div>
 
@@ -1383,26 +1383,6 @@ npath.normalize("./foo/") --&gt; "/current/working/dir/foo/"</pre>
 						   		
 						   		
 								<p>Extracts basic path and file parts.</p>
-
-<pre class="prettyprint">path.parse('/home/user/dir/file.txt')
-
-// Yeilds 
-
-{
-    // (traditional node proerties)
-    root    : "/",
-    dir     : "/home/user/dir",
-    base    : "file.txt",
-    ext     : ".txt",
-    name    : "file"
-
-    // additional "for my brain" labels:
-    ext2        : "txt"             // no dot
-    extension   : "txt"         // alias
-    basename    : "file"    
-    filename    : "file.txt"
-    parent      : "/home/user/dir"
-}</pre>
 
 					
 								
@@ -1463,12 +1443,26 @@ npath.normalize("./foo/") --&gt; "/current/working/dir/foo/"</pre>
 					</div>
 			      	     	<div class="member"><p>An object containing the following properties:</p>
 
-<pre class="prettyprint">{
-    root : "/",
-    dir : "/home/user/dir",
-    base : "file.txt",
-    ext : ".txt",
-    name : "file"
+<pre class="prettyprint">path.parse('/home/user/dir/file.txt')
+
+// Yeilds:
+
+{
+    // (traditional node proerties)
+    root    : "/",
+    dir     : "/home/user/dir",
+    base    : "file.txt",
+    ext     : ".txt",
+    name    : "file"
+
+    // additional "for my brain" labels:
+    ext2        : "txt"         // no dot
+    extension   : "txt"         // alias to above
+    basename    : "file"    
+    filename    : "file.txt"
+    parent      : "/home/user/dir"
+    path        : "/home/user/dir/file.txt"     // the original source path string
+    src         : "/home/user/dir/file.txt"     // same as above
 }</pre></div>
 				
 
@@ -1492,7 +1486,7 @@ npath.normalize("./foo/") --&gt; "/current/working/dir/foo/"</pre>
 						    		
 						    		<span class="member-file">myfs/npath.js</span>
 						    		
-						    		<span class="member-line-number">275</span>
+						    		<span class="member-line-number">272</span>
 						    	</span>
 						    </div>
 
@@ -1621,7 +1615,7 @@ npath.normalize("./foo/") --&gt; "/current/working/dir/foo/"</pre>
 						    		
 						    		<span class="member-file">myfs/npath.js</span>
 						    		
-						    		<span class="member-line-number">362</span>
+						    		<span class="member-line-number">359</span>
 						    	</span>
 						    </div>
 
@@ -1711,7 +1705,7 @@ npath.normalize("./foo/") --&gt; "/current/working/dir/foo/"</pre>
 						    		
 						    		<span class="member-file">myfs/npath.js</span>
 						    		
-						    		<span class="member-line-number">350</span>
+						    		<span class="member-line-number">347</span>
 						    	</span>
 						    </div>
 
@@ -1817,7 +1811,7 @@ npath.normalize("./foo/") --&gt; "/current/working/dir/foo/"</pre>
 						    		
 						    		<span class="member-file">myfs/npath.js</span>
 						    		
-						    		<span class="member-line-number">420</span>
+						    		<span class="member-line-number">417</span>
 						    	</span>
 						    </div>
 

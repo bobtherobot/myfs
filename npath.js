@@ -213,10 +213,14 @@ function normalize(Vpath){
 /**
 Extracts basic path and file parts.
 
+@method  parse
+@param   {string}  Vpath - The path to parse.
+@return  {object} - An object containing the following properties:
+
 	path.parse('/home/user/dir/file.txt')
-
-	// Yeilds 
-
+	
+	// Yeilds:
+	
 	{
 		// (traditional node proerties)
 		root	: "/",
@@ -226,26 +230,17 @@ Extracts basic path and file parts.
 		name	: "file"
 
 		// additional "for my brain" labels:
-		ext2		: "txt" 			// no dot
-		extension	: "txt" 		// alias
+		ext2		: "txt" 		// no dot
+		extension	: "txt" 		// alias to above
 		basename	: "file" 	
 		filename	: "file.txt"
 		parent		: "/home/user/dir"
-	}
-
-@method  parse
-@param   {string}  Vpath - The path to parse.
-@return  {object} - An object containing the following properties:
-
-	{
-		root : "/",
-		dir : "/home/user/dir",
-		base : "file.txt",
-		ext : ".txt",
-		name : "file"
+		path		: "/home/user/dir/file.txt" 	// the original source path string
+		src			: "/home/user/dir/file.txt" 	// same as above
 	}
 
 */
+
 function parse(Vpath){
 	var res = path.parse( clean(Vpath) );
 
@@ -255,6 +250,8 @@ function parse(Vpath){
 	res.basename = res.name;
 	res.filename = res.base;
 	res.parent = res.dir;
+	res.path = Vpath;
+	res.src = Vpath; // alias
 
 	return clean( res );
 }
