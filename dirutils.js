@@ -64,14 +64,14 @@ function makedir(dest) {
  extensions). Can be used to search recursively through all sub-folders, and can
  search multiple extensions.
 
- NOTE: Use lower-case when defining extension(s). (When we compare, we lower-case the source to do the comparison, which allows for files that contain either upper or lower case to be captured)
+ NOTE: Extension filtering is case-insensative, so files with both upper and lower-case extensions will be captured.
 
  Provided as shortcut for [readdir](#readdir) with your own extension-checking filter.
 
  * @method readExt
  *
  * @param  {string}			from 		- The path to search
- * @param  {string | array} [exts] 		- The extension to look for (e.g. "jpg"). To search for multiple extensions, use an array e.g. ["jpg", "png", "gif"]. IMPORTANT: Use lower-case only, see not above).
+ * @param  {string | array} [exts] 		- The extension to look for (e.g. "jpg"). To search for multiple extensions, use an array e.g. ["jpg", "png", "gif"]. 
  * @param  {boolean}		[recursive] - Find all matching files in all sub-folders.
  * @param  {function}		[filter] 	- A function to filter items on. The signature for this function's arguments is:
  - isFolder (boolean): Whether the item is a folder or not
@@ -84,6 +84,10 @@ function makedir(dest) {
  */
 
 function readExt(from, exts, recursive, filter){
+
+	for(var i=0; i<exts.length; i++){
+		exts[i] = exts[i].toLowerCase();
+	}
 
 	var extFilter;
 	if( Array.isArray(exts) ){
