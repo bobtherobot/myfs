@@ -143,10 +143,11 @@ Listing files of X & Y extension
 
 ### Change log
 
-1.0.18 - Sept. 8, 2018
+1.0.19 - Sept. 8, 2018
 
 - readExt/listExt would not capture file with upper-case extensions. Made upper/lower-case agnostic. When call this method, use lower-case strings for your extension(s).
 - added "path" and "src" to parse, both of which return the original source path string provided.
+- fixed issue with readdir when stats fails (mac)
 
 1.0.14 - August 14, 2018
 
