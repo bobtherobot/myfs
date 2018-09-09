@@ -176,31 +176,43 @@ function readdir(from, filter, recursive, store){
 	var len = files.length;
 	for(var i=0; i<len; i++){
 		var file = path.join(from, files[i]);
-      	//var stats = fs.lstatSync(file);
-      	var stats = fs.statSync(file); // dereference symlinks (follows symbolic links)
-		if ( stats.isDirectory() ) {
-            
-            if(hasFilterFunction){
-        		if( filter( true, file, stats ) ){
-        			store.dirs.push(file);
-        		}
-        	} else {
-        		store.dirs.push(file);
-        	}
+   
+      	var stats = false; // set this value otherwise a failing try will pickup the previous stats value (hoisted var)
 
-            if(recursive){
-            	readdir(file, filter, true, store);
-            }
-        } else if ( stats.isFile() ) {
-        	if(hasFilterFunction){
-        		if( filter( false, file, stats ) ){
-        			store.files.push(file);
-        		}
-        	} else {
-        		store.files.push(file);
-        	}
+      	// file may be a freak, and nod eay not be able to run stats on it.
+      	try {
+      		// stats = fs.lstatSync(file);
+      		stats = fs.statSync(file);  // de-reference symlinks (follows symbolic links)
+      	} catch(e) {
+      		// ignore
+      	}
+
+      	if(stats){
+      		if ( stats.isDirectory() ) {
             
-        }
+	            if(hasFilterFunction){
+	        		if( filter( true, file, stats ) ){
+	        			store.dirs.push(file);
+	        		}
+	        	} else {
+	        		store.dirs.push(file);
+	        	}
+
+	            if(recursive){
+	            	readdir(file, filter, true, store);
+	            }
+	        } else if ( stats.isFile() ) {
+	        	if(hasFilterFunction){
+	        		if( filter( false, file, stats ) ){
+	        			store.files.push(file);
+	        		}
+	        	} else {
+	        		store.files.push(file);
+	        	}
+	            
+	        }
+      	}
+
 	}
 
 	return store;
