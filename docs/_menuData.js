@@ -1077,9 +1077,9 @@ var MenuData = [
 		"kind": "methods",
 		"children": [
 			{
-				"id": "root.list",
-				"url": "root.html#root.list",
-				"label": "list",
+				"id": "root.ls",
+				"url": "root.html#root.ls",
+				"label": "ls",
 				"kind": "methods-item",
 				"access": "public",
 				"inherits": 0
@@ -1253,17 +1253,17 @@ var MenuData = [
 				"inherits": 0
 			},
 			{
-				"id": "root.addTrailingSlash",
-				"url": "root.html#root.addTrailingSlash",
-				"label": "addTrailingSlash",
+				"id": "root.list",
+				"url": "root.html#root.list",
+				"label": "list",
 				"kind": "methods-item",
 				"access": "public",
 				"inherits": 0
 			},
 			{
-				"id": "root.ls",
-				"url": "root.html#root.ls",
-				"label": "ls",
+				"id": "root.addTrailingSlash",
+				"url": "root.html#root.addTrailingSlash",
+				"label": "addTrailingSlash",
 				"kind": "methods-item",
 				"access": "public",
 				"inherits": 0
@@ -1328,6 +1328,14 @@ var MenuData = [
 				"id": "root.read",
 				"url": "root.html#root.read",
 				"label": "read",
+				"kind": "methods-item",
+				"access": "public",
+				"inherits": 0
+			},
+			{
+				"id": "root.readExt",
+				"url": "root.html#root.readExt",
+				"label": "readExt",
 				"kind": "methods-item",
 				"access": "public",
 				"inherits": 0

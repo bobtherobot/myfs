@@ -380,10 +380,12 @@ var myfile = myfs.write("/path/to/folder/file1.txt", data); // same as above</pr
 
 <h3>Change log</h3>
 
-<p>1.0.15 - Sept. 8, 2018</p>
+<p>1.0.19 - Sept. 8, 2018</p>
 
 <ul>
 <li>readExt/listExt would not capture file with upper-case extensions. Made upper/lower-case agnostic. When call this method, use lower-case strings for your extension(s).</li>
+<li>added "path" and "src" to parse, both of which return the original source path string provided.</li>
+<li>fixed issue with readdir when stats fails (mac)</li>
 </ul>
 
 <p>1.0.14 - August 14, 2018</p>

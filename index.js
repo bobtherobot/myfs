@@ -158,7 +158,10 @@ if (typeof require !== 'undefined') {
 		ls: du.list,
 
 		/**
-		 Collects files from a folder based on the specified extension (or
+		 
+		__Alias__ for [du.readExt](myfs.dirutils.readExt)
+
+		Collects files from a folder based on the specified extension (or
 		 extensions). Can be used to search recursively through all sub-folders, and can
 		 search multiple extensions.
 
@@ -184,9 +187,36 @@ if (typeof require !== 'undefined') {
 		listExt: du.readExt,
 
 		/**
+
+		 Collects files from a folder based on the specified extension (or
+		 extensions). Can be used to search recursively through all sub-folders, and can
+		 search multiple extensions.
+
+		 NOTE: Extension filtering is case-insensative, so files with both upper and lower-case extensions will be captured.
+
+		 Provided as shortcut for [readdir](#readdir) with your own extension-checking filter.
+
+		 * @method readExt
+		 *
+		 * @param  {string}			from 		- The path to search
+		 * @param  {string | array} [exts] 		- The extension to look for (e.g. "jpg"). To search for multiple extensions, use an array e.g. ["jpg", "png", "gif"]. 
+		 * @param  {boolean}		[recursive] - Find all matching files in all sub-folders.
+		 * @param  {function}		[filter] 	- A function to filter items on. The signature for this function's arguments is:
+		 - isFolder (boolean): Whether the item is a folder or not
+		 - file (string): The URI to the file
+		 - stats (object) : Info for the file such as time. See Node's [statSync](https://nodejs.org/api/fs.html#fs_class_fs_stats)
+		 - pathInfo (object) :  Since we're already parsing the path via [path.parse](path.parse), we're sending the results fo thsi object to you.
+		 *
+		 * @return {array} - The resulting array contains only files that mathc the
+		 specified extension(s).
+		 */
+
+		readExt: du.readExt,
+
+		/**
 		 * Recursively empties a folder of all it's contents (and all the sub-folder's contents), but leaves the source folder.
 		 *
-		 * __Alias__ for [du.copydir](myfs.dirutils.empty)
+		 * __Alias__ for [du.empty](myfs.dirutils.empty)
 		 * 
 		 * @method empty
 		 *

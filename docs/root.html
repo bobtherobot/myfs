@@ -218,7 +218,7 @@
 										<span class="member-name-right">
 								    		
 								    		
-								    		<span class="member-file">myfs/index.js</span><span class="member-line-number" title="myfs/index.js">605</span>
+								    		<span class="member-file">myfs/index.js</span><span class="member-line-number" title="myfs/index.js">635</span>
 								    	</span>
 
 						        	</div>
@@ -377,7 +377,7 @@ POSIX   = : </pre>
 										<span class="member-name-right">
 								    		
 								    		
-								    		<span class="member-file">myfs/index.js</span><span class="member-line-number" title="myfs/index.js">371</span>
+								    		<span class="member-file">myfs/index.js</span><span class="member-line-number" title="myfs/index.js">401</span>
 								    	</span>
 
 						        	</div>
@@ -406,7 +406,1778 @@ POSIX   = : </pre>
 							<a name="methods"></a>
 		            		<div class="part-methods">
 					            <div class="heading-part">Methods</div>
-					            <a name="root.list"></a><a name="list"></a>
+					            <a name="root.ls"></a><a name="ls"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		ls () 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">157</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>alias for <a href="#list">list</a></p>
+
+					
+								
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.addSlash"></a><a name="addSlash"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		addSlash (<span class="method-arguments">path</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">658</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>Adds a trailing slash from path (if doesn't exist).</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">path</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>path</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.base"></a><a name="base"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		base () 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">432</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>alias for <a href="#name">name</a></p>
+
+					
+								
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.basename"></a><a name="basename"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		basename (<span class="method-arguments">path</span>, <span class="method-arguments">ext</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">422</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<pre class="prettyprint">    npath.basename("/foo/bar/bob.txt") --&gt; "bob.txt"
+npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">path</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>The full path</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">ext</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>Lops off the extension if it matches.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"><p>The last portion of a path, generally the "filename".</p></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.clean"></a><a name="clean"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		clean (<span class="method-arguments">arg</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">498</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>Normalizes slashes by converting double \ to single \ and / to \ or \ tp / based on the current platform requirements.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">arg</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string | array</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>arg</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.copy"></a><a name="copy"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		copy (<span class="method-arguments">src</span>, <span class="method-arguments">dest</span>, <span class="method-arguments method-arg-optional">binary</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">323</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>Copies a file or folder from one location to another.</p>
+
+<p><strong>Alias</strong> for <a href="myfs.fu.copy">fu.copy</a></p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">src</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>The source file path.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">dest</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>The destination to copy the source to.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">binary</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="default-value">
+      				 		 	false]
+       						 </span>
+       			
+							<span class="type">boolean</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		<span class="flag optional">optional</span>
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>Is this a binary file? (We assume it's a text file.)</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.cp"></a><a name="cp"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		cp () 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">311</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>alias for <a href="#copy">copy</a></p>
+
+					
+								
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.cpdir"></a><a name="cpdir"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		cpdir (<span class="method-arguments">from</span>, <span class="method-arguments">to</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">74</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>Copies the entire folder's heirarchy folder from one location to another. If the other location doesn't exists, it will be constructed.</p>
+
+<p><strong>Alias</strong> for <a href="myfs.dirutils.copydir">du.copydir</a></p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">from</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>The source folder</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">to</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>The destination folder (get's created if not exist)</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.cwd"></a><a name="cwd"></a>
+
+						<div class="member" data-access="private" >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		cwd (<span class="method-arguments">tack</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="flag private">private</span>  <!-- public private protected -->
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">688</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>Returns current working directory.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">tack</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>Appends or (resolves)[resolve] additional context to the current working directory as needed.</p>
+
+<pre class="prettyprint">    var example = myfs.cwd("../"); // will back up one folder
+    var example = myfs.cwd("foo/bar"); // will tack onto the end /system/path/to/foo/bar</pre>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"><p>The resolved path.</p></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.dir"></a><a name="dir"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		dir () 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">452</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>alias for <a href="#dirname">dirname</a></p>
+
+					
+								
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.empty"></a><a name="empty"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		empty (<span class="method-arguments">who</span>, <span class="method-arguments">dryRun</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">227</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>Recursively empties a folder of all it's contents (and all the sub-folder's contents), but leaves the source folder.</p>
+
+<p><strong>Alias</strong> for <a href="myfs.dirutils.empty">du.empty</a></p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">who</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>The source folder</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">dryRun</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">boolean</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>Prevents actual deletion, but still allows the return list to display what "will" be deleted.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">array</span>
+					</div>
+			      	     	<div class="member"><p>An array containing a list of paths to files and folders that we're deleted (or will be deleted when dryrun is true)</p></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.exist"></a><a name="exist"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		exist () 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">269</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>alias for <a href="exists">exists</a> (plural)</p>
+
+					
+								
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.exists"></a><a name="exists"></a>
+
+						<div class="member" data-access="private" >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		exists (<span class="method-arguments">src</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="flag private">private</span>  <!-- public private protected -->
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">263</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>Checks to see if a file or folder exists. To validate either file or folder use <a href="#isFile">isFile</a> or <a href="isDir">isDir</a>.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">src</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">type</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>The source file path.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">boolean</span>
+					</div>
+			      	     	<div class="member"><p>True if exists, false if no file nor folder exists.</p></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.ext"></a><a name="ext"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		ext (<span class="method-arguments">Vpath</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">460</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>Returns the bare, base extension (no dot).</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">Vpath</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>The path to parse.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"><p>The extension</p></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.filename"></a><a name="filename"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		filename () 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">427</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>alias for <a href="#basename">basename</a></p>
+
+					
+								
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.format"></a><a name="format"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		format (<span class="method-arguments">obj</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">571</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>The opposite of path.parse().</p>
+
+<p>Combines the elements of an object into a string. </p>
+
+<p>Example:</p>
+
+<pre class="prettyprint">    {
+        root : "/",
+        dir : "/home/user/dir",
+        base : "file.txt",
+        ext : ".txt",
+        name : "file"
+    }
+
+... is converted to
+
+    /home/user/dir/file.txt</pre>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">obj</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">object</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>The object containing some of the required keys to formulate a path.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">type</span>
+					</div>
+			      	     	<div class="member"><p>The string representaiton of the object.</p></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.isAbsolute"></a><a name="isAbsolute"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		isAbsolute (<span class="method-arguments">Vpath</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">469</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>Determines if path is an absolute path.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">Vpath</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>The path to parse.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">Boolean</span>
+					</div>
+			      	     	<div class="member"></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.isDir"></a><a name="isDir"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		isDir () 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">241</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>alias for <a href="#isFolder">isFolder</a></p>
+
+					
+								
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.isFile"></a><a name="isFile"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		isFile (<span class="method-arguments">src</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">372</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>Validates if a file exists AND that it's not a folder. If the src is a folder, this method will yeil false.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">src</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>The source file path.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.isFolder"></a><a name="isFolder"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		isFolder () 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">236</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>FYI: <a href="dirUtils.exists">dirUtils.exists</a> only validates true on folder, if src is file and exists, will STILL return false. In other words, du.exists doesn't conduct a global "exists" (Note that fileUtils.exists does).</p>
+
+					
+								
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.join"></a><a name="join"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		join (<span class="method-arguments">paths...</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">585</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>Joins path segments and resolves relativity.</p>
+
+<pre class="prettyprint">    path.join('/foo', 'bar', 'baz/asdf', 'quux', '..')
+    Returns: '/foo/bar/baz/asdf'</pre>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">paths...</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>All arguments are evaluated as paths for construction</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">type</span>
+					</div>
+			      	     	<div class="member"><p>description description</p></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.launch"></a><a name="launch"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		launch (<span class="method-arguments">target</span>, <span class="method-arguments method-arg-optional">opts</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">42</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>A file launcher. Opens stuff like websites, files, executables. Cross-platform.</p>
+
+<p>Using <a href="https://github.com/sindresorhus/opn">opn</a></p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">target</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>The URI to open. Example: "/path/to/track.mp3" will open the MP3 in the default media player.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">opts</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">object</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		<span class="flag optional">optional</span>
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>Options - See [opn.js[myfs.opn] for details</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.list"></a><a name="list"></a>
 
 						<div class="member"  >
 
@@ -644,1742 +2415,6 @@ POSIX   = : </pre>
 
 							</div>
 						</div>
-				<a name="root.addSlash"></a><a name="addSlash"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		addSlash (<span class="method-arguments">path</span>) 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-file">myfs/index.js</span>
-						    		
-						    		<span class="member-line-number">628</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>Adds a trailing slash from path (if doesn't exist).</p>
-
-					
-								
-			    	<div class="part-parameters">
-				    	
-				    	<div class="heading-part">Parameters</div>
-				    	
-				    	<div class="member">
-					    	<table>
-
-							    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">path</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="type">string</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>path</p>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-
-							</table>
-						</div>
-				
-					</div>
-			
-
-							    
-			       		 	<div class="heading-returns">Returns		
-						<span class="type">string</span>
-					</div>
-			      	     	<div class="member"></div>
-				
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="root.base"></a><a name="base"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		base () 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-file">myfs/index.js</span>
-						    		
-						    		<span class="member-line-number">402</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>alias for <a href="#name">name</a></p>
-
-					
-								
-
-							    
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="root.basename"></a><a name="basename"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		basename (<span class="method-arguments">path</span>, <span class="method-arguments">ext</span>) 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-file">myfs/index.js</span>
-						    		
-						    		<span class="member-line-number">392</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<pre class="prettyprint">    npath.basename("/foo/bar/bob.txt") --&gt; "bob.txt"
-npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
-
-					
-								
-			    	<div class="part-parameters">
-				    	
-				    	<div class="heading-part">Parameters</div>
-				    	
-				    	<div class="member">
-					    	<table>
-
-							    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">path</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="type">string</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>The full path</p>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">ext</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="type">string</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>Lops off the extension if it matches.</p>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-
-							</table>
-						</div>
-				
-					</div>
-			
-
-							    
-			       		 	<div class="heading-returns">Returns		
-						<span class="type">string</span>
-					</div>
-			      	     	<div class="member"><p>The last portion of a path, generally the "filename".</p></div>
-				
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="root.clean"></a><a name="clean"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		clean (<span class="method-arguments">arg</span>) 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-file">myfs/index.js</span>
-						    		
-						    		<span class="member-line-number">468</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>Normalizes slashes by converting double \ to single \ and / to \ or \ tp / based on the current platform requirements.</p>
-
-					
-								
-			    	<div class="part-parameters">
-				    	
-				    	<div class="heading-part">Parameters</div>
-				    	
-				    	<div class="member">
-					    	<table>
-
-							    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">arg</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="type">string | array</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>arg</p>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-
-							</table>
-						</div>
-				
-					</div>
-			
-
-							    
-			       		 	<div class="heading-returns">Returns		
-						<span class="type">string</span>
-					</div>
-			      	     	<div class="member"></div>
-				
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="root.copy"></a><a name="copy"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		copy (<span class="method-arguments">src</span>, <span class="method-arguments">dest</span>, <span class="method-arguments method-arg-optional">binary</span>) 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-file">myfs/index.js</span>
-						    		
-						    		<span class="member-line-number">293</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>Copies a file or folder from one location to another.</p>
-
-<p><strong>Alias</strong> for <a href="myfs.fu.copy">fu.copy</a></p>
-
-					
-								
-			    	<div class="part-parameters">
-				    	
-				    	<div class="heading-part">Parameters</div>
-				    	
-				    	<div class="member">
-					    	<table>
-
-							    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">src</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="type">string</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>The source file path.</p>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">dest</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="type">string</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>The destination to copy the source to.</p>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">binary</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="default-value">
-      				 		 	false]
-       						 </span>
-       			
-							<span class="type">boolean</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		<span class="flag optional">optional</span>
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>Is this a binary file? (We assume it's a text file.)</p>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-
-							</table>
-						</div>
-				
-					</div>
-			
-
-							    
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="root.cp"></a><a name="cp"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		cp () 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-file">myfs/index.js</span>
-						    		
-						    		<span class="member-line-number">281</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>alias for <a href="#copy">copy</a></p>
-
-					
-								
-
-							    
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="root.cpdir"></a><a name="cpdir"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		cpdir (<span class="method-arguments">from</span>, <span class="method-arguments">to</span>) 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-file">myfs/index.js</span>
-						    		
-						    		<span class="member-line-number">74</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>Copies the entire folder's heirarchy folder from one location to another. If the other location doesn't exists, it will be constructed.</p>
-
-<p><strong>Alias</strong> for <a href="myfs.dirutils.copydir">du.copydir</a></p>
-
-					
-								
-			    	<div class="part-parameters">
-				    	
-				    	<div class="heading-part">Parameters</div>
-				    	
-				    	<div class="member">
-					    	<table>
-
-							    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">from</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="type">string</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>The source folder</p>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">to</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="type">string</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>The destination folder (get's created if not exist)</p>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-
-							</table>
-						</div>
-				
-					</div>
-			
-
-							    
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="root.cwd"></a><a name="cwd"></a>
-
-						<div class="member" data-access="private" >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		cwd (<span class="method-arguments">tack</span>) 
-						    	</span>
-								<span class="member-name-right">
-						    		<span class="flag private">private</span>  <!-- public private protected -->
-						    		
-						    		<span class="member-file">myfs/index.js</span>
-						    		
-						    		<span class="member-line-number">658</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>Returns current working directory.</p>
-
-					
-								
-			    	<div class="part-parameters">
-				    	
-				    	<div class="heading-part">Parameters</div>
-				    	
-				    	<div class="member">
-					    	<table>
-
-							    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">tack</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="type">string</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>Appends or (resolves)[resolve] additional context to the current working directory as needed.</p>
-
-<pre class="prettyprint">    var example = myfs.cwd("../"); // will back up one folder
-    var example = myfs.cwd("foo/bar"); // will tack onto the end /system/path/to/foo/bar</pre>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-
-							</table>
-						</div>
-				
-					</div>
-			
-
-							    
-			       		 	<div class="heading-returns">Returns		
-						<span class="type">string</span>
-					</div>
-			      	     	<div class="member"><p>The resolved path.</p></div>
-				
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="root.dir"></a><a name="dir"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		dir () 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-file">myfs/index.js</span>
-						    		
-						    		<span class="member-line-number">422</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>alias for <a href="#dirname">dirname</a></p>
-
-					
-								
-
-							    
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="root.empty"></a><a name="empty"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		empty (<span class="method-arguments">who</span>, <span class="method-arguments">dryRun</span>) 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-file">myfs/index.js</span>
-						    		
-						    		<span class="member-line-number">197</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>Recursively empties a folder of all it's contents (and all the sub-folder's contents), but leaves the source folder.</p>
-
-<p><strong>Alias</strong> for <a href="myfs.dirutils.empty">du.copydir</a></p>
-
-					
-								
-			    	<div class="part-parameters">
-				    	
-				    	<div class="heading-part">Parameters</div>
-				    	
-				    	<div class="member">
-					    	<table>
-
-							    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">who</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="type">string</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>The source folder</p>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">dryRun</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="type">boolean</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>Prevents actual deletion, but still allows the return list to display what "will" be deleted.</p>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-
-							</table>
-						</div>
-				
-					</div>
-			
-
-							    
-			       		 	<div class="heading-returns">Returns		
-						<span class="type">array</span>
-					</div>
-			      	     	<div class="member"><p>An array containing a list of paths to files and folders that we're deleted (or will be deleted when dryrun is true)</p></div>
-				
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="root.exist"></a><a name="exist"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		exist () 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-file">myfs/index.js</span>
-						    		
-						    		<span class="member-line-number">239</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>alias for <a href="exists">exists</a> (plural)</p>
-
-					
-								
-
-							    
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="root.exists"></a><a name="exists"></a>
-
-						<div class="member" data-access="private" >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		exists (<span class="method-arguments">src</span>) 
-						    	</span>
-								<span class="member-name-right">
-						    		<span class="flag private">private</span>  <!-- public private protected -->
-						    		
-						    		<span class="member-file">myfs/index.js</span>
-						    		
-						    		<span class="member-line-number">233</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>Checks to see if a file or folder exists. To validate either file or folder use <a href="#isFile">isFile</a> or <a href="isDir">isDir</a>.</p>
-
-					
-								
-			    	<div class="part-parameters">
-				    	
-				    	<div class="heading-part">Parameters</div>
-				    	
-				    	<div class="member">
-					    	<table>
-
-							    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">src</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="type">type</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>The source file path.</p>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-
-							</table>
-						</div>
-				
-					</div>
-			
-
-							    
-			       		 	<div class="heading-returns">Returns		
-						<span class="type">boolean</span>
-					</div>
-			      	     	<div class="member"><p>True if exists, false if no file nor folder exists.</p></div>
-				
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="root.ext"></a><a name="ext"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		ext (<span class="method-arguments">Vpath</span>) 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-file">myfs/index.js</span>
-						    		
-						    		<span class="member-line-number">430</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>Returns the bare, base extension (no dot).</p>
-
-					
-								
-			    	<div class="part-parameters">
-				    	
-				    	<div class="heading-part">Parameters</div>
-				    	
-				    	<div class="member">
-					    	<table>
-
-							    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">Vpath</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="type">string</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>The path to parse.</p>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-
-							</table>
-						</div>
-				
-					</div>
-			
-
-							    
-			       		 	<div class="heading-returns">Returns		
-						<span class="type">string</span>
-					</div>
-			      	     	<div class="member"><p>The extension</p></div>
-				
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="root.filename"></a><a name="filename"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		filename () 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-file">myfs/index.js</span>
-						    		
-						    		<span class="member-line-number">397</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>alias for <a href="#basename">basename</a></p>
-
-					
-								
-
-							    
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="root.format"></a><a name="format"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		format (<span class="method-arguments">obj</span>) 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-file">myfs/index.js</span>
-						    		
-						    		<span class="member-line-number">541</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>The opposite of path.parse().</p>
-
-<p>Combines the elements of an object into a string. </p>
-
-<p>Example:</p>
-
-<pre class="prettyprint">    {
-        root : "/",
-        dir : "/home/user/dir",
-        base : "file.txt",
-        ext : ".txt",
-        name : "file"
-    }
-
-... is converted to
-
-    /home/user/dir/file.txt</pre>
-
-					
-								
-			    	<div class="part-parameters">
-				    	
-				    	<div class="heading-part">Parameters</div>
-				    	
-				    	<div class="member">
-					    	<table>
-
-							    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">obj</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="type">object</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>The object containing some of the required keys to formulate a path.</p>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-
-							</table>
-						</div>
-				
-					</div>
-			
-
-							    
-			       		 	<div class="heading-returns">Returns		
-						<span class="type">type</span>
-					</div>
-			      	     	<div class="member"><p>The string representaiton of the object.</p></div>
-				
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="root.isAbsolute"></a><a name="isAbsolute"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		isAbsolute (<span class="method-arguments">Vpath</span>) 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-file">myfs/index.js</span>
-						    		
-						    		<span class="member-line-number">439</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>Determines if path is an absolute path.</p>
-
-					
-								
-			    	<div class="part-parameters">
-				    	
-				    	<div class="heading-part">Parameters</div>
-				    	
-				    	<div class="member">
-					    	<table>
-
-							    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">Vpath</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="type">string</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>The path to parse.</p>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-
-							</table>
-						</div>
-				
-					</div>
-			
-
-							    
-			       		 	<div class="heading-returns">Returns		
-						<span class="type">Boolean</span>
-					</div>
-			      	     	<div class="member"></div>
-				
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="root.isDir"></a><a name="isDir"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		isDir () 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-file">myfs/index.js</span>
-						    		
-						    		<span class="member-line-number">211</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>alias for <a href="#isFolder">isFolder</a></p>
-
-					
-								
-
-							    
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="root.isFile"></a><a name="isFile"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		isFile (<span class="method-arguments">src</span>) 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-file">myfs/index.js</span>
-						    		
-						    		<span class="member-line-number">342</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>Validates if a file exists AND that it's not a folder. If the src is a folder, this method will yeil false.</p>
-
-					
-								
-			    	<div class="part-parameters">
-				    	
-				    	<div class="heading-part">Parameters</div>
-				    	
-				    	<div class="member">
-					    	<table>
-
-							    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">src</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="type">string</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>The source file path.</p>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-
-							</table>
-						</div>
-				
-					</div>
-			
-
-							    
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="root.isFolder"></a><a name="isFolder"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		isFolder () 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-file">myfs/index.js</span>
-						    		
-						    		<span class="member-line-number">206</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>FYI: <a href="dirUtils.exists">dirUtils.exists</a> only validates true on folder, if src is file and exists, will STILL return false. In other words, du.exists doesn't conduct a global "exists" (Note that fileUtils.exists does).</p>
-
-					
-								
-
-							    
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="root.join"></a><a name="join"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		join (<span class="method-arguments">paths...</span>) 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-file">myfs/index.js</span>
-						    		
-						    		<span class="member-line-number">555</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>Joins path segments and resolves relativity.</p>
-
-<pre class="prettyprint">    path.join('/foo', 'bar', 'baz/asdf', 'quux', '..')
-    Returns: '/foo/bar/baz/asdf'</pre>
-
-					
-								
-			    	<div class="part-parameters">
-				    	
-				    	<div class="heading-part">Parameters</div>
-				    	
-				    	<div class="member">
-					    	<table>
-
-							    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">paths...</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="type">string</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>All arguments are evaluated as paths for construction</p>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-
-							</table>
-						</div>
-				
-					</div>
-			
-
-							    
-			       		 	<div class="heading-returns">Returns		
-						<span class="type">type</span>
-					</div>
-			      	     	<div class="member"><p>description description</p></div>
-				
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="root.launch"></a><a name="launch"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		launch (<span class="method-arguments">target</span>, <span class="method-arguments method-arg-optional">opts</span>) 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-file">myfs/index.js</span>
-						    		
-						    		<span class="member-line-number">42</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>A file launcher. Opens stuff like websites, files, executables. Cross-platform.</p>
-
-<p>Using <a href="https://github.com/sindresorhus/opn">opn</a></p>
-
-					
-								
-			    	<div class="part-parameters">
-				    	
-				    	<div class="heading-part">Parameters</div>
-				    	
-				    	<div class="member">
-					    	<table>
-
-							    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">target</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="type">string</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>The URI to open. Example: "/path/to/track.mp3" will open the MP3 in the default media player.</p>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">opts</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="type">object</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		<span class="flag optional">optional</span>
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>Options - See [opn.js[myfs.opn] for details</p>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-
-							</table>
-						</div>
-				
-					</div>
-			
-
-							    
-
-					
-								
-
-							    
-
-							</div>
-						</div>
 				<a name="root.addTrailingSlash"></a><a name="addTrailingSlash"></a>
 
 						<div class="member"  >
@@ -2393,7 +2428,7 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">633</span>
+						    		<span class="member-line-number">663</span>
 						    	</span>
 						    </div>
 
@@ -2402,41 +2437,6 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 						   		
 						   		
 								<p>alias for <a href="#addSlash">addSlash</a></p>
-
-					
-								
-
-							    
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="root.ls"></a><a name="ls"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		ls () 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-file">myfs/index.js</span>
-						    		
-						    		<span class="member-line-number">157</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>alias for <a href="#list">list</a></p>
 
 					
 								
@@ -2550,7 +2550,7 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">321</span>
+						    		<span class="member-line-number">351</span>
 						    	</span>
 						    </div>
 
@@ -2673,7 +2673,7 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">381</span>
+						    		<span class="member-line-number">411</span>
 						    	</span>
 						    </div>
 
@@ -2763,7 +2763,7 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">456</span>
+						    		<span class="member-line-number">486</span>
 						    	</span>
 						    </div>
 
@@ -2861,7 +2861,7 @@ npath.normalize("./foo/") --&gt; "/current/working/dir/foo/"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">258</span>
+						    		<span class="member-line-number">288</span>
 						    	</span>
 						    </div>
 
@@ -2896,7 +2896,7 @@ npath.normalize("./foo/") --&gt; "/current/working/dir/foo/"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">415</span>
+						    		<span class="member-line-number">445</span>
 						    	</span>
 						    </div>
 
@@ -2989,7 +2989,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">500</span>
+						    		<span class="member-line-number">530</span>
 						    	</span>
 						    </div>
 
@@ -3101,7 +3101,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">252</span>
+						    		<span class="member-line-number">282</span>
 						    	</span>
 						    </div>
 
@@ -3233,7 +3233,218 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">182</span>
+						    		<span class="member-line-number">185</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p><strong>Alias</strong> for <a href="myfs.dirutils.readExt">du.readExt</a></p>
+
+<p>Collects files from a folder based on the specified extension (or <br>
+ extensions). Can be used to search recursively through all sub-folders, and can <br>
+ search multiple extensions.</p>
+
+<p>NOTE: Extension filtering is case-insensative, so files with both upper and lower-case extensions will be captured.</p>
+
+<p>Provided as shortcut for <a href="#readdir">readdir</a> with your own extension-checking filter.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">from</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>The path to search</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">exts</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string | array</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		<span class="flag optional">optional</span>
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>The extension to look for (e.g. "jpg"). To search for multiple extensions, use an array e.g. ["jpg", "png", "gif"].</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">recursive</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">boolean</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		<span class="flag optional">optional</span>
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>Find all matching files in all sub-folders.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">filter</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">function</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		<span class="flag optional">optional</span>
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>A function to filter items on. The signature for this function's arguments is: <br>
+ - isFolder (boolean): Whether the item is a folder or not <br>
+ - file (string): The URI to the file <br>
+ - stats (object) : Info for the file such as time. See Node's <a href="https://nodejs.org/api/fs.html#fs_class_fs_stats">statSync</a> <br>
+ - pathInfo (object) :  Since we're already parsing the path via <a href="path.parse">path.parse</a>, we're sending the results fo thsi object to you.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">array</span>
+					</div>
+			      	     	<div class="member"><p>The resulting array contains only files that mathc the <br>
+ specified extension(s).</p></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.readExt"></a><a name="readExt"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		readExt (<span class="method-arguments">from</span>, <span class="method-arguments method-arg-optional">exts</span>, <span class="method-arguments method-arg-optional">recursive</span>, <span class="method-arguments method-arg-optional">filter</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">212</span>
 						    	</span>
 						    </div>
 
@@ -3442,7 +3653,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">515</span>
+						    		<span class="member-line-number">545</span>
 						    	</span>
 						    </div>
 
@@ -3571,7 +3782,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">303</span>
+						    		<span class="member-line-number">333</span>
 						    	</span>
 						    </div>
 
@@ -3658,7 +3869,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">614</span>
+						    		<span class="member-line-number">644</span>
 						    	</span>
 						    </div>
 
@@ -3748,7 +3959,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">619</span>
+						    		<span class="member-line-number">649</span>
 						    	</span>
 						    </div>
 
@@ -3783,7 +3994,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">333</span>
+						    		<span class="member-line-number">363</span>
 						    	</span>
 						    </div>
 
@@ -3906,7 +4117,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">583</span>
+						    		<span class="member-line-number">613</span>
 						    	</span>
 						    </div>
 
@@ -4012,7 +4223,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">310</span>
+						    		<span class="member-line-number">340</span>
 						    	</span>
 						    </div>
 
@@ -4225,7 +4436,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">276</span>
+						    		<span class="member-line-number">306</span>
 						    	</span>
 						    </div>
 
@@ -4260,7 +4471,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">644</span>
+						    		<span class="member-line-number">674</span>
 						    	</span>
 						    </div>
 
@@ -4386,7 +4597,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">356</span>
+						    		<span class="member-line-number">386</span>
 						    	</span>
 						    </div>
 
@@ -4549,7 +4760,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">271</span>
+						    		<span class="member-line-number">301</span>
 						    	</span>
 						    </div>
 
