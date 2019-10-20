@@ -1,6 +1,6 @@
 {
   "name": "myfs",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "My simplifeid methods for manipulating file and folders syncronously.",
   "keywords": "fs, file, folder, dir, directory, path, easy, simple, basic, touch",
   "main": "index.js",

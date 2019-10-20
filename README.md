@@ -145,6 +145,9 @@ Listing files of X & Y extension
 
 ### Change log
 
+1.0.22 - Oct 20, 2019
+- Added isBinary and dupe file methods.
+
 1.021 - Dec. 20, 2018
 
 - readExt/listExt properly documented and available... One was missing and the docs explained the other, now they're both in their.
