@@ -37,6 +37,8 @@ NOTE: See the "docs" folder details (this is just a basic listing).
 |__isFile__|src|Checks to see if src is a file, as opposed to exists, which checks if either file OR folder exists.|
 |__isDir__|src|Checks to see if src is a folder, as opposed to exists, which checks if either file OR folder exists.|
 |__touch__|src|Creates or updates the timestamp on a specific file or folder.|
+|__dupe__|src|Duplicates a file "in place" by making a copy with appended "copy N" in the file name.|
+|__isBinary__|src|A cheap/fast check to see if a file's extension is in a list of known binary extensions.|
 
 
 ##### Path Stuff
@@ -142,6 +144,10 @@ Listing files of X & Y extension
 
 
 ### Change log
+
+1.021 - Dec. 20, 2018
+
+- readExt/listExt properly documented and available... One was missing and the docs explained the other, now they're both in their.
 
 1.0.19 - Sept. 8, 2018
 

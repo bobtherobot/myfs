@@ -208,97 +208,7 @@ POSIX   = : </pre>
 							<a name="methods"></a>
 		            		<div class="part-methods">
 					            <div class="heading-part">Methods</div>
-					            <a name="myfs.npath.isAbsolute"></a><a name="isAbsolute"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		isAbsolute (<span class="method-arguments">Vpath</span>) 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-file">myfs/npath.js</span>
-						    		
-						    		<span class="member-line-number">187</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>Determines if path is an absolute path.</p>
-
-					
-								
-			    	<div class="part-parameters">
-				    	
-				    	<div class="heading-part">Parameters</div>
-				    	
-				    	<div class="member">
-					    	<table>
-
-							    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">Vpath</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="type">string</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>The path to parse.</p>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-
-							</table>
-						</div>
-				
-					</div>
-			
-
-							    
-			       		 	<div class="heading-returns">Returns		
-						<span class="type">Boolean</span>
-					</div>
-			      	     	<div class="member"></div>
-				
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="myfs.npath.addTrailingSlash"></a><a name="addTrailingSlash"></a>
+					            <a name="myfs.npath.addTrailingSlash"></a><a name="addTrailingSlash"></a>
 
 						<div class="member"  >
 
@@ -379,6 +289,133 @@ POSIX   = : </pre>
 						<span class="type">string</span>
 					</div>
 			      	     	<div class="member"></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.npath.basename"></a><a name="basename"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		basename (<span class="method-arguments">path</span>, <span class="method-arguments">ext</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/npath.js</span>
+						    		
+						    		<span class="member-line-number">123</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<pre class="prettyprint">    npath.basename("/foo/bar/bob.txt") --&gt; "bob.txt"
+npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">path</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>The full path</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">ext</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>Lops off the extension if it matches.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"><p>The last portion of a path, generally the "filename".</p></div>
 				
 
 					
@@ -953,20 +990,20 @@ npath.extname("/foo/sally/yoyo/boob") --&gt; ""</pre>
 
 							</div>
 						</div>
-				<a name="myfs.npath.basename"></a><a name="basename"></a>
+				<a name="myfs.npath.isAbsolute"></a><a name="isAbsolute"></a>
 
 						<div class="member"  >
 
 							<div class="member-name clearfix">
 								<span class="member-name-left">
-						    		basename (<span class="method-arguments">path</span>, <span class="method-arguments">ext</span>) 
+						    		isAbsolute (<span class="method-arguments">Vpath</span>) 
 						    	</span>
 								<span class="member-name-right">
 						    		
 						    		
 						    		<span class="member-file">myfs/npath.js</span>
 						    		
-						    		<span class="member-line-number">123</span>
+						    		<span class="member-line-number">187</span>
 						    	</span>
 						    </div>
 
@@ -974,8 +1011,7 @@ npath.extname("/foo/sally/yoyo/boob") --&gt; ""</pre>
 						   	<div class="member-description">
 						   		
 						   		
-								<pre class="prettyprint">    npath.basename("/foo/bar/bob.txt") --&gt; "bob.txt"
-npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
+								<p>Determines if path is an absolute path.</p>
 
 					
 								
@@ -992,7 +1028,7 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 
 						    	<td>
 						    		
-						        	<span class="member-name">path</span>
+						        	<span class="member-name">Vpath</span>
 						        </td>
 						        <td>
 						        	<div class="param-meta clearfix">
@@ -1013,43 +1049,7 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 						        		
 									
 							<div class="member-description">
-      				 		 	<p>The full path</p>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">ext</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="type">string</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>Lops off the extension if it matches.</p>
+      				 		 	<p>The path to parse.</p>
        						 </div>
        			
 						        	
@@ -1068,9 +1068,9 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 
 							    
 			       		 	<div class="heading-returns">Returns		
-						<span class="type">string</span>
+						<span class="type">Boolean</span>
 					</div>
-			      	     	<div class="member"><p>The last portion of a path, generally the "filename".</p></div>
+			      	     	<div class="member"></div>
 				
 
 					
@@ -1457,7 +1457,7 @@ npath.normalize("./foo/") --&gt; "/current/working/dir/foo/"</pre>
 
     // additional "for my brain" labels:
     ext2        : "txt"         // no dot
-    extension   : "txt"         // alias to above
+    extension   : "txt"         // no dot (alias to above)
     basename    : "file"    
     filename    : "file.txt"
     parent      : "/home/user/dir"

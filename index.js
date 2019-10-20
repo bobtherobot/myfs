@@ -324,6 +324,40 @@ if (typeof require !== 'undefined') {
 		copy: fu.copy,
 
 		/**
+		 * Duplicates a file "in place" by appending a "copy N" to the base file name.
+		 * 
+		 * Example:
+		 * 
+		 *  	myfs.copy("somewhere/foo.txt");
+		 * 
+		 *  	... will make "somewhere/foo copy.txt"
+		 *  	... will auto increment multiple copies:
+		 * 
+		 * 		"somewhere/foo copy.txt"
+		 * 		"somewhere/foo copy 1.txt"
+		 * 		"somewhere/foo copy 2.txt"
+		 * 		"somewhere/foo copy 3.txt"
+		 * 
+		 * @method  dupe
+		 * @param	{string}	src 	- The source file path.
+		 * @returns	{string}	- The file path to the newly duplicated file.
+		 */
+
+		dupe: fu.dupe,
+
+		/**
+		 * Duplicates a file "in place" by appending a "copy N" to the base file name.
+		
+			__Alias__ for [fu.dupe](myfs.fu.dupe)
+			
+		 * @method     duplicate
+		 * @param	{string}	src 	- The source file path.
+		 * @returns	{string}	- The file path to the newly duplicated file.
+		 */
+
+		duplicate: fu.dupe,
+
+		/**
 		 * Deletes a file from the system.
 		
 			__Alias__ for [fu.remove](myfs.fu.remove)
@@ -372,7 +406,16 @@ if (typeof require !== 'undefined') {
 		 */
 		isFile: fu.isFile,
 
-
+		/**
+		 * Checks the extension against a list of known binary files.
+		 * 
+		 * NOTE: This is not a fail-safe evaluation -- only a fast check.
+		 * 
+		 * @method     isBinary
+		 * @param      {string}    src     - The source file path.
+		 * @param      {boolean}   [manual]  - Used interally to see if the user actually set a value.
+		 */
+		isBinary: fu.isFile,
 
 		/**
 		 * Creates or updates the timestamp on a specific file or folder.

@@ -58,6 +58,7 @@ if( contents != fileContents ){
 }
 
 
+
 var path2 = myfs.join(testDir, testFile2);
 
 // copy
@@ -65,6 +66,12 @@ myfs.copy(path1, path2);
 
 if( ! myfs.exists(path2) ){
 	failed("fail: copy");
+}
+
+// dupe
+var newFile = myfs.dupe(path2);
+if( ! myfs.exists(newFile) ){
+	failed("fail: dupe");
 }
 
 // rm
@@ -302,7 +309,7 @@ if( myfs.cwd() != "/Volumes/Drives/projects/myfs" ){
 // Launch
 myfs.launch("README.md");
 
-
+console.log("DONE... see any failures above? No? you good!");
 process.exit();
 /*
 - launch

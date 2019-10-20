@@ -105,42 +105,7 @@
 							<a name="methods"></a>
 		            		<div class="part-methods">
 					            <div class="heading-part">Methods</div>
-					            <a name="myfs.dirutils.list"></a><a name="list"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		list () 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-file">myfs/dirutils.js</span>
-						    		
-						    		<span class="member-line-number">384</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>Alias for <a href="#readdir">readdir</a></p>
-
-					
-								
-
-							    
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="myfs.dirutils.copy"></a><a name="copy"></a>
+					            <a name="myfs.dirutils.copy"></a><a name="copy"></a>
 
 						<div class="member"  >
 
@@ -165,6 +130,127 @@
 
 					
 								
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.dirutils.copydir"></a><a name="copydir"></a>
+
+						<div class="member" data-access="private" >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		copydir (<span class="method-arguments">from</span>, <span class="method-arguments">to</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="flag private">private</span>  <!-- public private protected -->
+						    		
+						    		<span class="member-file">myfs/dirutils.js</span>
+						    		
+						    		<span class="member-line-number">228</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>Copies the entire folder's heirarchy folder from one location to another. If the other location doesn't exists, it will be constructed.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">from</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>The source folder</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">to</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>The destination folder (get's created if not exist)</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
 
 							    
 
@@ -496,20 +582,20 @@
 
 							</div>
 						</div>
-				<a name="myfs.dirutils.copydir"></a><a name="copydir"></a>
+				<a name="myfs.dirutils.list"></a><a name="list"></a>
 
-						<div class="member" data-access="private" >
+						<div class="member"  >
 
 							<div class="member-name clearfix">
 								<span class="member-name-left">
-						    		copydir (<span class="method-arguments">from</span>, <span class="method-arguments">to</span>) 
+						    		list () 
 						    	</span>
 								<span class="member-name-right">
-						    		<span class="flag private">private</span>  <!-- public private protected -->
+						    		
 						    		
 						    		<span class="member-file">myfs/dirutils.js</span>
 						    		
-						    		<span class="member-line-number">228</span>
+						    		<span class="member-line-number">384</span>
 						    	</span>
 						    </div>
 
@@ -517,96 +603,10 @@
 						   	<div class="member-description">
 						   		
 						   		
-								<p>Copies the entire folder's heirarchy folder from one location to another. If the other location doesn't exists, it will be constructed.</p>
+								<p>Alias for <a href="#readdir">readdir</a></p>
 
 					
 								
-			    	<div class="part-parameters">
-				    	
-				    	<div class="heading-part">Parameters</div>
-				    	
-				    	<div class="member">
-					    	<table>
-
-							    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">from</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="type">string</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>The source folder</p>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-							
-							<tr  >
-
-						    	<td>
-						    		
-						        	<span class="member-name">to</span>
-						        </td>
-						        <td>
-						        	<div class="param-meta clearfix">
-
-						        		<span class="member-name-left">
-								    		
-							<span class="type">string</span>
-				
-								    	</span>
-										<span class="member-name-right">
-								    		
-								    		
-								    		
-								    	</span>
-
-						        	</div>
-						        	<div class="param-description">
-						        		
-									
-							<div class="member-description">
-      				 		 	<p>The destination folder (get's created if not exist)</p>
-       						 </div>
-       			
-						        	
-						        	
-					
-						        	</div>
-						        </td>
-						    </tr>
-				    
-
-							</table>
-						</div>
-				
-					</div>
-			
 
 							    
 

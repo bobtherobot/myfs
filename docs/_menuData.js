@@ -295,19 +295,19 @@ var MenuData = [
 										"kind": "methods",
 										"children": [
 											{
-												"id": "myfs.dirutils.list",
-												"url": "myfs.dirutils.html#myfs.dirutils.list",
-												"label": "list",
-												"kind": "methods-item",
-												"access": "public",
-												"inherits": 0
-											},
-											{
 												"id": "myfs.dirutils.copy",
 												"url": "myfs.dirutils.html#myfs.dirutils.copy",
 												"label": "copy",
 												"kind": "methods-item",
 												"access": "public",
+												"inherits": 0
+											},
+											{
+												"id": "myfs.dirutils.copydir",
+												"url": "myfs.dirutils.html#myfs.dirutils.copydir",
+												"label": "copydir",
+												"kind": "methods-item",
+												"access": "private",
 												"inherits": 0
 											},
 											{
@@ -351,11 +351,11 @@ var MenuData = [
 												"inherits": 0
 											},
 											{
-												"id": "myfs.dirutils.copydir",
-												"url": "myfs.dirutils.html#myfs.dirutils.copydir",
-												"label": "copydir",
+												"id": "myfs.dirutils.list",
+												"url": "myfs.dirutils.html#myfs.dirutils.list",
+												"label": "list",
 												"kind": "methods-item",
-												"access": "private",
+												"access": "public",
 												"inherits": 0
 											},
 											{
@@ -425,17 +425,25 @@ var MenuData = [
 										"kind": "methods",
 										"children": [
 											{
-												"id": "myfs.fileutils.open",
-												"url": "myfs.fileutils.html#myfs.fileutils.open",
-												"label": "open",
+												"id": "myfs.fileutils.copy",
+												"url": "myfs.fileutils.html#myfs.fileutils.copy",
+												"label": "copy",
 												"kind": "methods-item",
 												"access": "public",
 												"inherits": 0
 											},
 											{
-												"id": "myfs.fileutils.copy",
-												"url": "myfs.fileutils.html#myfs.fileutils.copy",
-												"label": "copy",
+												"id": "myfs.fileutils.cp",
+												"url": "myfs.fileutils.html#myfs.fileutils.cp",
+												"label": "cp",
+												"kind": "methods-item",
+												"access": "public",
+												"inherits": 0
+											},
+											{
+												"id": "myfs.fileutils.dupe",
+												"url": "myfs.fileutils.html#myfs.fileutils.dupe",
+												"label": "dupe",
 												"kind": "methods-item",
 												"access": "public",
 												"inherits": 0
@@ -454,6 +462,14 @@ var MenuData = [
 												"label": "exists",
 												"kind": "methods-item",
 												"access": "private",
+												"inherits": 0
+											},
+											{
+												"id": "myfs.fileutils.isBinary",
+												"url": "myfs.fileutils.html#myfs.fileutils.isBinary",
+												"label": "isBinary",
+												"kind": "methods-item",
+												"access": "public",
 												"inherits": 0
 											},
 											{
@@ -481,9 +497,9 @@ var MenuData = [
 												"inherits": 0
 											},
 											{
-												"id": "myfs.fileutils.cp",
-												"url": "myfs.fileutils.html#myfs.fileutils.cp",
-												"label": "cp",
+												"id": "myfs.fileutils.open",
+												"url": "myfs.fileutils.html#myfs.fileutils.open",
+												"label": "open",
 												"kind": "methods-item",
 												"access": "public",
 												"inherits": 0
@@ -595,17 +611,17 @@ var MenuData = [
 										"kind": "methods",
 										"children": [
 											{
-												"id": "myfs.npath.isAbsolute",
-												"url": "myfs.npath.html#myfs.npath.isAbsolute",
-												"label": "isAbsolute",
+												"id": "myfs.npath.addTrailingSlash",
+												"url": "myfs.npath.html#myfs.npath.addTrailingSlash",
+												"label": "addTrailingSlash",
 												"kind": "methods-item",
 												"access": "public",
 												"inherits": 0
 											},
 											{
-												"id": "myfs.npath.addTrailingSlash",
-												"url": "myfs.npath.html#myfs.npath.addTrailingSlash",
-												"label": "addTrailingSlash",
+												"id": "myfs.npath.basename",
+												"url": "myfs.npath.html#myfs.npath.basename",
+												"label": "basename",
 												"kind": "methods-item",
 												"access": "public",
 												"inherits": 0
@@ -659,9 +675,9 @@ var MenuData = [
 												"inherits": 0
 											},
 											{
-												"id": "myfs.npath.basename",
-												"url": "myfs.npath.html#myfs.npath.basename",
-												"label": "basename",
+												"id": "myfs.npath.isAbsolute",
+												"url": "myfs.npath.html#myfs.npath.isAbsolute",
+												"label": "isAbsolute",
 												"kind": "methods-item",
 												"access": "public",
 												"inherits": 0
@@ -769,17 +785,17 @@ var MenuData = [
 						"kind": "properties",
 						"children": [
 							{
-								"id": "root.Draggable._down_bound",
-								"url": "root.Draggable.html#root.Draggable._down_bound",
-								"label": "_down_bound",
+								"id": "root.Draggable._callback",
+								"url": "root.Draggable.html#root.Draggable._callback",
+								"label": "_callback",
 								"kind": "properties-item",
 								"access": "private",
 								"inherits": 0
 							},
 							{
-								"id": "root.Draggable._callback",
-								"url": "root.Draggable.html#root.Draggable._callback",
-								"label": "_callback",
+								"id": "root.Draggable._callbackArg",
+								"url": "root.Draggable.html#root.Draggable._callbackArg",
+								"label": "_callbackArg",
 								"kind": "properties-item",
 								"access": "private",
 								"inherits": 0
@@ -833,9 +849,9 @@ var MenuData = [
 								"inherits": 0
 							},
 							{
-								"id": "root.Draggable._callbackArg",
-								"url": "root.Draggable.html#root.Draggable._callbackArg",
-								"label": "_callbackArg",
+								"id": "root.Draggable._down_bound",
+								"url": "root.Draggable.html#root.Draggable._down_bound",
+								"label": "_down_bound",
 								"kind": "properties-item",
 								"access": "private",
 								"inherits": 0
@@ -913,17 +929,17 @@ var MenuData = [
 						"kind": "methods",
 						"children": [
 							{
-								"id": "root.Draggable.init",
-								"url": "root.Draggable.html#root.Draggable.init",
-								"label": "init",
-								"kind": "methods-item",
-								"access": "protected",
-								"inherits": 0
-							},
-							{
 								"id": "root.Draggable._down",
 								"url": "root.Draggable.html#root.Draggable._down",
 								"label": "_down",
+								"kind": "methods-item",
+								"access": "private",
+								"inherits": 0
+							},
+							{
+								"id": "root.Draggable._initMove",
+								"url": "root.Draggable.html#root.Draggable._initMove",
+								"label": "_initMove",
 								"kind": "methods-item",
 								"access": "private",
 								"inherits": 0
@@ -961,11 +977,11 @@ var MenuData = [
 								"inherits": 0
 							},
 							{
-								"id": "root.Draggable._initMove",
-								"url": "root.Draggable.html#root.Draggable._initMove",
-								"label": "_initMove",
+								"id": "root.Draggable.init",
+								"url": "root.Draggable.html#root.Draggable.init",
+								"label": "init",
 								"kind": "methods-item",
-								"access": "private",
+								"access": "protected",
 								"inherits": 0
 							},
 							{
@@ -1077,17 +1093,17 @@ var MenuData = [
 		"kind": "methods",
 		"children": [
 			{
-				"id": "root.ls",
-				"url": "root.html#root.ls",
-				"label": "ls",
+				"id": "root.addSlash",
+				"url": "root.html#root.addSlash",
+				"label": "addSlash",
 				"kind": "methods-item",
 				"access": "public",
 				"inherits": 0
 			},
 			{
-				"id": "root.addSlash",
-				"url": "root.html#root.addSlash",
-				"label": "addSlash",
+				"id": "root.addTrailingSlash",
+				"url": "root.html#root.addTrailingSlash",
+				"label": "addTrailingSlash",
 				"kind": "methods-item",
 				"access": "public",
 				"inherits": 0
@@ -1157,6 +1173,22 @@ var MenuData = [
 				"inherits": 0
 			},
 			{
+				"id": "root.dupe",
+				"url": "root.html#root.dupe",
+				"label": "dupe",
+				"kind": "methods-item",
+				"access": "public",
+				"inherits": 0
+			},
+			{
+				"id": "root.duplicate",
+				"url": "root.html#root.duplicate",
+				"label": "duplicate",
+				"kind": "methods-item",
+				"access": "public",
+				"inherits": 0
+			},
+			{
 				"id": "root.empty",
 				"url": "root.html#root.empty",
 				"label": "empty",
@@ -1213,6 +1245,14 @@ var MenuData = [
 				"inherits": 0
 			},
 			{
+				"id": "root.isBinary",
+				"url": "root.html#root.isBinary",
+				"label": "isBinary",
+				"kind": "methods-item",
+				"access": "public",
+				"inherits": 0
+			},
+			{
 				"id": "root.isDir",
 				"url": "root.html#root.isDir",
 				"label": "isDir",
@@ -1261,9 +1301,9 @@ var MenuData = [
 				"inherits": 0
 			},
 			{
-				"id": "root.addTrailingSlash",
-				"url": "root.html#root.addTrailingSlash",
-				"label": "addTrailingSlash",
+				"id": "root.ls",
+				"url": "root.html#root.ls",
+				"label": "ls",
 				"kind": "methods-item",
 				"access": "public",
 				"inherits": 0

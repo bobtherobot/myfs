@@ -105,42 +105,7 @@
 							<a name="methods"></a>
 		            		<div class="part-methods">
 					            <div class="heading-part">Methods</div>
-					            <a name="myfs.fileutils.open"></a><a name="open"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		open () 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-file">myfs/fileutils.js</span>
-						    		
-						    		<span class="member-line-number">234</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>Alias for <a href="#read">read</a></p>
-
-					
-								
-
-							    
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="myfs.fileutils.copy"></a><a name="copy"></a>
+					            <a name="myfs.fileutils.copy"></a><a name="copy"></a>
 
 						<div class="member"  >
 
@@ -153,7 +118,7 @@
 						    		
 						    		<span class="member-file">myfs/fileutils.js</span>
 						    		
-						    		<span class="member-line-number">27</span>
+						    		<span class="member-line-number">337</span>
 						    	</span>
 						    </div>
 
@@ -259,10 +224,6 @@
 
 						        		<span class="member-name-left">
 								    		
-							<span class="default-value">
-      				 		 	false]
-       						 </span>
-       			
 							<span class="type">boolean</span>
 				
 								    	</span>
@@ -277,7 +238,7 @@
 						        		
 									
 							<div class="member-description">
-      				 		 	<p>Is this a binary file? (We assume it's a text file.)</p>
+      				 		 	<p>When not set, we'll see if the file extension matches a binary file type. This is not a fail-safe evaluation, so we recommend manually setting this value (if you know).</p>
        						 </div>
        			
 						        	
@@ -303,6 +264,143 @@
 
 							</div>
 						</div>
+				<a name="myfs.fileutils.cp"></a><a name="cp"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		cp () 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/fileutils.js</span>
+						    		
+						    		<span class="member-line-number">544</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>Alias for <a href="#copy">copy</a></p>
+
+					
+								
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.fileutils.dupe"></a><a name="dupe"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		dupe (<span class="method-arguments">src</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/fileutils.js</span>
+						    		
+						    		<span class="member-line-number">306</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>Duplicates a file "in place" by appending a "copy N" to the base file name.</p>
+
+<p>Example:</p>
+
+<pre class="prettyprint">myfs.copy("somewhere/foo.txt");
+
+... will make "somewhere/foo copy.txt"
+... will auto increment multiple copies:
+
+    "somewhere/foo copy.txt"
+    "somewhere/foo copy 1.txt"
+    "somewhere/foo copy 2.txt"
+    "somewhere/foo copy 3.txt"</pre>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">src</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>The source file path.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"><p>The file path to the newly duplicated file.</p></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
 				<a name="myfs.fileutils.ensureParentExists"></a><a name="ensureParentExists"></a>
 
 						<div class="member" data-access="private" >
@@ -316,7 +414,7 @@
 						    		
 						    		<span class="member-file">myfs/fileutils.js</span>
 						    		
-						    		<span class="member-line-number">57</span>
+						    		<span class="member-line-number">369</span>
 						    	</span>
 						    </div>
 
@@ -402,7 +500,7 @@ The associated mkdir constructs the entire heirarchy as needed.</p>
 						    		
 						    		<span class="member-file">myfs/fileutils.js</span>
 						    		
-						    		<span class="member-line-number">163</span>
+						    		<span class="member-line-number">479</span>
 						    	</span>
 						    </div>
 
@@ -479,6 +577,129 @@ The associated mkdir constructs the entire heirarchy as needed.</p>
 
 							</div>
 						</div>
+				<a name="myfs.fileutils.isBinary"></a><a name="isBinary"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		isBinary (<span class="method-arguments">src</span>, <span class="method-arguments method-arg-optional">manual</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/fileutils.js</span>
+						    		
+						    		<span class="member-line-number">280</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>Checks the extension against a list of known binary files.</p>
+
+<p>NOTE: This is not a fail-safe evaluation -- only a fast check.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">src</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>The source file path.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">manual</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">boolean</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		<span class="flag optional">optional</span>
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>Used interally to see if the user actually set a value.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
 				<a name="myfs.fileutils.isFile"></a><a name="isFile"></a>
 
 						<div class="member"  >
@@ -492,7 +713,7 @@ The associated mkdir constructs the entire heirarchy as needed.</p>
 						    		
 						    		<span class="member-file">myfs/fileutils.js</span>
 						    		
-						    		<span class="member-line-number">70</span>
+						    		<span class="member-line-number">382</span>
 						    	</span>
 						    </div>
 
@@ -577,7 +798,7 @@ The associated mkdir constructs the entire heirarchy as needed.</p>
 						    		
 						    		<span class="member-file">myfs/fileutils.js</span>
 						    		
-						    		<span class="member-line-number">244</span>
+						    		<span class="member-line-number">560</span>
 						    	</span>
 						    </div>
 
@@ -612,7 +833,7 @@ The associated mkdir constructs the entire heirarchy as needed.</p>
 						    		
 						    		<span class="member-file">myfs/fileutils.js</span>
 						    		
-						    		<span class="member-line-number">99</span>
+						    		<span class="member-line-number">411</span>
 						    	</span>
 						    </div>
 
@@ -689,20 +910,20 @@ The associated mkdir constructs the entire heirarchy as needed.</p>
 
 							</div>
 						</div>
-				<a name="myfs.fileutils.cp"></a><a name="cp"></a>
+				<a name="myfs.fileutils.open"></a><a name="open"></a>
 
 						<div class="member"  >
 
 							<div class="member-name clearfix">
 								<span class="member-name-left">
-						    		cp () 
+						    		open () 
 						    	</span>
 								<span class="member-name-right">
 						    		
 						    		
 						    		<span class="member-file">myfs/fileutils.js</span>
 						    		
-						    		<span class="member-line-number">228</span>
+						    		<span class="member-line-number">550</span>
 						    	</span>
 						    </div>
 
@@ -710,7 +931,7 @@ The associated mkdir constructs the entire heirarchy as needed.</p>
 						   	<div class="member-description">
 						   		
 						   		
-								<p>Alias for <a href="#copy">copy</a></p>
+								<p>Alias for <a href="#read">read</a></p>
 
 					
 								
@@ -737,7 +958,7 @@ The associated mkdir constructs the entire heirarchy as needed.</p>
 						    		
 						    		<span class="member-file">myfs/fileutils.js</span>
 						    		
-						    		<span class="member-line-number">108</span>
+						    		<span class="member-line-number">420</span>
 						    	</span>
 						    </div>
 
@@ -867,7 +1088,7 @@ The associated mkdir constructs the entire heirarchy as needed.</p>
 						    		
 						    		<span class="member-file">myfs/fileutils.js</span>
 						    		
-						    		<span class="member-line-number">152</span>
+						    		<span class="member-line-number">468</span>
 						    	</span>
 						    </div>
 
@@ -952,7 +1173,7 @@ The associated mkdir constructs the entire heirarchy as needed.</p>
 						    		
 						    		<span class="member-file">myfs/fileutils.js</span>
 						    		
-						    		<span class="member-line-number">173</span>
+						    		<span class="member-line-number">489</span>
 						    	</span>
 						    </div>
 
@@ -1073,7 +1294,7 @@ The associated mkdir constructs the entire heirarchy as needed.</p>
 						    		
 						    		<span class="member-file">myfs/fileutils.js</span>
 						    		
-						    		<span class="member-line-number">123</span>
+						    		<span class="member-line-number">437</span>
 						    	</span>
 						    </div>
 
@@ -1194,7 +1415,7 @@ The associated mkdir constructs the entire heirarchy as needed.</p>
 						    		
 						    		<span class="member-file">myfs/fileutils.js</span>
 						    		
-						    		<span class="member-line-number">239</span>
+						    		<span class="member-line-number">555</span>
 						    	</span>
 						    </div>
 
@@ -1229,7 +1450,7 @@ The associated mkdir constructs the entire heirarchy as needed.</p>
 						    		
 						    		<span class="member-file">myfs/fileutils.js</span>
 						    		
-						    		<span class="member-line-number">196</span>
+						    		<span class="member-line-number">512</span>
 						    	</span>
 						    </div>
 
@@ -1392,7 +1613,7 @@ The associated mkdir constructs the entire heirarchy as needed.</p>
 						    		
 						    		<span class="member-file">myfs/fileutils.js</span>
 						    		
-						    		<span class="member-line-number">132</span>
+						    		<span class="member-line-number">446</span>
 						    	</span>
 						    </div>
 

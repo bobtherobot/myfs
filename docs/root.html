@@ -218,7 +218,7 @@
 										<span class="member-name-right">
 								    		
 								    		
-								    		<span class="member-file">myfs/index.js</span><span class="member-line-number" title="myfs/index.js">635</span>
+								    		<span class="member-file">myfs/index.js</span><span class="member-line-number" title="myfs/index.js">678</span>
 								    	</span>
 
 						        	</div>
@@ -377,7 +377,7 @@ POSIX   = : </pre>
 										<span class="member-name-right">
 								    		
 								    		
-								    		<span class="member-file">myfs/index.js</span><span class="member-line-number" title="myfs/index.js">401</span>
+								    		<span class="member-file">myfs/index.js</span><span class="member-line-number" title="myfs/index.js">444</span>
 								    	</span>
 
 						        	</div>
@@ -406,42 +406,7 @@ POSIX   = : </pre>
 							<a name="methods"></a>
 		            		<div class="part-methods">
 					            <div class="heading-part">Methods</div>
-					            <a name="root.ls"></a><a name="ls"></a>
-
-						<div class="member"  >
-
-							<div class="member-name clearfix">
-								<span class="member-name-left">
-						    		ls () 
-						    	</span>
-								<span class="member-name-right">
-						    		
-						    		
-						    		<span class="member-file">myfs/index.js</span>
-						    		
-						    		<span class="member-line-number">157</span>
-						    	</span>
-						    </div>
-
-
-						   	<div class="member-description">
-						   		
-						   		
-								<p>alias for <a href="#list">list</a></p>
-
-					
-								
-
-							    
-
-					
-								
-
-							    
-
-							</div>
-						</div>
-				<a name="root.addSlash"></a><a name="addSlash"></a>
+					            <a name="root.addSlash"></a><a name="addSlash"></a>
 
 						<div class="member"  >
 
@@ -454,7 +419,7 @@ POSIX   = : </pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">658</span>
+						    		<span class="member-line-number">701</span>
 						    	</span>
 						    </div>
 
@@ -531,6 +496,41 @@ POSIX   = : </pre>
 
 							</div>
 						</div>
+				<a name="root.addTrailingSlash"></a><a name="addTrailingSlash"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		addTrailingSlash () 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">706</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>alias for <a href="#addSlash">addSlash</a></p>
+
+					
+								
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
 				<a name="root.base"></a><a name="base"></a>
 
 						<div class="member"  >
@@ -544,7 +544,7 @@ POSIX   = : </pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">432</span>
+						    		<span class="member-line-number">475</span>
 						    	</span>
 						    </div>
 
@@ -579,7 +579,7 @@ POSIX   = : </pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">422</span>
+						    		<span class="member-line-number">465</span>
 						    	</span>
 						    </div>
 
@@ -706,7 +706,7 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">498</span>
+						    		<span class="member-line-number">541</span>
 						    	</span>
 						    </div>
 
@@ -1117,7 +1117,7 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">688</span>
+						    		<span class="member-line-number">731</span>
 						    	</span>
 						    </div>
 
@@ -1210,7 +1210,7 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">452</span>
+						    		<span class="member-line-number">495</span>
 						    	</span>
 						    </div>
 
@@ -1224,6 +1224,200 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 								
 
 							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.dupe"></a><a name="dupe"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		dupe (<span class="method-arguments">src</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">344</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>Duplicates a file "in place" by appending a "copy N" to the base file name.</p>
+
+<p>Example:</p>
+
+<pre class="prettyprint">myfs.copy("somewhere/foo.txt");
+
+... will make "somewhere/foo copy.txt"
+... will auto increment multiple copies:
+
+    "somewhere/foo copy.txt"
+    "somewhere/foo copy 1.txt"
+    "somewhere/foo copy 2.txt"
+    "somewhere/foo copy 3.txt"</pre>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">src</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>The source file path.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"><p>The file path to the newly duplicated file.</p></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="root.duplicate"></a><a name="duplicate"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		duplicate (<span class="method-arguments">src</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">356</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>Duplicates a file "in place" by appending a "copy N" to the base file name.</p>
+
+<pre class="prettyprint">__Alias__ for [fu.dupe](myfs.fu.dupe)</pre>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">src</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>The source file path.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"><p>The file path to the newly duplicated file.</p></div>
+				
 
 					
 								
@@ -1498,7 +1692,7 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">460</span>
+						    		<span class="member-line-number">503</span>
 						    	</span>
 						    </div>
 
@@ -1588,7 +1782,7 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">427</span>
+						    		<span class="member-line-number">470</span>
 						    	</span>
 						    </div>
 
@@ -1623,7 +1817,7 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">571</span>
+						    		<span class="member-line-number">614</span>
 						    	</span>
 						    </div>
 
@@ -1729,7 +1923,7 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">469</span>
+						    		<span class="member-line-number">512</span>
 						    	</span>
 						    </div>
 
@@ -1806,6 +2000,129 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 
 							</div>
 						</div>
+				<a name="root.isBinary"></a><a name="isBinary"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		isBinary (<span class="method-arguments">src</span>, <span class="method-arguments method-arg-optional">manual</span>) 
+						    	</span>
+								<span class="member-name-right">
+						    		
+						    		
+						    		<span class="member-file">myfs/index.js</span>
+						    		
+						    		<span class="member-line-number">417</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+						   		
+						   		
+								<p>Checks the extension against a list of known binary files.</p>
+
+<p>NOTE: This is not a fail-safe evaluation -- only a fast check.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+					    	<table>
+
+							    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">src</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">string</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>The source file path.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+							
+							<tr  >
+
+						    	<td>
+						    		
+						        	<span class="member-name">manual</span>
+						        </td>
+						        <td>
+						        	<div class="param-meta clearfix">
+
+						        		<span class="member-name-left">
+								    		
+							<span class="type">boolean</span>
+				
+								    	</span>
+										<span class="member-name-right">
+								    		<span class="flag optional">optional</span>
+								    		
+								    		
+								    	</span>
+
+						        	</div>
+						        	<div class="param-description">
+						        		
+									
+							<div class="member-description">
+      				 		 	<p>Used interally to see if the user actually set a value.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+						        	</div>
+						        </td>
+						    </tr>
+				    
+
+							</table>
+						</div>
+				
+					</div>
+			
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
 				<a name="root.isDir"></a><a name="isDir"></a>
 
 						<div class="member"  >
@@ -1854,7 +2171,7 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">372</span>
+						    		<span class="member-line-number">406</span>
 						    	</span>
 						    </div>
 
@@ -1974,7 +2291,7 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">585</span>
+						    		<span class="member-line-number">628</span>
 						    	</span>
 						    </div>
 
@@ -2415,20 +2732,20 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 
 							</div>
 						</div>
-				<a name="root.addTrailingSlash"></a><a name="addTrailingSlash"></a>
+				<a name="root.ls"></a><a name="ls"></a>
 
 						<div class="member"  >
 
 							<div class="member-name clearfix">
 								<span class="member-name-left">
-						    		addTrailingSlash () 
+						    		ls () 
 						    	</span>
 								<span class="member-name-right">
 						    		
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">663</span>
+						    		<span class="member-line-number">157</span>
 						    	</span>
 						    </div>
 
@@ -2436,7 +2753,7 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 						   	<div class="member-description">
 						   		
 						   		
-								<p>alias for <a href="#addSlash">addSlash</a></p>
+								<p>alias for <a href="#list">list</a></p>
 
 					
 								
@@ -2550,7 +2867,7 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">351</span>
+						    		<span class="member-line-number">385</span>
 						    	</span>
 						    </div>
 
@@ -2673,7 +2990,7 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">411</span>
+						    		<span class="member-line-number">454</span>
 						    	</span>
 						    </div>
 
@@ -2763,7 +3080,7 @@ npath.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">486</span>
+						    		<span class="member-line-number">529</span>
 						    	</span>
 						    </div>
 
@@ -2896,7 +3213,7 @@ npath.normalize("./foo/") --&gt; "/current/working/dir/foo/"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">445</span>
+						    		<span class="member-line-number">488</span>
 						    	</span>
 						    </div>
 
@@ -2989,7 +3306,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">530</span>
+						    		<span class="member-line-number">573</span>
 						    	</span>
 						    </div>
 
@@ -3653,7 +3970,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">545</span>
+						    		<span class="member-line-number">588</span>
 						    	</span>
 						    </div>
 
@@ -3782,7 +4099,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">333</span>
+						    		<span class="member-line-number">367</span>
 						    	</span>
 						    </div>
 
@@ -3869,7 +4186,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">644</span>
+						    		<span class="member-line-number">687</span>
 						    	</span>
 						    </div>
 
@@ -3959,7 +4276,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">649</span>
+						    		<span class="member-line-number">692</span>
 						    	</span>
 						    </div>
 
@@ -3994,7 +4311,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">363</span>
+						    		<span class="member-line-number">397</span>
 						    	</span>
 						    </div>
 
@@ -4117,7 +4434,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">613</span>
+						    		<span class="member-line-number">656</span>
 						    	</span>
 						    </div>
 
@@ -4223,7 +4540,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">340</span>
+						    		<span class="member-line-number">374</span>
 						    	</span>
 						    </div>
 
@@ -4471,7 +4788,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">674</span>
+						    		<span class="member-line-number">717</span>
 						    	</span>
 						    </div>
 
@@ -4597,7 +4914,7 @@ npath.parent("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"</pre>
 						    		
 						    		<span class="member-file">myfs/index.js</span>
 						    		
-						    		<span class="member-line-number">386</span>
+						    		<span class="member-line-number">429</span>
 						    	</span>
 						    </div>
 

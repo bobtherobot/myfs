@@ -15,6 +15,316 @@ var fs = require( 'fs' );
 var path = require( './npath' );
 var du = require( './dirutils' );
 
+var binaryExt = [
+	"3dm",
+	"3ds",
+	"3g2",
+	"3gp",
+	"7z",
+	"a",
+	"aac",
+	"adp",
+	"ai",
+	"aif",
+	"aiff",
+	"alz",
+	"ape",
+	"apk",
+	"ar",
+	"arj",
+	"asf",
+	"au",
+	"avi",
+	"bak",
+	"baml",
+	"bh",
+	"bin",
+	"bk",
+	"bmp",
+	"btif",
+	"bz2",
+	"bzip2",
+	"cab",
+	"caf",
+	"cgm",
+	"class",
+	"cmx",
+	"cpio",
+	"cr2",
+	"cur",
+	"dat",
+	"dcm",
+	"deb",
+	"dex",
+	"djvu",
+	"dll",
+	"dmg",
+	"dng",
+	"doc",
+	"docm",
+	"docx",
+	"dot",
+	"dotm",
+	"dra",
+	"DS_Store",
+	"dsk",
+	"dts",
+	"dtshd",
+	"dvb",
+	"dwg",
+	"dxf",
+	"ecelp4800",
+	"ecelp7470",
+	"ecelp9600",
+	"egg",
+	"eol",
+	"eot",
+	"epub",
+	"exe",
+	"f4v",
+	"fbs",
+	"fh",
+	"fla",
+	"flac",
+	"fli",
+	"flv",
+	"fpx",
+	"fst",
+	"fvt",
+	"g3",
+	"gh",
+	"gif",
+	"graffle",
+	"gz",
+	"gzip",
+	"h261",
+	"h263",
+	"h264",
+	"icns",
+	"ico",
+	"ief",
+	"img",
+	"ipa",
+	"iso",
+	"jar",
+	"jpeg",
+	"jpg",
+	"jpgv",
+	"jpm",
+	"jxr",
+	"key",
+	"ktx",
+	"lha",
+	"lib",
+	"lvp",
+	"lz",
+	"lzh",
+	"lzma",
+	"lzo",
+	"m3u",
+	"m4a",
+	"m4v",
+	"mar",
+	"mdi",
+	"mht",
+	"mid",
+	"midi",
+	"mj2",
+	"mka",
+	"mkv",
+	"mmr",
+	"mng",
+	"mobi",
+	"mov",
+	"movie",
+	"mp3",
+	"mp4",
+	"mp4a",
+	"mpeg",
+	"mpg",
+	"mpga",
+	"mxu",
+	"nef",
+	"npx",
+	"numbers",
+	"nupkg",
+	"o",
+	"oga",
+	"ogg",
+	"ogv",
+	"otf",
+	"pages",
+	"pbm",
+	"pcx",
+	"pdb",
+	"pdf",
+	"pea",
+	"pgm",
+	"pic",
+	"png",
+	"pnm",
+	"pot",
+	"potm",
+	"potx",
+	"ppa",
+	"ppam",
+	"ppm",
+	"pps",
+	"ppsm",
+	"ppsx",
+	"ppt",
+	"pptm",
+	"pptx",
+	"psd",
+	"pya",
+	"pyc",
+	"pyo",
+	"pyv",
+	"qt",
+	"rar",
+	"ras",
+	"raw",
+	"resources",
+	"rgb",
+	"rip",
+	"rlc",
+	"rmf",
+	"rmvb",
+	"rtf",
+	"rz",
+	"s3m",
+	"s7z",
+	"scpt",
+	"sgi",
+	"shar",
+	"sil",
+	"sketch",
+	"slk",
+	"smv",
+	"snk",
+	"so",
+	"stl",
+	"suo",
+	"sub",
+	"swf",
+	"tar",
+	"tbz",
+	"tbz2",
+	"tga",
+	"tgz",
+	"thmx",
+	"tif",
+	"tiff",
+	"tlz",
+	"ttc",
+	"ttf",
+	"txz",
+	"udf",
+	"uvh",
+	"uvi",
+	"uvm",
+	"uvp",
+	"uvs",
+	"uvu",
+	"viv",
+	"vob",
+	"war",
+	"wav",
+	"wax",
+	"wbmp",
+	"wdp",
+	"weba",
+	"webm",
+	"webp",
+	"whl",
+	"wim",
+	"wm",
+	"wma",
+	"wmv",
+	"wmx",
+	"woff",
+	"woff2",
+	"wrm",
+	"wvx",
+	"xbm",
+	"xif",
+	"xla",
+	"xlam",
+	"xls",
+	"xlsb",
+	"xlsm",
+	"xlsx",
+	"xlt",
+	"xltm",
+	"xltx",
+	"xm",
+	"xmind",
+	"xpi",
+	"xpm",
+	"xwd",
+	"xz",
+	"z",
+	"zip",
+	"zipx"
+];
+
+
+/**
+ * Checks the extension against a list of known binary files.
+ * 
+ * NOTE: This is not a fail-safe evaluation -- only a fast check.
+ * 
+ * @method     isBinary
+ * @param      {string}    src     - The source file path.
+ * @param      {boolean}   [manual]  - Used interally to see if the user actually set a value.
+ */
+function isBinary(src, manual){
+	if ( typeof manual == 'undefined' ) {
+		return binaryExt.indexOf( path.ext(src) ) > -1;
+	}
+	return manual;
+}
+
+/**
+ * Duplicates a file "in place" by appending a "copy N" to the base file name.
+ * 
+ * Example:
+ * 
+ *  	myfs.copy("somewhere/foo.txt");
+ * 
+ *  	... will make "somewhere/foo copy.txt"
+ *  	... will auto increment multiple copies:
+ * 
+ * 		"somewhere/foo copy.txt"
+ * 		"somewhere/foo copy 1.txt"
+ * 		"somewhere/foo copy 2.txt"
+ * 		"somewhere/foo copy 3.txt"
+ * 
+ * @method  dupe
+ * @param	{string}	src 	- The source file path.
+ * @returns	{string}	- The file path to the newly duplicated file.
+ */
+function dupe(src) {
+
+    var info = path.parse(src);
+
+    var base = info.parent + "/" + info.basename + " copy";
+    var newPath = base + info.ext;
+
+    if( exists(newPath) ) {
+        var count = 1;
+        while ( exists(newPath) && count < 1000 ) { // 1000 = prevent while freeze
+            newPath = base + " " + count + info.ext;
+            count++;
+        }
+    }
+
+    copy(src, newPath, binaryExt.indexOf(info.ext2) > -1);
+
+    return newPath
+    
+}
+
 /**
  * Copies a file from one location to another.
  * 
@@ -23,10 +333,10 @@ var du = require( './dirutils' );
  * @method     copy
  * @param      {string}    src     - The source file path.
  * @param      {string}    dest    - The destination to copy the source to.
- * @param      {boolean}   [binary=false]  - Is this a binary file? (We assume it's a text file.)
+ * @param      {boolean}   [binary]  - When not set, we'll see if the file extension matches a binary file type. This is not a fail-safe evaluation, so we recommend manually setting this value (if you know).
  */
 function copy( src, dest, binary ) {
-	if ( !exists( src ) ) {
+	if ( ! exists( src ) ) {
 		return false;
 	}
 
@@ -34,7 +344,9 @@ function copy( src, dest, binary ) {
 		return du.copy(src, dest);
 	}
 
-	var data = fs.readFileSync( src, binary ? null : "UTF-8" );
+	var bin = isBinary(src, binary);
+
+	var data = fs.readFileSync( src, bin ? null : "UTF-8" );
 
 	// if just folder provided, tack on the file name.
 	if ( du.exists( dest ) ) {
@@ -44,7 +356,7 @@ function copy( src, dest, binary ) {
 
 	ensureParentExists(dest);
 
-	fs.writeFileSync( dest, data, binary ? null : "UTF-8" );
+	fs.writeFileSync( dest, data, bin ? null : "UTF-8" );
 	
 }
 
@@ -110,7 +422,9 @@ function read( src, binary ) {
 	if ( !fs.existsSync( src ) ) {
 		return false;
 	}
-	return fs.readFileSync( src, binary ? null : "UTF-8" );
+
+	var bin = isBinary(src, binary)
+	return fs.readFileSync( src, bin ? null : "UTF-8" );
 }
 
 
@@ -141,8 +455,10 @@ function write( src, data, binary ) {
 		}
 	}
 
+	var bin = isBinary(src, binary)
+	
 	ensureParentExists(src);
-	fs.writeFileSync( src, data, binary ? "binary" : "UTF-8" );
+	fs.writeFileSync( src, data, bin ? "binary" : "UTF-8" );
 }
 
 /**
@@ -255,5 +571,8 @@ module.exports = {
 	rename: rename,
 	move: rename, // alias
 	isFile : isFile,
-	touch : touch
+	touch : touch,
+	dupe : dupe,
+	duplicate : dupe, // alias
+	isBinary : isBinary
 }

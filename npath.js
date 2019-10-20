@@ -231,7 +231,7 @@ Extracts basic path and file parts.
 
 		// additional "for my brain" labels:
 		ext2		: "txt" 		// no dot
-		extension	: "txt" 		// alias to above
+		extension	: "txt" 		// no dot (alias to above)
 		basename	: "file" 	
 		filename	: "file.txt"
 		parent		: "/home/user/dir"
