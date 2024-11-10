@@ -122,6 +122,11 @@ function clean(arg){
  * @return {string} - The last portion of a path, generally the "filename".
  */
 function basename(Vpath, Vext){
+    if(Vext){
+        if( ! /^\./.test(Vext)){
+            Vext = "." + Vext;
+        }
+    }
 	return path.basename( clean(Vpath), Vext );
 }
 

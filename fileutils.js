@@ -290,15 +290,14 @@ function isBinary(src, manual){
  * 
  * Example:
  * 
- *  	myfs.copy("somewhere/foo.txt");
+ *     myfs.dupe("somewhere/foo.txt");
  * 
- *  	... will make "somewhere/foo copy.txt"
- *  	... will auto increment multiple copies:
+ * ... will duplicate the file and auto increment multiple copies (when called multiple times):
  * 
- * 		"somewhere/foo copy.txt"
- * 		"somewhere/foo copy 1.txt"
- * 		"somewhere/foo copy 2.txt"
- * 		"somewhere/foo copy 3.txt"
+ *     "somewhere/foo copy.txt"
+ *     "somewhere/foo copy 1.txt"
+ *     "somewhere/foo copy 2.txt"
+ *     "somewhere/foo copy 3.txt"
  * 
  * @method  dupe
  * @param	{string}	src 	- The source file path.
@@ -361,8 +360,7 @@ function copy( src, dest, binary ) {
 }
 
 /**
- * Ensures a file's parent folder exists so when we attempt to write, there's a folder ot write into.
- * The associated mkdir constructs the entire heirarchy as needed.
+ * Ensures a file's parent folder exists so when we attempt to write, there's a folder ot write into. The associated mkdir constructs the entire heirarchy as needed.
  * @method     ensureParentExists
  * @private
  * @param      {type}                src    - the path
@@ -474,7 +472,7 @@ function remove( src ) {
  * Checks to see if a file exists. Note this also checks if a folder of the same name exists too.
  * @method     exists
  * @private
- * @param      {type}    src    - The source file path.
+ * @param      {string}    src    - The source file path.
  * @return     {boolean}           - True if exists, false if no file nor folder exists.
  */
 function exists( src ) {
@@ -500,7 +498,7 @@ function rename( from, to ) {
 }
 
 /**
- * Creates or updates the timestamp on a specific file or folder.
+Creates or updates the timestamp on a specific file or folder.
 
 To specify that you want to touch a directory, include a trailing slash on the path, or set the isFolder argument to true, otherwise we assume your toughing a file.
 

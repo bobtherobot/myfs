@@ -15,18 +15,18 @@ if (typeof require !== 'undefined') {
 	module.exports = {
 
 		/**
-		 * @property {dirutils} du - access to the underlaying [directory utility](myfs.dirutil) class for access to additional methods that are not so common.
+		 * @property {dirutils} du - access to the underlaying directory utility class for access to additional methods that are not so common.
 		 */
 		du: du,
 
 		/**
-		 * @property {fileutils} fu - access to the underlaying [file utility](myfs.fileutil) class for access to additional methods that are not so common.
+		 * @property {fileutils} fu - access to the underlaying file utility class for access to additional methods that are not so common.
 		 */
 		fu: fu,
 
 
 		/**
-		 * @property {npath} path - access to the underlaying [path utility](myfs.npath) class for access to additional methods that are not so common.
+		 * @property {npath} path - access to the underlaying path utility class for access to additional methods that are not so common.
 		 */
 		path: path,
 
@@ -53,7 +53,6 @@ if (typeof require !== 'undefined') {
 		/**
 		 * Creates a folder at the specified location. The sub-folder heirarchy is constructed as needed. 
 		 * 
-		 * __Alias__ for [du.makedir](myfs.dirutils.makedir)
 		 * 
 		 * @method makedir
 		 * @param  {string}  destination
@@ -65,7 +64,6 @@ if (typeof require !== 'undefined') {
 		/**
 		 * Copies the entire folder's heirarchy folder from one location to another. If the other location doesn't exists, it will be constructed.
 		 *
-		 * __Alias__ for [du.copydir](myfs.dirutils.copydir)
 		 * 
 		 * @method cpdir
 		 *
@@ -79,12 +77,10 @@ if (typeof require !== 'undefined') {
 		/**
 		 * Recursively removes a folder and all of it's sub-folders as well.
 		 *
-		 * __Alias__ for [du.copydir](myfs.dirutils.removedir) 
-		 *
 		 * @method rmdir
 		 *
 		 * @param  {string}		who    	- The path to the folder
-		 * @param  {boolean}	dryRun 	- Prevents actual deletion, but still allows the return to return the list of items that "will" be deleted.
+		 * @param  {boolean}	[dryRun] 	- Prevents actual deletion, but still allows the return to return the list of items that "will" be deleted.
 		 *
 		 * @return {array} - An array of all the items that were deleted (or "will be" deleted if dryrun is true.
 		 */
@@ -92,63 +88,60 @@ if (typeof require !== 'undefined') {
 
 
 
-		/**
-		 * Read a folder and returns an object containing a "files" array and a "dirs" array with full system paths.
-		 *
-		 * 		{
-		 * 			files : [
-		 * 						"/path/to/file1.txt",
-		 * 						"/path/to/file2.txt",
-		 * 						"/path/to/file3.txt"
-		 * 					],
-		 * 			dirs : [
-		 * 						"/path/to/folder1",
-		 * 						"/path/to/folder2",
-		 * 						"/path/to/folder3"
-		 * 					]
-		 * 		}
-		 * 			
-		 * 						
-		 * 
-		 * __Alias__ for [du.copydir](myfs.dirutils.readdir)
-		 * 
-		 * @method list
-		 *
-		 * @param  {string}  	from      	- The path to the folder to read.
-		 * @param  {function}  	filter   	- A custom filter funciton should return boolean for inclusion. The function will be set arguments fo the following signature:
-		 * 
-		 *     filter( isFolder [boolean], file [URI string], stats [instance of Node's statSync] );
-		 *     
-		 *     // See Node's statSync : https://nodejs.org/api/fs.html#fs_class_fs_stats
-		 * 
-		 * @param  {boolean}  	recursive 	- Should we retrieve sub-folders too?
-		 * @param  {object}  	store     	- Used internally to store recursive findings.
-		 Note that you may also provide this argument and readdir will populate your
-		 existing files/folder list. But is recommended to leave this argument alone.
-		 *
-		 * @return {object} - An object containing a list of "files" and "folders" 
-		 (as properties of the returned list), where each is an array.
-		 * 
-		@example
-		 	var contents = readdir("/path/to/folder", null, true);
-		 	// yeids contents {
-			// 		files : [
-			// 					"/path/to/folder/1.foo",
-			// 					"/path/to/folder/2.bar",
-			// 					"/path/to/folder/3.png",
-			//					"/path/to/folder/sub1/1.foo",
-			// 					"/path/to/folder/sub2/2.bar",
-			// 					"/path/to/folder/sub3/3.png"
-			// 				],
-			// 		dirs : [
-			// 					"/path/to/folder/sub1",
-			// 					"/path/to/folder/sub2",
-			// 					"/path/to/folder/sub3"
-			// 
-			// 				]
-			// }
+/**
+Read a folder and returns an object containing a "files" array and a "dirs" array with full system paths.
 
-		 */
+    {
+        files : [
+            "/path/to/file1.txt",
+            "/path/to/file2.txt",
+            "/path/to/file3.txt"
+        ],
+        dirs : [
+            "/path/to/folder1",
+            "/path/to/folder2",
+            "/path/to/folder3"
+        ]
+    }
+
+
+
+@method list
+@param  {string} from - The path to the folder to read.
+@param  {function} [filter] - A custom filter funciton should return boolean (return TRUE to include, return FALSE to exclude). The function will be set arguments fo the following signature:
+
+    filter( isFolder [boolean], file [URI string], stats [instance of Node's statSync] );
+    
+See Node's [statSync](https://nodejs.org/api/fs.html#fs_class_fs_stats)
+
+@param  {boolean} [recursive] - Should we retrieve sub-folders too?
+@param  {object} [store] - Used internally to store recursive findings. Note that you may also provide this argument and list() will populate your existing files/folder list. But is recommended to leave this argument alone.
+
+@return {object} - An object containing an array of "files" and "dirs" (folders), where each is an array.
+
+@example
+    var contents = list("/path/to/folder", null, true);
+
+yeids contents as:
+
+    {
+        files : [
+            "/path/to/folder/1.foo",
+            "/path/to/folder/2.bar",
+            "/path/to/folder/3.png",
+            "/path/to/folder/sub1/1.foo",
+            "/path/to/folder/sub2/2.bar",
+            "/path/to/folder/sub3/3.png"
+        ],
+        dirs : [
+            "/path/to/folder/sub1",
+            "/path/to/folder/sub2",
+            "/path/to/folder/sub3"
+        ]
+    }
+
+    */
+
 		list: du.list,
 
 
@@ -158,54 +151,34 @@ if (typeof require !== 'undefined') {
 		ls: du.list,
 
 		/**
-		 
-		__Alias__ for [du.readExt](myfs.dirutils.readExt)
-
-		Collects files from a folder based on the specified extension (or
-		 extensions). Can be used to search recursively through all sub-folders, and can
-		 search multiple extensions.
-
-		 NOTE: Extension filtering is case-insensative, so files with both upper and lower-case extensions will be captured.
-
-		 Provided as shortcut for [readdir](#readdir) with your own extension-checking filter.
-
-		 * @method readExt
-		 *
-		 * @param  {string}			from 		- The path to search
-		 * @param  {string | array} [exts] 		- The extension to look for (e.g. "jpg"). To search for multiple extensions, use an array e.g. ["jpg", "png", "gif"]. 
-		 * @param  {boolean}		[recursive] - Find all matching files in all sub-folders.
-		 * @param  {function}		[filter] 	- A function to filter items on. The signature for this function's arguments is:
-		 - isFolder (boolean): Whether the item is a folder or not
-		 - file (string): The URI to the file
-		 - stats (object) : Info for the file such as time. See Node's [statSync](https://nodejs.org/api/fs.html#fs_class_fs_stats)
-		 - pathInfo (object) :  Since we're already parsing the path via [path.parse](path.parse), we're sending the results fo thsi object to you.
-		 *
-		 * @return {array} - The resulting array contains only files that mathc the
-		 specified extension(s).
+		 @method listExt - alias for [readExt](#readExt)
 		 */
 
 		listExt: du.readExt,
 
 		/**
 
-		 Collects files from a folder based on the specified extension (or
-		 extensions). Can be used to search recursively through all sub-folders, and can
-		 search multiple extensions.
+		 Collects files from a folder based on the specified extension (or extensions). Can be used to search recursively through all sub-folders, and can search multiple extensions.
 
 		 NOTE: Extension filtering is case-insensative, so files with both upper and lower-case extensions will be captured.
 
-		 Provided as shortcut for [readdir](#readdir) with your own extension-checking filter.
+		 Provided as shortcut for [list](#list) with your own extension-checking filter.
 
 		 * @method readExt
 		 *
 		 * @param  {string}			from 		- The path to search
-		 * @param  {string | array} [exts] 		- The extension to look for (e.g. "jpg"). To search for multiple extensions, use an array e.g. ["jpg", "png", "gif"]. 
+		 * @param  {string | array} [exts] 		- The extension to look for (e.g. "jpg"). Use:
+         * - a string for one extension only: "txt"
+         * - a comma delimited list: "jpg, png, bmp"
+         * - an array: ["jpg", "png", "gif"]
+         * 
+         * 
 		 * @param  {boolean}		[recursive] - Find all matching files in all sub-folders.
 		 * @param  {function}		[filter] 	- A function to filter items on. The signature for this function's arguments is:
-		 - isFolder (boolean): Whether the item is a folder or not
-		 - file (string): The URI to the file
-		 - stats (object) : Info for the file such as time. See Node's [statSync](https://nodejs.org/api/fs.html#fs_class_fs_stats)
-		 - pathInfo (object) :  Since we're already parsing the path via [path.parse](path.parse), we're sending the results fo thsi object to you.
+		 - __isFolder__ (boolean): Whether the item is a folder or not
+		 - __file__ (string): The URI to the file
+		 - __stats__ (object) : Info for the file such as time. See Node's [statSync](https://nodejs.org/api/fs.html#fs_class_fs_stats)
+		 - __pathInfo__ (object) :  Since we're already parsing the path via [parse](#parse), we're sending the results fo thsi object to you.
 		 *
 		 * @return {array} - The resulting array contains only files that mathc the
 		 specified extension(s).
@@ -216,8 +189,6 @@ if (typeof require !== 'undefined') {
 		/**
 		 * Recursively empties a folder of all it's contents (and all the sub-folder's contents), but leaves the source folder.
 		 *
-		 * __Alias__ for [du.empty](myfs.dirutils.empty)
-		 * 
 		 * @method empty
 		 *
 		 * @param  {string}   	who    - The source folder
@@ -231,13 +202,15 @@ if (typeof require !== 'undefined') {
 
 
 		/**
-		 * FYI: [dirUtils.exists](dirUtils.exists) only validates true on folder, if src is file and exists, will STILL return false. In other words, du.exists doesn't conduct a global "exists" (Note that fileUtils.exists does).
- 	 	 * @method isFolder alias for [exists](#exists)
+		 * Checks to see if provided path is a folder.
+ 	 	 * @method isFolder
+         * @param {string} path - the path to check
 		 */
 		isFolder : du.exists,
 		
 		/**
 	 	 * @method isDir alias for [isFolder](#isFolder)
+         * @param {string} path - the path to check
 		 */
 		isDir : du.exists,
 
@@ -254,26 +227,24 @@ if (typeof require !== 'undefined') {
 
 		/**
 		 * 
-		 * Checks to see if a file or folder exists. To validate either file or folder use [isFile](#isFile) or [isDir](isDir).
+		 * Checks to see if a file or folder exists. FYI: To validate either file or folder use [isFile](#isFile) or [isDir](#isDir).
 		 * 
 		 * @method     exists
 		 * @private
-		 * @param      {type}    src    - The source file path.
-		 * @return     {boolean}        - True if exists, false if no file nor folder exists.
+		 * @param      {string} src - The source file path.
+		 * @return     {boolean} - True if exists, false if no file nor folder exists.
 		 */
 
 		exists: fu.exists,
 
 		/**
-		 * @method  exist - alias for [exists](exists) (plural)
+		 * @method  exist - alias for [exists](#exists) (plural)
 		 */
 		exist: fu.exists,
 
 
 		/**
 		 * Reads the data out of a file.
-		 *
-		 * __Alias__ for [fu.read](myfs.fu.read)
 		 *
 		 * @method     read
 		 * @param      {string}    src    - The source file path.
@@ -292,7 +263,6 @@ if (typeof require !== 'undefined') {
 		/**
 		 * Saves text or binary data to a file. Overwrites entire file with provided data.
 		 *
-		 * __Alias__ for [fu.write](myfs.fu.write)
 		 *
 		 * @method     write
 		 * @param      {string}    src    - The source file path.
@@ -314,8 +284,6 @@ if (typeof require !== 'undefined') {
 		/**
 		 * Copies a file or folder from one location to another.
 		 *
-		 * __Alias__ for [fu.copy](myfs.fu.copy)
-		 *
 		 * @method     copy
 		 * @param      {string}    src     - The source file path.
 		 * @param      {string}    dest    - The destination to copy the source to.
@@ -324,60 +292,55 @@ if (typeof require !== 'undefined') {
 		copy: fu.copy,
 
 		/**
-		 * Duplicates a file "in place" by appending a "copy N" to the base file name.
+         * __Alias__ for [duplicate](#duplicate)
 		 * 
-		 * Example:
-		 * 
-		 *  	myfs.copy("somewhere/foo.txt");
-		 * 
-		 *  	... will make "somewhere/foo copy.txt"
-		 *  	... will auto increment multiple copies:
-		 * 
-		 * 		"somewhere/foo copy.txt"
-		 * 		"somewhere/foo copy 1.txt"
-		 * 		"somewhere/foo copy 2.txt"
-		 * 		"somewhere/foo copy 3.txt"
 		 * 
 		 * @method  dupe
-		 * @param	{string}	src 	- The source file path.
-		 * @returns	{string}	- The file path to the newly duplicated file.
+		 * @param	{string} src - The source file path.
+		 * @returns	{string} - The file path to the newly duplicated file.
 		 */
 
 		dupe: fu.dupe,
 
 		/**
 		 * Duplicates a file "in place" by appending a "copy N" to the base file name.
-		
-			__Alias__ for [fu.dupe](myfs.fu.dupe)
-			
-		 * @method     duplicate
-		 * @param	{string}	src 	- The source file path.
-		 * @returns	{string}	- The file path to the newly duplicated file.
+		 * 
+		 * Example:
+		 * 
+		 *     myfs.dupe("somewhere/foo.txt");
+		 * 
+		 * ... will duplicate the file and auto increment multiple copies (when called multiple times):
+		 * 
+		 *     "somewhere/foo copy.txt"
+		 *     "somewhere/foo copy 1.txt"
+		 *     "somewhere/foo copy 2.txt"
+		 *     "somewhere/foo copy 3.txt"
+		 *
+		 * @method duplicate
+		 * @param {string} src - The source file path.
+		 * @returns	{string} - The file path to the newly duplicated file.
 		 */
 
 		duplicate: fu.dupe,
 
 		/**
 		 * Deletes a file from the system.
-		
-			__Alias__ for [fu.remove](myfs.fu.remove)
-			
-		 * @method     remove
-		 * @param      {string}    src    - The source file path.
+		 * @method remove
+		 * @param {string} path - The source file path.
 		 */
 		remove: fu.remove,
 		
 		/**
-			__Alias__ for [remove](#remove)
-		 * @method     rm
-		 * @param      {string}    src    - The source file path.
+		 * Alias for [remove](#remove)
+		 * @method rm
+		 * @param {string} path - The source file path.
 		 */
 		rm: fu.remove,
 
 		/**
 		 * Moves (or renames) a file or folder.
 		 * 
-		 * __Alias__ for [rename](rename)
+		 * __Alias__ for [rename](#rename)
 		 * 
 		 * @method     move
 		 * @param      {string}    from    	- The source file path.
@@ -389,8 +352,6 @@ if (typeof require !== 'undefined') {
 		/**
 		 * Moves (or renames) a file or folder.
 		 * 
-		 * __Alias__ for [rename](rename)
-		 * 
 		 * @method     rename
 		 * @param      {string}    from    	- The source file path.
 		 * @param      {string}    to    	- The destination file path.
@@ -400,16 +361,17 @@ if (typeof require !== 'undefined') {
 
 		
 		/**
-		 * Validates if a file exists AND that it's not a folder. If the src is a folder, this method will yeil false.
+		 * Validates if a file exists AND that it's not a folder. If the src is a folder, this method will yeild false.
 		 * @method     isFile
 		 * @param      {string}    src     - The source file path.
 		 */
 		isFile: fu.isFile,
 
 		/**
-		 * Checks the extension against a list of known binary files.
 		 * 
-		 * NOTE: This is not a fail-safe evaluation -- only a fast check.
+         * Checks the extension against a list of known binary files.
+		 * 
+		 * NOTE: This is not a fail-safe evaluation -- only a fast check against a known list of binary file extensions (I hope I'm not stuck in 1984?).
 		 * 
 		 * @method     isBinary
 		 * @param      {string}    src     - The source file path.
@@ -455,12 +417,13 @@ if (typeof require !== 'undefined') {
 		name: path.name,
 
 		/**
-		 * 		npath.basename("/foo/bar/bob.txt") --> "bob.txt"
-		 *   	npath.basename("/foo/bar/bob.txt", ".txt") --> "bob"
+		 *     npath.basename("/foo/bar/bob.txt") --> "bob.txt"
+		 *     npath.basename("/foo/bar/bob.txt", ".txt") --> "bob" // default node behaviour
+		 *     npath.basename("/foo/bar/bob.txt", "txt") --> "bob" // ok without dot
 		 * 
-		 * @method basename
+		 * @method basename - Gets the file name from provided path. By default will include extension. If you don't want the extension
 		 * @param  {string} path - The full path
-		 * @param  {string} ext - Lops off the extension if it matches.
+		 * @param  {string} [ext] - Lops off the extension if it matches.
 		 * @return {string} - The last portion of a path, generally the "filename".
 		 */
 		basename: path.basename,
@@ -479,11 +442,11 @@ if (typeof require !== 'undefined') {
 		/**
 		 * Returns the path to the parent folder that the item resides within.
 		 * 	
-		 * 		npath.parent("/foo/bar/bob.txt") --> "/foo/bar"
-		 *   	npath.parent("/foo/sally/yoyo/boob") --> "/foo/sally/yoyo"
+		 *     npath.parent("/foo/bar/bob.txt") --> "/foo/bar"
+		 *     npath.parent("/foo/sally/yoyo/boob") --> "/foo/sally/yoyo"
 		 * 
 		 * @method parent
-		 * @param  {string} Vpath - The path to parse.
+		 * @param  {string} path - The path to parse.
 		 * @return {string} - The path to the file/folder.
 		 */
 
@@ -498,7 +461,7 @@ if (typeof require !== 'undefined') {
 		/**
 		 * Returns the bare, base extension (no dot).
 		 * @method ext
-		 * @param  {string} Vpath - The path to parse.
+		 * @param  {string} path - The path to parse.
 		 * @return {string} - The extension
 		 */
 		ext: path.ext, // alias
@@ -507,7 +470,7 @@ if (typeof require !== 'undefined') {
 		 * Determines if path is an absolute path.
 		 *
 		 * @method  isAbsolute
-		 * @param   {string} Vpath - The path to parse.
+		 * @param   {string} path - The path to parse.
 		 * @return  {Boolean}
 		 */
 		isAbsolute: path.isAbsolute,
@@ -524,28 +487,61 @@ if (typeof require !== 'undefined') {
 		 *   	npath.normalize("./foo/") --> "/current/working/dir/foo/"
 		 *
 		 * @method  normalize
-		 * @param   {string} Vpath - The path to parse.
+		 * @param   {string} path - The path to parse.
 		 * @return  {string}
 		 */
 		normalize: path.normalize,
 
 
 		/**
-		 * Normalizes slashes by converting double \\ to single \ and / to \\ or \\ tp / based on the current platform requirements.
+		 * Normalizes slashes by converting double slash to single slash adhering to the platform slash requirements.
 		 * 
 		 * @method clean
 		 *
-		 * @param  {string | array} arg
+		 * @param  {string | array} - The string to cleans. If array or object provided, will clean strings within there too, can also be multi-dimensional array or multi-dimensional object.
 		 *
 		 * @return {string}
-		 */
+         * 
+         * @example
+         * 
+         * string
+         * 
+         * ~~~
+         * clean("a\\b///c/d")
+         *      
+         * // yeilds "a/b/c/d"
+         * ~~~  
+         * 
+         * 
+         * object
+         * 
+         * ~~~
+         * clean({
+         *     a : "a//b/c\\d"
+         * })
+         *      
+         * // yeilds {a: "a/b/c/d"}
+         * ~~~
+         * 
+         * 
+         * array
+         * 
+         * ~~~ 
+         * clean([
+         *      "a//b/c\\d"
+         *      "x\\y\/z"
+         * ])
+         *      
+         * // yeilds ["a/b/c/d", "x/y/z"]
+         * ~~~
+        */
 		clean: path.clean,
 
 		/**
-		Extracts basic path and file parts.
+		Extracts basic path and file parts. The opposite of [format](#format). 
 
 		@method  parse
-		@param   {string}  Vpath - The path to parse.
+		@param   {string}  path - The path to parse.
 		@return  {object} - An object containing the following properties:
 
 			path.parse('/home/user/dir/file.txt')
@@ -589,12 +585,10 @@ if (typeof require !== 'undefined') {
 		relative: path.relative,
 
 		/**
-		 * The opposite of path.parse().
-		 *
-		 * Combines the elements of an object into a string. 
-		 *
-		 * Example:
-		 * 		
+		 * The opposite of [parse](#parse). Combines the elements of an object into a string. 
+         * 
+         * @example
+		 * ~~~
 		 * 		{
 		 * 			root : "/",
 		 * 			dir : "/home/user/dir",
@@ -602,15 +596,16 @@ if (typeof require !== 'undefined') {
 		 * 			ext : ".txt",
 		 * 			name : "file"
 		 * 		}
-		 * 		
-		 * 	... is converted to
+		 * ~~~
+         * 
+		 * ... is converted to
 		 *
 		 * 		/home/user/dir/file.txt
-		 * 		
-		 *
+         * 
 		 * @method  format
 		 * @param   {object}  obj  - The object containing some of the required keys to formulate a path.
-		 * @return  {type} - The string representaiton of the object.
+		 * @return  {type} - The string representation of the object.
+         * 
 		 */
 
 		format: path.format,
@@ -630,28 +625,29 @@ if (typeof require !== 'undefined') {
 
 
 		/**
-		 * Generates an absolute path based on the provided arguments.
+		 * Generates an __absolute path__ based on the provided arguments.
 		 *
-		 * Path construction occurs from right < to < left
+		 * Path construction occurs from left > to > right
 		 * 
 		 * 		resolve("/a", "b", "c"); // yields: "/a/b/c"
-		 *
-		 * If an absolute path is resolved during construction, the items to the left are ignored.
+         * 
+		 * If an absolute path is resolved during construction, by any of the arguments starting with a slash, the arguments to the left are ignored.
 		 *
 		 * 		resolve("a", "/b", "c"); // yields: "/b/c" ("a" is ignored)
 		 *
-		 * If an absolute path is not resolved after constructing all arguments, the CWD is inserted.
+		 * If an absolute path is not resolved after constructing all arguments, the CWD (Current Working Directory) is inserted so that a full absolute path can be returned.
 		 *
-		 * 		resolve("a", "b", "c"); // yields: "/current/working/dir/a/b/c"
+		 * 		resolve("a", "b", "c"); // yields: "/current/working/directory/a/b/c"
 		 *
 		 * Relative paths are automatically resolved:
 		 *
-		 * 		resolve("/a", "../b", "c"); // yields "/a/c"
+		 * 		resolve("/a", "../b", "c"); // yields "/b/c"
 		 * 
 		 * 
 		 *
 		 * @method	resolve
-		 * @param	{string} [path...] - All arguments are evaluated as paths for construction.
+		 * @param	{string} path - All arguments are evaluated as paths for construction.
+		 * @param	{string} [...] - Any numer of arguments can be included to construct/build the path.
 		 * @return 	{string}
 		 */
 		resolve: path.resolve,
@@ -661,19 +657,21 @@ if (typeof require !== 'undefined') {
 		 *
 		 * Example of how PATH appears on Windows:
 		 * 
-		 * 		'C:\Windows\system32;C:\Windows;C:\Program Files\node\'
+		 *      'C:\Windows\system32;C:\Windows;C:\Program Files\node\'
 		 * 
 		 * Example of how PATH appears on POSIX systems (Mac Unix):
 		 * 
-		 * 		'/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin'
+		 *      '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin'
 		 *
 		 * Read the PATH with Node:
 		 * 
-		 * 		console.log(process.env.PATH)
-		 * 
-		 * 		Windows 	= ;
-		 *   	POSIX	= : 
-		 *
+         * ~~~
+		 * console.log(process.env.PATH)
+         * 
+         * // Windows  = ; (semicolon)
+		 * // POSIX	  = : (colon)
+		 * ~~~
+         * 
 		 * @property {string} delimiter
 		 */
 		delimiter: path.delimiter,
@@ -693,7 +691,7 @@ if (typeof require !== 'undefined') {
 		removeTrailingSlash: path.removeTrailingSlash,
 
 		/**
-		 * Adds a trailing slash from path (if doesn't exist).
+		 * Adds a trailing slash to provided path when/if slash doesn't already exist.
 		 *
 		 * @method  addSlash
 		 * @param   {string} path
@@ -710,7 +708,6 @@ if (typeof require !== 'undefined') {
 		/**
 		 * Changes a path's extension. Can apply to a basic filename or a full path.
 		 * @method     swapExt
-		 * @private
 		 * @param      {string}     path      The original path.
 		 * @param      {string}     newExt    The new extenion to use.
 		 * @return     {sring}               The new path.
@@ -721,11 +718,10 @@ if (typeof require !== 'undefined') {
 		/**
 		 * Returns current working directory.
 		 * @method     cwd
-		 * @private
-		 * @param      {string}    tack    Appends or (resolves)[resolve] additional context to the current working directory as needed.
+		 * @param      {string}    tack    Appends or [resolves](#resolve) additional context to the current working directory as needed.
 		 *
-		 *		var example = myfs.cwd("../"); // will back up one folder
-		 *		var example = myfs.cwd("foo/bar"); // will tack onto the end /system/path/to/foo/bar
+		 *     var example = myfs.cwd("../"); // will back up one folder
+		 *     var example = myfs.cwd("foo/bar"); // will tack onto the end /system/path/to/foo/bar
 		 *		
 		 * @return     {string}            The resolved path.
 		 */

@@ -25,8 +25,7 @@ var path = require('./npath');
 //    |------------------------------> fs.mkdir ("/foo/bar/qwer") <-- waiting
 
 /**
- * Creates a folder at the specified location. The sub-folder heirarchy is
- constructed as needed.
+Creates a folder at the specified location. The sub-folder heirarchy is constructed as needed.
 
  For example if a folder exists here:
 
@@ -60,9 +59,7 @@ function makedir(dest) {
  */
 
 /**
- Collects files from a folder based on the specified extension (or
- extensions). Can be used to search recursively through all sub-folders, and can
- search multiple extensions.
+ Collects files from a folder based on the specified extension (or extensions). Can be used to search recursively through all sub-folders, and can search multiple extensions.
 
  NOTE: Extension filtering is case-insensative, so files with both upper and lower-case extensions will be captured.
 
@@ -85,38 +82,26 @@ function makedir(dest) {
 
 function readExt(from, exts, recursive, filter){
 
-	for(var i=0; i<exts.length; i++){
-		exts[i] = exts[i].toLowerCase();
-	}
+    if(typeof exts == "string") {
+        exts = exts.split(",");
+    }
 
-	var extFilter;
-	if( Array.isArray(exts) ){
-		extFilter = function(isFolder, file, stats){
-			if( isFolder ){
-				return false;
-			} else {
-				var item = path.parse( file );
-				var ok = exts.indexOf(item.ext.substr(1).toLowerCase()) > -1;
-				if(filter && ok){
-					ok = filter(isFolder, file, stats, item);
-				}
-				return ok;
-			}
-		}
-	} else {
-		extFilter = function(isFolder, file, stats){
-			if( isFolder ){
-				return false;
-			} else {
-				var item = path.parse( file );
-				var ok = item.ext.substr(1).toLowerCase() == exts;
-				if(filter && ok){
-					ok = filter(isFolder, file, stats, item);
-				}
-				return ok;
-			}
-		}
-	}
+    for(var i=0; i<exts.length; i++){
+        exts[i] = exts[i].trim().toLowerCase();
+    }
+
+	var extFilter = function(isFolder, file, stats){
+        if( isFolder ){
+            return false;
+        } else {
+            var item = path.parse( file );
+            var ok = exts.indexOf(item.ext.substr(1).toLowerCase()) > -1;
+            if(filter && ok){
+                ok = filter(isFolder, file, stats, item);
+            }
+            return ok;
+        }
+    };
 
 	var obj = readdir(from, extFilter, recursive);
 
@@ -124,46 +109,44 @@ function readExt(from, exts, recursive, filter){
 }
 
 /**
- * Read a folder and returns an object containing all of the files and
- folder in arrays.
+Read a folder and returns an object containing all of the files and folder in arrays.
 
- * @method readdir
- * @private
- * @param  {string}  	from      	- The path to the folder to read.
- * @param  {function}  	filter   	- A custom filter funciton should return boolean for inclusion. The function will be set arguments fo the following signature:
-		 * 
-		 *     filter( isFolder [boolean], file [URI string], stats [instance of Node's statSync] );
-		 *     
-		 *     // See Node's statSync : https://nodejs.org/api/fs.html#fs_class_fs_stats
-		 * 
- * @param  {boolean}  	recursive 	- Should we retrieve sub-folders too?
- * @param  {object}  	store     	- Used internally to store recursive findings.
- Note that you may also provide this argument and readdir will populate your
- existing files/folder list. But is recommended to leave this argument alone.
- *
- * @return {object} - An object containing a list of "files" and "folders" 
- (as properties of the returned list), where each is an array.
- * 
+@method readdir
+@private
+@param  {string}  	from      	- The path to the folder to read.
+@param  {function}  	filter   	- A custom filter funciton should return boolean for inclusion. The function will be set arguments fo the following signature:
+
+    filter( isFolder [boolean], file [URI string], stats [instance of Node's statSync] );
+    
+    // See Node's statSync : https://nodejs.org/api/fs.html#fs_class_fs_stats
+
+@param  {boolean}  	recursive 	- Should we retrieve sub-folders too?
+@param  {object}  	store     	- Used internally to store recursive findings. Note that you may also provide this argument and readdir will populate your existing files/folder list. But is recommended to leave this argument alone.
+
+@return {object} - An object containing a list of "files" and "folders" (as properties of the returned list), where each is an array.
+
 @example
- 	var contents = readdir("/path/to/folder", null, true);
- 	// yeids contents {
-	// 		files : [
-	// 					"/path/to/folder/1.foo",
-	// 					"/path/to/folder/2.bar",
-	// 					"/path/to/folder/3.png",
-	//					"/path/to/folder/sub1/1.foo",
-	// 					"/path/to/folder/sub2/2.bar",
-	// 					"/path/to/folder/sub3/3.png"
-	// 				],
-	// 		dirs : [
-	// 					"/path/to/folder/sub1",
-	// 					"/path/to/folder/sub2",
-	// 					"/path/to/folder/sub3"
-	// 
-	// 				]
-	// }
 
- */
+    var contents = readdir("/path/to/folder", null, true);
+    
+    yeilds contents {
+    		files : [
+    					"/path/to/folder/1.foo",
+    					"/path/to/folder/2.bar",
+    					"/path/to/folder/3.png",
+    					"/path/to/folder/sub1/1.foo",
+    					"/path/to/folder/sub2/2.bar",
+    					"/path/to/folder/sub3/3.png"
+    				],
+    		dirs : [
+    					"/path/to/folder/sub1",
+    					"/path/to/folder/sub2",
+    					"/path/to/folder/sub3"
+    
+    				]
+    }
+
+*/
 
 function readdir(from, filter, recursive, store){
 	if( ! store ){
