@@ -16,37 +16,17 @@ Load myfs (choose one!)
     // Load myfs for ESM (native import):
     import myfs from "myfs";
 
-Open / Read 
+Here are a few examples of what you can do. There are many more features and examples than are shown in this readme. Please refer to the [full documentation here](https://documon.net/projects/myfs/).
+
+__Open / Read__
 
 	var myfile = myfs.open("/path/to/folder/file1.txt"); // Yeilds the text contents of the file.
-	var myfile = myfs.read("/path/to/folder/file1.txt"); // same as above
 
-Save / Write
+__Save / Write__
 
 	var myfile = myfs.save("/path/to/folder/file1.txt", data); // Wites the text data to the file.
-	var myfile = myfs.write("/path/to/folder/file1.txt", data); // same as above
 
-Listing files from a folder. NOTE: This can list recursively too.
-
-	var mylist = myfs.list("/path/to/folder");
-	//
-	// Yeilds
-	//
-	// {
-	// 		files : [
-	// 					"/path/to/folder/file1.txt",
-	// 					"/path/to/folder/file2.txt",
-	// 					"/path/to/folder/file3.txt"
-	// 					],
-	// 		dirs : [
-	// 					"/path/to/folder/folder1",
-	// 					"/path/to/folder/folder2",
-	// 					"/path/to/folder/folder3"
-	// 					]
-	// 	}
-
-
-Listing only files of X extension.
+__Listing only files of X extension__ (NOTE: This can list recursively too.)
 
 	var mylist = myfs.listExt("/path/to/folder", "txt");
 	//
@@ -57,18 +37,6 @@ Listing only files of X extension.
 	// 			"/path/to/folder/file3.txt"
 	// 		]
 
-
-Listing files of X & Y extension
-
-	var mylist = myfs.listExt("/path/to/folder", "txt,foo");
-	//
-	// Yeilds
-	// 		[
-	// 			"/path/to/folder/file1.txt",
-	// 			"/path/to/folder/file2.txt",
-	// 			"/path/to/folder/bob1.foo",
-	// 			"/path/to/folder/bob2.foo"
-	// 		]
 
 
 ## Documentation
