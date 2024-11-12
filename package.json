@@ -1,13 +1,19 @@
 {
-  "name": "myfs",
-  "version": "1.0.22",
-  "description": "My simplifeid methods for manipulating file and folders syncronously.",
-  "keywords": "fs, file, folder, dir, directory, path, easy, simple, basic, touch",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bobtherobot/myfs"
-  },
-  "author": "Michael Gieson <mgieson@plaino.com> (http://www.gieson.com)",
-  "license": "MIT"
+    "name": "myfs",
+    "version": "1.0.22",
+    "description": "My simplifeid methods for manipulating file and folders syncronously.",
+    "keywords": "fs, file, folder, dir, directory, path, easy, simple, basic, touch",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bobtherobot/myfs"
+    },
+    "exports": {
+        ".": {
+            "require": "./index.js",
+            "import": "./esm/index.mjs"
+        }
+    },
+    "author": "Michael Gieson <mgieson@plaino.com> (http://www.gieson.com)",
+    "license": "MIT"
 }

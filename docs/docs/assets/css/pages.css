@@ -1,0 +1,533 @@
+/*
+Part of Documon.
+Copyright (c) Michael Gieson.
+www.documon.net
+ */
+/*
+
+337ab7  bootstrap blue
+A3A3A3  light grey
+5B5B5B  medium grey 
+FF00E3	hot pink
+
+*/
+html,
+body {
+  width: 100%;
+  height: 100%;
+  /*font-family: "Inconsolata", "Monoco", "Lucida Grande", "Courier New", Courier, monospace;
+    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'FiraSans';*/
+  font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.3em;
+  margin: 0;
+  padding: 0;
+  color: #333333;
+}
+a {
+  color: #4100C5;
+}
+a:link {
+  /*text-decoration: underline;
+	text-decoration-color : #CCCCCC;*/
+  text-decoration: none;
+  border-bottom: 1px solid #ECECEC;
+}
+a:hover {
+  color: #D200FE;
+  /*text-decoration-color : #D200FE; */
+  border-bottom-color: #D200FE;
+}
+hr {
+  background-color: #ECECEC;
+  /* find border-bottom elsewhere */
+  height: 1px;
+  border: 0;
+}
+p {
+  margin: 0 0 1em 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 2em;
+  font-weight: 200;
+}
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.7em;
+}
+h3 {
+  font-size: 1.5em;
+}
+h4 {
+  font-size: 1.4em;
+}
+h5 {
+  font-size: 1.3em;
+}
+h6 {
+  font-size: 1.2em;
+}
+ul,
+li,
+table tr {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  padding-left: 1em;
+  list-style: none;
+  /*text-indent: -1.5em;*/
+}
+ul li {
+  padding-left: 1em;
+}
+ul li:before {
+  content: '\2022  ';
+}
+table {
+  border-collapse: collapse;
+  border: none;
+  outline: none;
+}
+/* head cells */
+table th {
+  white-space: nowrap;
+  background-color: #EFEFEF;
+  border: 1px solid #ECECEC;
+  padding: 0 10px 0 10px;
+  text-align: left;
+}
+/* prevents evenly spaced cells (horizontially), and makes the last cell the largest */
+/* pick alternating or underline */
+/* underline */
+table tr {
+  border-bottom: solid 1px #ECECEC;
+}
+/* alternating 
+table tr:nth-child(even) {
+   background-color: #F9F9F9;
+}
+*/
+table tr:last-child {
+  border-bottom: none;
+}
+pre {
+  white-space: pre !important;
+  /* over-rule prettyprint */
+  overflow-x: auto;
+  font-size: 11.5px;
+  line-height: 1.3em;
+  padding: 1em;
+  font-family: Monaco, Consolas, "Andale Mono WT", "Lucida Console", "Lucida Sans Typewriter", "DejaVu SansMono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+}
+/* give some space after (couldn't just add to pre because prettyprint is consuming css? )*/
+pre + p,
+pre + span,
+pre + div {
+  margin-top: 1em;
+}
+dl {
+  margin: 1em 1em 1em 2em;
+}
+dl dt {
+  font-weight: bold;
+}
+dl dd {
+  margin-left: 2em;
+  margin-bottom: 1em;
+}
+blockquote {
+  border: 1px solid #f3d97b;
+  background-color: #fffdeb;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 0 0 10px 0;
+}
+blockquote p {
+  margin-bottom: 0px;
+}
+/* -----------------------------------------------------------------
+Page
+----------------------------------------------------------------- */
+.page {
+  padding: 0 20px 200px 20px;
+  /* white space please */
+  min-height: 100%;
+  margin-bottom: -100px;
+  /* equal to footer height */
+}
+.page:after {
+  content: "";
+  display: block;
+}
+.footer,
+.page:after {
+  height: 100px;
+  /* equal to page margin-bottom */
+}
+.footer {
+  border-top: 1px solid #000000;
+  background: #444;
+  width: 100%;
+  padding-top: 40px;
+  text-align: center;
+  font-size: 12px;
+  color: #949494;
+}
+.footer a {
+  color: #949494;
+}
+/* -----------------------------------------------------------------
+Headings -- for each kind of section
+----------------------------------------------------------------- */
+.part-properties > .heading-part,
+.part-events > .heading-part,
+.part-methods > .heading-part {
+  /*
+	background-color : #FDFDFD;
+	border-radius : 10px;
+	*/
+  font-size: 2em;
+  border-bottom: 1px solid #ECECEC;
+  padding: 0 0 0.3em 0;
+  margin-top: 1em;
+  color: #909090;
+  font-weight: bold;
+}
+.heading-returns,
+.heading-seeAlso,
+.source-file,
+.heading-example,
+.part-parameters > .heading-part {
+  margin: 2em 0 2em 0;
+  /* background-color: #F6FBFF; */
+  padding: 2px;
+  /* border-radius: 3px; */
+  color: #a2a2a2;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+.heading-returns,
+.heading-seeAlso,
+.heading-example {
+  margin: 2em 0 0em 0;
+}
+.heading-example {
+  margin: 2em 0 1em -2em;
+}
+/* method parameter that is an object with sub.props */
+.part-parameters > .heading-part {
+  display: block;
+}
+.part-parameters > .member {
+  display: block;
+  padding-top: 0;
+}
+/*
+.heading-example {
+	font-weight : bold;
+}
+
+.example-block {
+    margin-bottom: 2em;
+}
+*/
+/* "Extendish" stuff (e.g. inherits, extends, requires, etc) */
+.meta-block {
+  color: #B5B5B5;
+  margin-bottom: 20px;
+}
+.meta-block a {
+  color: #B5B5B5;
+  border-bottom: 0;
+}
+.meta-block-klass {
+  color: #3294DF;
+}
+.meta-line:before {
+  font-size: 1em;
+  line-height: 1.6em;
+  content: "\21B3  ";
+  /* \25BA */
+}
+/* Each meta-line and meta-lable has the kind in the className definition (e.g. "meta-line extends" */
+/* The word "inherits, extnds", etc */
+.meta-label {
+  display: inline-block;
+  min-width: 70px;
+}
+/* The super class (e.g. the link) */
+/* -----------------------------------------------------------------
+The "main" class definition
+----------------------------------------------------------------- */
+.main-method {
+  background-color: #FBFBFB;
+  border: 1px solid #ECECEC;
+  border-radius: 10px;
+}
+.main-method {
+  margin-top: 30px;
+  padding: 0 20px 20px 20px;
+}
+/* Make the "class" constructor large liek a heading */
+.main-method > .part-methods > .member > .member-name {
+  margin-bottom: 0.5em;
+  margin-top: 0.8em;
+  font-size: 2em;
+}
+.main-method > .part-methods > .member .member-description {
+  padding-left: 0;
+}
+/* A wrapper for all the sub-parts (Properties, Events, Methods) */
+/* wrapper divs for each kind of member */
+.part-properties .member-name {
+  color: #000000;
+}
+.part-events .member-name {
+  color: #936A17;
+}
+.part-methods .member-name {
+  color: #000000;
+  /*  1E67D7  146BC5  0391F9  B847E4  633372  B847E4 */
+}
+.part-parameters .member-name {
+  color: #0F6DC3;
+}
+.method-arguments {
+  color: #0F6DC3;
+}
+.method-arg-optional {
+  color: #5080B5;
+}
+.method-arg-optional:before {
+  content: '[';
+}
+.method-arg-optional:after {
+  content: ']';
+}
+/* Uuuuhhh, couldn't get first-child 
+.method-arg-optional:first-child:before {
+	content : '[';
+}
+.method-arg-optional:last-child:after {
+	content : ']';
+}
+*/
+/* ----------------------------------------------------------------- 
+members
+- include properties, methods and events 
+----------------------------------------------------------------- */
+.member {
+  padding-left: 20px;
+  padding-top: 1.5em;
+  /*padding-bottom: 2em;*/
+  border-bottom: 1px solid #ECECEC;
+}
+/* remove the line from the last one */
+.part-methods > .member:last-child,
+.member:last-child {
+  border-bottom: 0;
+}
+/* A little seperation in the table cells is nicer */
+/* Gives some space between methods. Attemptign to do this on regular .member whacks out a lot of thigns singe .member is used extensively everywhere. */
+.part-methods > .member {
+  padding-bottom: 40px;
+  border-bottom: 1px solid #ECECEC;
+}
+/*
+.member table td p:first-of-type, .member table td div {
+	display : inline;
+}
+
+
+.member table td p:last-of-type {
+	padding : 0;
+	margin : 0;
+}
+*/
+/* mem-des > mem-des covers "Returns", which is the second mem-des */
+.member > .member-description,
+.member-description > .member-description {
+  padding-left: 20px;
+}
+/* the function shown as it would appear in code */
+.member-name {
+  /*font-family: "Inconsolata", "Monoco", "Lucida Grande", "Courier New", Courier, monospace;*/
+  font-weight: bold;
+  color: #337ab7;
+  margin-bottom: 1em;
+  white-space: nowrap;
+  /*border-bottom : 1px solid @light-grey-line;*/
+}
+.member-name a {
+  text-decoration: none;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.member-name-left {
+  float: left;
+}
+.member-name-right {
+  float: right;
+}
+.member-file,
+.member-line-number {
+  font-size: 10px;
+  color: #8C8C8C;
+}
+.member-line-number:before {
+  font-weight: bold;
+  content: ' - line: ';
+}
+.member-file {
+  font-size: 10px;
+  color: #8C8C8C;
+}
+.param-description {
+  border-bottom: 1px solid #ECECEC;
+  margin-bottom: 1em;
+}
+.param-meta {
+  display: block;
+}
+.member-block-group {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0px 10px;
+  width: 100%;
+}
+.member-block-group .member-block {
+  display: contents;
+  /* Allows each row to have its own content */
+}
+.member-block-group .member-block .member-block-left {
+  grid-column: 1;
+  white-space: nowrap;
+}
+.member-block-group .member-block .member-block-center {
+  grid-column: 2;
+}
+/* -----------------------------------------------------------------
+flags + type (a span inside the member-name)
+- Used to identify variable definitions such as static, public, private, protected, inheretence.
+----------------------------------------------------------------- */
+.flag,
+.type {
+  display: inline;
+  margin-right: 0.5em;
+  text-align: center;
+}
+.flag,
+.type {
+  color: #FFFFFF;
+  font-weight: bold;
+  border-radius: 2px;
+  font-size: 9.5px;
+  text-transform: uppercase;
+  padding: 1px 3px 1px 3px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /*font-family: "Inconsolata", "Monoco", "Lucida Grande", "Courier New", Courier, monospace;*/
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+/* magic to get the box to center vertically */
+.flag:after,
+.type:after {
+  content: ' ';
+  font-size: 5px;
+  line-height: 0;
+}
+.type {
+  background: #8e8e8e;
+}
+.type a {
+  color: #FF8AFC;
+}
+.constructor,
+.final,
+.public,
+.private,
+.protected,
+.deprecated {
+  /* trbl */
+  background-color: #a7a7a7;
+}
+.constructor {
+  background-color: #3C72DF;
+}
+.private {
+  background-color: #5D5D5D;
+}
+.protected {
+  background-color: #FC9417;
+}
+.deprecated {
+  background-color: #D18ED2;
+}
+.inherited {
+  background-color: #AAAAAA;
+}
+.readonly {
+  background-color: #B0702D;
+}
+.optional {
+  background-color: #bc740e;
+}
+/* A div that shows a property's default value */
+.default-value {
+  color: #CA7923;
+  white-space: nowrap;
+}
+.default-value:before {
+  color: #b6b6b6;
+  content: 'default = ';
+}
+.list-filepath {
+  color: #b6b6b6;
+  white-space: nowrap;
+}
+/* -----------------------------------------------------------------
+See Also
+- Used to identify variable definitions such as static, public, private, protected, inheretence.
+----------------------------------------------------------------- */
+.seeAlsoBlock ul {
+  padding: 0.5em 0 0 1em;
+}
+.seeAlsoBlock li {
+  list-style: none;
+  white-space: nowrap;
+}
+/* markdown processor wraps links in a paragraph, and automatically inserts a dash in the li */
+.seeAlsoBlock p {
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0 0 0 5px;
+}
+/* ---------------------
+More Pages
+------------------------ */
+.more {
+  padding-top: 20px;
+}
+.more h1,
+.more h2,
+.more h3,
+.more h4,
+.more h5,
+.more h6 {
+  font-weight: 600;
+}

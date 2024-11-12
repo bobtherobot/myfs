@@ -13,7 +13,7 @@
  */
 
 var fs = require('fs');
-var path = require('./npath');
+var path = require('./npath.js');
 
 // 1. makedir ("/foo/bar/qwer")  <-- not exist
 //    |    2. makedir ("/foo/bar") <-- not exist
@@ -95,7 +95,7 @@ function readExt(from, exts, recursive, filter){
             return false;
         } else {
             var item = path.parse( file );
-            var ok = exts.indexOf(item.ext.substr(1).toLowerCase()) > -1;
+            var ok = exts.indexOf(item.ext.substring(1).toLowerCase()) > -1;
             if(filter && ok){
                 ok = filter(isFolder, file, stats, item);
             }
@@ -381,21 +381,33 @@ function rename( from, to ) {
 * @method     isDir
 */
 
+// alias's
+const make = makedir;
+const mkdir = makedir;
+const copy = copydir;
+const cp = copydir;
+const read = readdir;
+const list = readdir;
+const listExt = readExt;
+const empty = emptydir;
+const remove = removedir;
+const isFolder = exists;
+const isDir = exists;
 
-module.exports = {
-	make : makedir,
-	mkdir : makedir, 	// alias
-	copy : copydir,
-	cp : copydir,		// alias
-	read : readdir,
+module.exports  = {
+	make : make,
+	mkdir : mkdir,
+	copy : copy,
+	cp : cp,
+	read : read,
 	readExt : readExt,
-	list : readdir,		// alias
-	listExt : readExt,	// alias
-	empty : emptydir,
-	remove : removedir,
+	list : list,
+	listExt : listExt,
+	empty : empty,
+	remove : remove,
 	exists : exists,
-	isFolder : exists, // alias (only validates true on folder, if src is file and exists, will still retrun false)
-	isDir : exists, // alias
+	isFolder : isFolder,
+	isDir : isDir,
 	rename : rename
 }
 

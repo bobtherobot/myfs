@@ -11,9 +11,11 @@ run
 cd /Volumes/Drives/projects/myfs
 node ./test.js
 
+node ./esm/test.mjs
+
  */
 
-var myfs = require('./index');
+var myfs = require('./index.js');
 
 var testDir = myfs.join(__dirname, "test");
 var testFile1 = "test1.txt";
@@ -30,8 +32,13 @@ function wait(ms){
 	while(waitTill > new Date()){
 
 	}
+    return
 }
 
+// property: slash
+if( myfs.slash != "/" ){
+	failed("fail: slash");
+}
 
 // makedir
 myfs.mkdir(testDir);
@@ -40,20 +47,31 @@ if( ! myfs.exists(testDir) ){
 	failed("fail: save");
 }
 
-// join
+// join 1
 var path1 = myfs.join(testDir, testFile1);
 var fileContents = "this is a test";
 
-// save
+// save 1
 myfs.save(path1, fileContents);
 
 if( ! myfs.exists(path1) ){
-	failed("fail: save");
+	failed("fail: save and join 1");
+}
+
+// join 2 (as array)
+var path1 = myfs.join([testDir, testFile1]);
+var fileContents = "this is a test";
+
+// save 2
+myfs.save(path1, fileContents);
+
+if( ! myfs.exists(path1) ){
+	failed("fail: save and join 2 (as array)");
 }
 
 // open
 var contents = myfs.open(path1);
-if( contents != fileContents ){
+if( contents && contents != fileContents ){
 	failed("fail: open");
 }
 

@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		
+    	<title>opn</title>
+		<meta name="description" content="A cross-platform way to launch files from Node.">
+
+		 <!-- Normalize -->
+	    <link rel="stylesheet" href="assets/vendor/normalize.css">
+
+	    
+	    <!-- prettify -->
+	    <link rel="stylesheet" href="assets/vendor/prettify/codamike.css">
+	    
+		<script src="assets/vendor/prettify/prettify.js"></script>
+
+		<!-- Documon Pages Info. (Used by various classes to identify this page.) -->
+		<script>
+	    var pageCtx = {
+	    	id : "myfs.opn",
+	    	name: "opn"
+	    }
+	    </script>
+
+	    <!-- theme 
+	    <link rel="stylesheet" href="assets/fonts/Fira_Sans/FiraSans.css">
+	    <link rel="stylesheet" href="assets/fonts/Inconsolata/inconsolata.css">
+	    -->
+	    <link rel="stylesheet" href="assets/css/pages.css">
+	    <script src="assets/js/documon/Storage.js"></script>
+	    <script src="assets/js/documon/Access.js"></script>
+	    <script src="assets/js/documon/Pages.js"></script>
+
+	    
+	    
+
+	</head>
+
+
+
+	<body>
+
+		<div class="page">
+			
+
+			
+
+			<div class="main-method">
+				
+							<a name="methods"></a>
+		            		<div class="part-methods">
+					            
+					            <a name="myfs.opn"></a><a name="opn"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		opn (<span class="method-arguments">target</span>, <span class="method-arguments method-arg-optional">opts</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">opn.js</span>
+						    		<span class="member-line-number">49</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                <div class="meta-block meta-block-klass">
+				<div class="meta-line"><span class="meta-label" >xpath</span> <span class="meta-target">myfs.opn<span></div>
+				<div class="meta-line"><span class="meta-label" >file</span> <span class="meta-target">opn.js<span></div>
+			</div>
+								<p>A cross-platform way to launch files from Node.</p>
+<p>Direct copy of:
+npmjs:     https://www.npmjs.com/package/opn
+github: https://github.com/sindresorhus/opn</p>
+<h3 id="usage">USAGE</h3>
+<pre><code>const opn = require('opn');
+
+// Opens the image in the default image viewer
+opn('unicorn.png').then(() =&gt; {
+    // image viewer closed
+});
+
+// Opens the url in the default browser
+opn('http://sindresorhus.com');
+
+// Specify the app to open in
+opn('http://sindresorhus.com', {app: 'firefox'});
+
+// Specify app arguments
+opn('http://sindresorhus.com', {app: ['google chrome', '--incognito']});
+</code></pre>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">target</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The URI to open.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">opts</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">object</span>
+				
+                                        <span class="flag optional">optional</span>
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>Options</p>
+       						 </div>
+       			
+						        	
+						        	
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">opts properties</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">app</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">array</span>
+				
+                                        <span class="flag optional">optional</span>
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>Specify the app to open the target with, or an array with the app and app arguments.</p>
+<p>The app name is platform dependent. Don't hard code it in reusable modules. For example, Chrome is google chrome on macOS, google-chrome on Linux and chrome on Windows.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">wait</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">boolean</span>
+				
+                                        <span class="flag optional">optional</span>
+                                        
+							<span class="default-value">
+      				 		 	true
+       						 </span>
+       			
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>Wait for the opened app to exit before fulfilling the promise. If false it's fulfilled immediately when opening the app.</p>
+<p>On Windows you have to explicitly specify an app for it to be able to wait.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">promise</span>
+					</div>
+			      	     	<div class="member"></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				
+				            </div>
+						
+						
+			</div>
+
+		    <div class="parts">
+		        
+		        
+		        
+		    </div>
+		
+		</div>
+
+		<div class="footer">Generated by <a href="http://www.documon.net" target="_blank">Documon</a></div>
+
+	</body>
+
+
+</html>

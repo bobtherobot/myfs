@@ -1,0 +1,16 @@
+/* ---------------------- layout ---------------------- */
+/* the splitter line + background color if desired wider splitter */
+.layout-splitter-row,.layout-splitter-col{position:absolute;background-color:#cccccc;z-index:800}
+.layout-splitter-row{height:1px;width:100%}
+.layout-splitter-col{width:1px;height:100%}
+/* The line that divides panels */
+.layout-splitter-line-col{position:absolute;/* background-color: rgba(0, 255, 39, 0.11); */cursor:col-resize;left:0px;width:6px;height:100%}
+.layout-splitter-line-row{position:absolute;/* background-color: rgba(0, 255, 39, 0.11); */cursor:row-resize;top:0px;height:6px;width:100%}
+/* #3c9dff medium blue */
+.layout-splitter-handle-col,.layout-splitter-handle-row{position:relative;background-color:#cccccc;cursor:pointer;font-size:8px;/* the triangle is a font ! */color:#FFFFFF;-webkit-font-smoothing:subpixel-antialiased;font-smoothing:subpixel-antialiased;/*border-radius : 3px;*/pointer-events:inherit}
+.layout-splitter-handle-col{top:45%;/* quassi centering */width:10px;height:30px;text-align:left;line-height:3.9em/* centers vertically */}
+.layout-splitter-handle-col.opened:after{content:'\25C4'/* bullet : \2981   arrow : \25C2*/}
+.layout-splitter-handle-col.closed:after{content:'\25BA'/* bullet : \2981   arrow < : \25C2   arrow > : \25C2*/}
+.layout-splitter-handle-row{margin-left:auto;/* centering */margin-right:auto;/* centering */top:0px;width:30px;height:10px;text-align:center;line-height:9px}
+.layout-splitter-handle-row.opened:after{content:'\25B2'/* arrow /\ : \25B2   arrow \/ : \25BC */}
+.layout-splitter-handle-row.closed:after{content:'\25BC'/* arrow /\ : \25B2   arrow \/ : \25BC */}

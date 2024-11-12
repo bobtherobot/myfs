@@ -1,0 +1,118 @@
+#mizer_codeOutput{
+	
+	
+	
+	/*
+	margin: 0;
+	padding : 0;
+	
+	width: 200px;
+	max-height: 600px;
+	overflow : auto;
+	*/
+}
+
+pre {
+	tab-size : 2;
+	background-color: #F6F6F6;
+	border-radius:3px;
+	border: 1px solid #E1E1E1;
+	display: inline-block;
+	font-family: "Inconsolata", "Monoco", "Lucida Grande", "Courier New", Courier, monospace;
+	/*font-family: "Lucida Console", Monaco, monospace;*/
+}
+
+pre.highlight {
+	background-color: "#FF0000"; 
+}
+
+/* Coda scheme ported from TextMate to google prettify */
+pre.prettyprint {
+	/*width : auto;*/
+	/*position:relative;*/
+	width:97%;
+	overflow:auto;
+	margin : 0;
+	padding : 0 0.5em 0.5em 0.3em;
+	/* padding : 3px 0 3px 3px; 10px; */
+	white-space: pre-wrap;
+}
+pre .nocode { 
+	background-color: none; 
+	color: #000 
+}
+
+pre .str { color: #060;} 	/* string */
+pre .kwd { color: #03F;} 	/* keyword */
+pre .com { color: #999;} 	/* comment */
+pre .typ { color: #000;} 	/* type */
+pre .lit { color: #000;} 	/* literal */
+pre .pun { color: #000;}    /* punctuation */
+pre .pln { color: #000;}    /* plaintext */
+pre .tag { color: #861681;} /* html/xml tag */
+pre .atn { color: #C5680C;} /* attribute name */
+pre .atv { color: #221AA6;} /* attribute value */
+pre .dec { color: #1F00FF;} /* decimal */
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+	margin : 0;
+	padding: 0 0 0 2em;
+	background: #F7F7F7;
+	color : #bbbbbb;
+}
+
+o.linenums {
+	counter-reset:number;
+	list-style-type : none;
+	margin-bottom : 10px;
+}
+/*
+.lineNumbers {
+	background-color: #FF0000; 
+}
+
+ol.linenums li:before {
+                content: " " counter(level1) " ";
+                counter-increment: level1;
+				background: #e8e8e8;
+				margin-left : 0;
+				margin-right : 10px;
+            }
+
+
+ol.linenums li:before {
+	counter-increment : number;
+	content:counter(number)"\a0";
+	text-align : right;
+	display:inline-block;
+	width : 2.5em;
+	border-right : 1px solid #eee;
+}    */
+
+ol.linenums li span:first-child {
+	padding-left : 0.5em;
+}
+
+ol.linenums > :first-child { 
+	padding-top: 4px !important;
+}
+ol.linenums > :last-child {
+	/*padding-bottom: 40px !important;*/
+}
+
+/* IE indents via margin-left 
+li.L0,li.L1,li.L2,li.L3,li.L4,li.L5,li.L6,li.L7,li.L8,li.L9 {
+	background: #FFFFFF;
+	position : relative;
+	padding: 0 3em 0 8px;
+	margin : 0;
+}
+*/
+
+/* Alternate shading for lines 
+li.L1,li.L3,li.L5,li.L7,li.L9 {
+	background: #FFFFFF;
+}
+*/
+

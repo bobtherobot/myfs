@@ -1,0 +1,1665 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		
+    	<title>fileutils</title>
+		<meta name="description" content="A collection of basic, common and simplified syncronous file methods.">
+
+		 <!-- Normalize -->
+	    <link rel="stylesheet" href="assets/vendor/normalize.css">
+
+	    
+	    <!-- prettify -->
+	    <link rel="stylesheet" href="assets/vendor/prettify/codamike.css">
+	    
+		<script src="assets/vendor/prettify/prettify.js"></script>
+
+		<!-- Documon Pages Info. (Used by various classes to identify this page.) -->
+		<script>
+	    var pageCtx = {
+	    	id : "myfs.fileutils",
+	    	name: "fileutils"
+	    }
+	    </script>
+
+	    <!-- theme 
+	    <link rel="stylesheet" href="assets/fonts/Fira_Sans/FiraSans.css">
+	    <link rel="stylesheet" href="assets/fonts/Inconsolata/inconsolata.css">
+	    -->
+	    <link rel="stylesheet" href="assets/css/pages.css">
+	    <script src="assets/js/documon/Storage.js"></script>
+	    <script src="assets/js/documon/Access.js"></script>
+	    <script src="assets/js/documon/Pages.js"></script>
+
+	    
+	    
+
+	</head>
+
+
+
+	<body>
+
+		<div class="page">
+			
+
+			
+
+			<div class="main-method">
+				
+							<a name="methods"></a>
+		            		<div class="part-methods">
+					            
+					            <a name="myfs.fileutils"></a><a name="fileutils"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		fileutils () 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">fileutils.js</span>
+						    		<span class="member-line-number">13</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                <div class="meta-block meta-block-klass">
+				<div class="meta-line"><span class="meta-label" >xpath</span> <span class="meta-target">myfs.fileutils<span></div>
+				<div class="meta-line"><span class="meta-label" >file</span> <span class="meta-target">fileutils.js<span></div>
+			</div>
+								<p>A collection of basic, common and simplified syncronous file methods.</p>
+
+					
+								
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				
+				            </div>
+						
+						
+			</div>
+
+		    <div class="parts">
+		        
+		        
+		        
+							<a name="methods"></a>
+		            		<div class="part-methods">
+					            <div class="heading-part">Methods</div>
+					            <a name="myfs.fileutils.copy"></a><a name="copy"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		copy (<span class="method-arguments">src</span>, <span class="method-arguments">dest</span>, <span class="method-arguments method-arg-optional">binary</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">fileutils.js</span>
+						    		<span class="member-line-number">336</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Copies a file from one location to another.</p>
+<p>Will also copy a folder if the provided src is a folder. But this is just a convieneince, I recommend using dir.copy or dir.cp directly.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">src</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The source file path.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">dest</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The destination to copy the source to.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">binary</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">boolean</span>
+				
+                                        <span class="flag optional">optional</span>
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>When not set, we'll see if the file extension matches a binary file type. This is not a fail-safe evaluation, so we recommend manually setting this value (if you know).</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.fileutils.cp"></a><a name="cp"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		cp () 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">fileutils.js</span>
+						    		<span class="member-line-number">550</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Alias for <a href="#copy">copy</a></p>
+
+					
+								
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.fileutils.dupe"></a><a name="dupe"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		dupe (<span class="method-arguments">src</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">fileutils.js</span>
+						    		<span class="member-line-number">305</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Duplicates a file "in place" by appending a "copy N" to the base file name.</p>
+<p>Example:</p>
+<pre><code>myfs.dupe("somewhere/foo.txt");
+</code></pre>
+<p>… will duplicate the file and auto increment multiple copies (when called multiple times):</p>
+<pre><code>"somewhere/foo copy.txt"
+"somewhere/foo copy 1.txt"
+"somewhere/foo copy 2.txt"
+"somewhere/foo copy 3.txt"
+</code></pre>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">src</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The source file path.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"><p>The file path to the newly duplicated file.</p></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.fileutils.ensureParentExists"></a><a name="ensureParentExists"></a>
+
+						<div class="member" data-access="private" >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		ensureParentExists (<span class="method-arguments">src</span>) 
+                                    <span class="flag private">private</span>  <!-- public private protected -->
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">fileutils.js</span>
+						    		<span class="member-line-number">367</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Ensures a file's parent folder exists so when we attempt to write, there's a folder ot write into. The associated mkdir constructs the entire heirarchy as needed.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">src</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">type</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>the path</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.fileutils.exists"></a><a name="exists"></a>
+
+						<div class="member" data-access="private" >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		exists (<span class="method-arguments">src</span>) 
+                                    <span class="flag private">private</span>  <!-- public private protected -->
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">fileutils.js</span>
+						    		<span class="member-line-number">485</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Checks to see if a file exists. Note this also checks if a folder of the same name exists too.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">src</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The source file path.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">boolean</span>
+					</div>
+			      	     	<div class="member"><p>True if exists, false if no file nor folder exists.</p></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.fileutils.isBinary"></a><a name="isBinary"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		isBinary (<span class="method-arguments">src</span>, <span class="method-arguments method-arg-optional">manual</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">fileutils.js</span>
+						    		<span class="member-line-number">280</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Checks the extension against a list of known binary files.</p>
+<p>NOTE: This is not a fail-safe evaluation -- only a fast check.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">src</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The source file path.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">manual</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">boolean</span>
+				
+                                        <span class="flag optional">optional</span>
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>Used interally to see if the user actually set a value.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.fileutils.isFile"></a><a name="isFile"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		isFile (<span class="method-arguments">src</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">fileutils.js</span>
+						    		<span class="member-line-number">380</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Validates if a file exists AND that it's not a folder. If the src is a folder, this method will yeil false.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">src</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The source file path.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.fileutils.move"></a><a name="move"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		move () 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">fileutils.js</span>
+						    		<span class="member-line-number">566</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Alias for <a href="#rename">rename</a></p>
+
+					
+								
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.fileutils.Open"></a><a name="Open"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		Open (<span class="method-arguments">src</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">fileutils.js</span>
+						    		<span class="member-line-number">409</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Reads the entire file as a string. NOTE: This is an alias for <a href="#read">read</a>.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">src</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The source file path.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"><p>description description</p></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.fileutils.open"></a><a name="open"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		open () 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">fileutils.js</span>
+						    		<span class="member-line-number">556</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Alias for <a href="#read">read</a></p>
+
+					
+								
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.fileutils.read"></a><a name="read"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		read (<span class="method-arguments">src</span>, <span class="method-arguments method-arg-optional">binary</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">fileutils.js</span>
+						    		<span class="member-line-number">418</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Reads the entire file as a string.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">src</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The source file path.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">binary</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">boolean</span>
+				
+                                        <span class="flag optional">optional</span>
+                                        
+							<span class="default-value">
+      				 		 	false
+       						 </span>
+       			
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>Is this a binary file? (We assume it's a text file.)</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.fileutils.remove"></a><a name="remove"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		remove (<span class="method-arguments">src</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">fileutils.js</span>
+						    		<span class="member-line-number">466</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Deletes a file or folder from the system.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">src</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The source file path.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.fileutils.rename"></a><a name="rename"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		rename (<span class="method-arguments">from</span>, <span class="method-arguments">to</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">fileutils.js</span>
+						    		<span class="member-line-number">495</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Renames (or moves) a file or folder.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">from</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The source file path.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">to</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The destination file path.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.fileutils.save"></a><a name="save"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		save (<span class="method-arguments">src</span>, <span class="method-arguments">data</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">fileutils.js</span>
+						    		<span class="member-line-number">435</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Saves text data to a file. Overwrites entire file with provided data. NOTE:  This is an alias for <a href="#write">write</a>.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">src</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The source file path.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">data</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The text data to save.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.fileutils.save"></a><a name="save"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		save () 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">fileutils.js</span>
+						    		<span class="member-line-number">561</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Alias for <a href="#write">write</a></p>
+
+					
+								
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.fileutils.touch"></a><a name="touch"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		touch (<span class="method-arguments">path</span>, <span class="method-arguments">isFolder</span>, <span class="method-arguments method-arg-optional">date</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">fileutils.js</span>
+						    		<span class="member-line-number">518</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Creates or updates the timestamp on a specific file or folder.</p>
+<p>To specify that you want to touch a directory, include a trailing slash on the path, or set the isFolder argument to true, otherwise we assume your toughing a file.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">path</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The file or folder path.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">isFolder</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">boolean</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>Whether your trying to touch a folder. A trailing slash on the path is assume isFolder=true</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">date</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">Date</span>
+				
+                                        <span class="flag optional">optional</span>
+                                        
+							<span class="default-value">
+      				 		 	now
+       						 </span>
+       			
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>To specify a specific date, use a Date object, otherwise time "now" is used.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.fileutils.write"></a><a name="write"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		write (<span class="method-arguments">src</span>, <span class="method-arguments">data</span>, <span class="method-arguments method-arg-optional">binary</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">fileutils.js</span>
+						    		<span class="member-line-number">444</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Saves text data to a file. Overwrites entire file with provided data.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">src</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The source file path.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">data</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The text data to save.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">binary</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string|boolean</span>
+				
+                                        <span class="flag optional">optional</span>
+                                        
+							<span class="default-value">
+      				 		 	false
+       						 </span>
+       			
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>Is this a binary file? (We assume it's a text file.) Honors the string "binary" or just use a boolean. If you use a string, only "binary" is recognized, anything other than "binary" will default down to "UTF-8".</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				
+				            </div>
+						
+						
+		    </div>
+		
+		</div>
+
+		<div class="footer">Generated by <a href="http://www.documon.net" target="_blank">Documon</a></div>
+
+	</body>
+
+
+</html>

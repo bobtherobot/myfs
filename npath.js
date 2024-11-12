@@ -44,10 +44,9 @@ var sep = path.sep;
  *
  * @property {string} delimiter
  */
-var delimiter = path.sep == "/" ? ":" : ";";
+var delimiter = sep == "/" ? ":" : ";";
 
 //sep = "/"; //delimiter == ";" ? sep + "\\" : sep;
-
 
 /**
  * Normalizes slashes by converting double \\ to single \ and / to \\ or \\ tp / based on the current platform requirements.
@@ -113,13 +112,22 @@ function clean(arg){
 
 
 /**
- * 		npath.basename("/foo/bar/bob.txt") --> "bob.txt"
- *   	npath.basename("/foo/bar/bob.txt", ".txt") --> "bob"
+ * 
+ * Returns the filename (with or without extension) from the provided path string.
+ * 
+ * Same as node's built-in [path.basename](https://nodejs.org/api/path.html#pathbasenamepath), with the helper of appending a "." if second argument does not include a dot.
+ * 
+ * 		myfs.basename("/foo/bar/bob.txt") --> "bob.txt"
+ *   	myfs.basename("/foo/bar/bob.txt", ".txt") --> "bob"
+ * 
+ * Helper to tack on "." if missing
+ * 
+ *      myfs.basename("/foo/bar/bob.txt", "txt") --> "bob"
  * 
  * @method basename
  * @param  {string} path - The full path
  * @param  {string} ext - Lops off the extension if it matches.
- * @return {string} - The last portion of a path, generally the "filename".
+ * @return {string} - The last portion of a path, generally the "filename.txt".
  */
 function basename(Vpath, Vext){
     if(Vext){
@@ -150,10 +158,11 @@ function name(Vpath){
  * 
  * @method dirname
  * @param  {string} Vpath - The path to parse.
+ * @param  {boolean} [addTrailingSlash=false] - Add a trailing slass to the result.
  * @return {string} - The path to the file/folder.
  */
-function dirname(Vpath){
-	return clean( path.dirname( clean(Vpath) ) );
+function dirname(Vpath, addTrailingSlash){
+	return clean( path.dirname( clean(Vpath) ) ) + (addTrailingSlash ? sep : "");
 }
 
 /**
@@ -283,25 +292,33 @@ function relative(Vfrom, Vto){
  * The opposite of path.parse().
  *
  * Combines the elements of an object into a string. 
+ * 
+ * Passthrough to nodejs's "format" method. See [nodejs docs](https://nodejs.org/api/path.html#pathformatpathobject) for additional examples and details.
+ * 
+ * One addition we do is [clean](#clean) the results.
  *
- * Example:
- * 		
- * 		{
+ * 
+ * @method  format
+ * @param   {object}  obj  - The object containing some of the required keys to formulate a path.
+ * @param   {object}  [obj.dir]  - The directory path.
+ * @param   {object}  [obj.root]  - Used when "dir" is not provided.
+ * @param   {object}  [obj.base]  - The file name with ext.
+ * @param   {object}  [obj.name]  - Name and ext are use when "base" not provided.
+ * @param   {object}  [obj.ext]  - Name and ext are use when "base" not provided.
+ * @return  {type} - The string representaiton of the object.
+ * @see [join](#join) (array-based alternative)
+ * @see [nodejs docs for "format"](https://nodejs.org/api/path.html#pathformatpathobject)
+ * @example
+ *  
+ * 		var foo = myfs.format({
  * 			root : "/",
  * 			dir : "/home/user/dir",
  * 			base : "file.txt",
  * 			ext : ".txt",
  * 			name : "file"
- * 		}
- * 		
- * 	... is converted to
- *
- * 		/home/user/dir/file.txt
- * 		
- *
- * @method  format
- * @param   {object}  obj  - The object containing some of the required keys to formulate a path.
- * @return  {type} - The string representaiton of the object.
+ * 		})
+ * 		// foo = /home/user/dir/file.txt
+ * 	
  */
 function format(obj){
 	return clean( path.format( clean( obj ) ) );
@@ -314,31 +331,48 @@ function format(obj){
  * 		path.join('/foo', 'bar', 'baz/asdf', 'quux', '..')
  * 		Returns: '/foo/bar/baz/asdf'
  * 
+ * Passthrough to nodejs's "join" method. See [nodejs docs](https://nodejs.org/api/path.html#pathjoinpaths) for additional examples and details.
+ * 
+ * One addition we do is [clean](#clean) the results.
+ * 
  *
  * @method  join
- * @param	{string} paths... - All arguments are evaluated as paths for construction
- * @return  {type}  description
+ * @param	{string|array} paths - __If string__: Send in as many arguments as you want as strings, each will be a segment in the result. __If array__: Each item in the array will be a segment of the result. 
+ * 
+ * Interally we use the native nodejs path.join feaure -- so review that for details on the rules for combining what is provided.
+ * @see [nodejs doc for "join"](https://nodejs.org/api/path.html#pathjoinpaths)
  */
-function join(){
-	var args = Array.prototype.slice.call(arguments);
+function join(first){
+	var args
+    if(Array.isArray(first)){
+        args = first;
+    } else {
+        args = Array.prototype.slice.call(arguments);
+    }
 	return clean( path.join.apply(null, clean(args) ) );
 }
 
 
 /**
+ * Same as Node's path.resolve, with the additional helper so that provided arguments are cleaned.
+ * 
+ * See: [node.path.resolve](https://nodejs.org/api/path.html#pathresolvepaths)
+ * 
  * Generates an absolute path based on the provided arguments.
+ * 
+ * When ANY argument begins with a slash, (e.g. "/b"), it is assumed that is the root that should be resolved, and arguments that exist to the left of that argument will get ignored.
  *
- * Path construction occurs from right < to < left
+ * If an absolute path is not resolved after constructing all arguments, the CWD is inserted.
+ *
+ * 		resolve("a", "b", "c"); // yields: "/current/working/dir/a/b/c"
+ *
+ * Agin, path construction occurs from right < to < left
  * 
  * 		resolve("/a", "b", "c"); // yields: "/a/b/c"
  *
  * If an absolute path is resolved during construction, the items to the left are ignored.
  *
  * 		resolve("a", "/b", "c"); // yields: "/b/c" ("a" is ignored)
- *
- * If an absolute path is not resolved after constructing all arguments, the CWD is inserted.
- *
- * 		resolve("a", "b", "c"); // yields: "/current/working/dir/a/b/c"
  *
  * Relative paths are automatically resolved:
  *
@@ -364,8 +398,8 @@ function resolve(){
  */
 function removeTrailingSlash(dpath){
 	dpath = clean(dpath);
-	if( dpath.substr(-sep.length) == sep ){
-		dpath = dpath.substr(0, dpath.length - 1);
+	if( dpath.slice(-sep.length) == sep ){
+		dpath = dpath.slice(0, dpath.length - 1);
 	}
 	return dpath;
 }
@@ -382,7 +416,7 @@ function addTrailingSlash(dpath){
 		return sep;
 	}
 	dpath = clean(dpath);
-	if( dpath.substr(-sep.length) != sep ){
+	if( dpath.slice(-sep.length) != sep ){
 		dpath = dpath + sep;
 	}
 	if(!dpath) {
@@ -395,12 +429,26 @@ function addTrailingSlash(dpath){
  * Returns current working directory.
  * @method     cwd
  * @private
- * @param      {string}    tack    Appends or (resolves)[resolve] additional context to the current working directory as needed.
- *
- *		var example = myfs.cwd("../"); // will back up one folder
- *		var example = myfs.cwd("foo/bar"); // will tack onto the end /system/path/to/foo/bar
+ * @param      {string}    [tack]    Optionally appends or (resolves)[resolve] additional context to the current working directory as needed.
  *		
  * @return     {string}            The resolved path.
+ * @example
+ * 
+ *      // Asuming current working directory is: 
+ *      //   /my/current/working/folder
+ * 
+ *      var foo = myfs.cwd();
+ *      // foo = /my/current/working/folder
+ *	    // gets the current working directory
+ *
+ *      var example = myfs.cwd("../");
+ *      // foo = /my/current/working
+ *	    // will back up to "working" directory
+ *
+ * 		var example = myfs.cwd("foo/bar"); 
+ *      // will tack onto the end /my/working/folder/foo/bar
+ * 
+ * 
  */
 function cwd(tack){
 	var cwd = process.cwd()
@@ -426,23 +474,26 @@ function swapExt(path, newExt){
 	return Apath.join(".") + "." + newExt;
 }
 
+// alias's
+
+const base = name;
+const filename = basename;
+const dir = dirname;
+const parent = dirname;
+const posix = path.posix;
+const win32 = path.win32;
 
 module.exports = {
 	clean 		: clean,
 	name		: name,
-	base		: name, // alias
 	basename 	: basename,
-	filename 	: basename, // alias
 	dirname 	: dirname,
-	dir 		: dirname, // alias
-	parent 		: dirname, // alias
 	extname 	: extname,
 	ext 		: ext,
 	isAbsolute 	: isAbsolute,
 	normalize 	: normalize,
 	parse 		: parse,
 	relative 	: relative,
-
 	format 		: format,
 	join 		: join,
 	resolve 	: resolve,
@@ -450,11 +501,17 @@ module.exports = {
 	delimiter 	: delimiter,
 	sep 		: sep, // provide what node says is slash, but interally, we always force forard slash "/"
 
-	win32 		: path.win32, 	// leave as is
-	posix 		: path.posix,	// leave as is
+	win32 		: win32, 	// leave as is
+	posix 		: posix,	// leave as is
 
 	removeTrailingSlash : removeTrailingSlash,
 	addTrailingSlash : addTrailingSlash,
 	swapExt : swapExt,
-	cwd : cwd
+	cwd : cwd,
+
+    // alias's
+    base        : base,
+    filename    : filename,
+    dir         : dir,
+    parent      : parent
 };

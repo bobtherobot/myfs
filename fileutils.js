@@ -12,8 +12,8 @@
  * @package myfs
  */
 var fs = require( 'fs' );
-var path = require( './npath' );
-var du = require( './dirutils' );
+var path = require( './npath.js' );
+var du = require( './dirutils.js' );
 
 var binaryExt = [
 	"3dm",
@@ -460,12 +460,20 @@ function write( src, data, binary ) {
 }
 
 /**
- * Deletes a file from the system.
+ * Deletes a file or folder from the system.
  * @method     remove
  * @param      {string}    src    - The source file path.
  */
 function remove( src ) {
-	fs.unlinkSync( src );
+    fs.unlinkSync( src );
+
+    // // might be a little dangerous and/or too expensive?
+    // if(du.exists(src)){
+    //     du.removedir(src); // can use du.remove, but du.remove is just an alias.
+    // } else {
+    //     fs.unlinkSync( src );
+    // }
+  
 }
 
 /**
@@ -515,7 +523,7 @@ function touch( path, isFolder, date ) {
 	const stamp = parseInt(new Date(date || Date.now()).getTime() / 1000);
 
 	if( typeof isFolder === 'undefined'){
-		isFolder = (path.substr(-1) == sep);
+		isFolder = (path.slice(-1) == sep);
 	}
 
 	if( exists(path) ) {
@@ -557,20 +565,30 @@ function touch( path, isFolder, date ) {
  * @method     move
  */
 
+
+// alias's
+const cp = copy;
+const open = read;
+const save = write;
+const move = rename;
+const duplicate = dupe;
+
 module.exports = {
-	cp: copy, // alias
 	copy: copy,
 	read: read,
-	open: read, // alias
 	write: write,
-	save: write, // alias
 	remove: remove,
 	exists: exists,
 	rename: rename,
-	move: rename, // alias
 	isFile : isFile,
 	touch : touch,
 	dupe : dupe,
-	duplicate : dupe, // alias
-	isBinary : isBinary
+	isBinary : isBinary,
+
+    // alias's
+    cp : cp,
+    open : open,
+    save : save,
+    move : move,
+    duplicate : duplicate
 }

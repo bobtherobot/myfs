@@ -1,0 +1,2088 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		
+    	<title>npath</title>
+		<meta name="description" content="A drop-in replacement for path, that provides cross-playform normalization. Easing the development of cross-platform modules.">
+
+		 <!-- Normalize -->
+	    <link rel="stylesheet" href="assets/vendor/normalize.css">
+
+	    
+	    <!-- prettify -->
+	    <link rel="stylesheet" href="assets/vendor/prettify/codamike.css">
+	    
+		<script src="assets/vendor/prettify/prettify.js"></script>
+
+		<!-- Documon Pages Info. (Used by various classes to identify this page.) -->
+		<script>
+	    var pageCtx = {
+	    	id : "myfs.npath",
+	    	name: "npath"
+	    }
+	    </script>
+
+	    <!-- theme 
+	    <link rel="stylesheet" href="assets/fonts/Fira_Sans/FiraSans.css">
+	    <link rel="stylesheet" href="assets/fonts/Inconsolata/inconsolata.css">
+	    -->
+	    <link rel="stylesheet" href="assets/css/pages.css">
+	    <script src="assets/js/documon/Storage.js"></script>
+	    <script src="assets/js/documon/Access.js"></script>
+	    <script src="assets/js/documon/Pages.js"></script>
+
+	    
+	    
+
+	</head>
+
+
+
+	<body>
+
+		<div class="page">
+			
+
+			
+
+			<div class="main-method">
+				
+							<a name="methods"></a>
+		            		<div class="part-methods">
+					            
+					            <a name="myfs.npath"></a><a name="npath"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		npath () 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">npath.js</span>
+						    		<span class="member-line-number">16</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                <div class="meta-block meta-block-klass">
+				<div class="meta-line"><span class="meta-label" >xpath</span> <span class="meta-target">myfs.npath<span></div>
+				<div class="meta-line"><span class="meta-label" >file</span> <span class="meta-target">npath.js<span></div>
+			</div>
+								<p>A drop-in replacement for path, that provides cross-playform normalization. Easing the development of cross-platform modules.</p>
+<p>Essentially what we're doing is pre-processing all methods with a path normalization -- always enforcing forward slashes.</p>
+
+					
+								
+
+							    
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				
+				            </div>
+						
+						
+			</div>
+
+		    <div class="parts">
+		        <a name="properties"></a>
+			    	<div class="part-properties">
+				    	
+				    	<div class="heading-part">Properties</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    <a name="myfs.npath.delimiter"></a><a name="delimiter"></a>
+                                    <span class="member-name">delimiter</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                <span class="member-file">npath.js</span><span class="member-line-number" title="npath.js">46</span>
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>Platform environment PATH delimiter.</p>
+<p>Example of how PATH appears on Windows:</p>
+<pre><code>    'C:\Windows\system32;C:\Windows;C:\Program Files\node\'
+</code></pre>
+<p>Example of how PATH appears on POSIX systems (Mac Unix):</p>
+<pre><code>    '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin'
+</code></pre>
+<p>Read the PATH with Node:</p>
+<pre><code>    console.log(process.env.PATH)
+
+    Windows     = ;
+  POSIX   = : 
+</code></pre>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    <a name="myfs.npath.sep"></a><a name="sep"></a>
+                                    <span class="member-name">sep</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                <span class="member-file">npath.js</span><span class="member-line-number" title="npath.js">23</span>
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The kind of seperator used in paths. Windows = \  or POSIX    = /</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+		        
+		        
+							<a name="methods"></a>
+		            		<div class="part-methods">
+					            <div class="heading-part">Methods</div>
+					            <a name="myfs.npath.addTrailingSlash"></a><a name="addTrailingSlash"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		addTrailingSlash (<span class="method-arguments">path</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">npath.js</span>
+						    		<span class="member-line-number">413</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Adds a trailing slash from path (if doesn't exist).</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">path</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>path</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.npath.basename"></a><a name="basename"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		basename (<span class="method-arguments">path</span>, <span class="method-arguments">ext</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">npath.js</span>
+						    		<span class="member-line-number">131</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Returns the filename (with or without extension) from the provided path string.</p>
+<p>Same as node's built-in <a href="https://nodejs.org/api/path.html#pathbasenamepath">path.basename</a>, with the helper of appending a "." if second argument does not include a dot.</p>
+<pre><code>    myfs.basename("/foo/bar/bob.txt") --&gt; "bob.txt"
+  myfs.basename("/foo/bar/bob.txt", ".txt") --&gt; "bob"
+</code></pre>
+<p>Helper to tack on "." if missing</p>
+<pre><code> myfs.basename("/foo/bar/bob.txt", "txt") --&gt; "bob"
+</code></pre>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">path</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The full path</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">ext</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>Lops off the extension if it matches.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"><p>The last portion of a path, generally the "filename.txt".</p></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.npath.clean"></a><a name="clean"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		clean (<span class="method-arguments">arg</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">npath.js</span>
+						    		<span class="member-line-number">59</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Normalizes slashes by converting double \ to single \ and / to \ or \ tp / based on the current platform requirements.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">arg</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string | array</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>arg</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.npath.cwd"></a><a name="cwd"></a>
+
+						<div class="member" data-access="private" >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		cwd (<span class="method-arguments method-arg-optional">tack</span>) 
+                                    <span class="flag private">private</span>  <!-- public private protected -->
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">npath.js</span>
+						    		<span class="member-line-number">452</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Returns current working directory.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">tack</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        <span class="flag optional">optional</span>
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>Optionally appends or (resolves)[resolve] additional context to the current working directory as needed.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"><p>The resolved path.</p></div>
+				
+
+					
+								<div class="member">
+			<div class="heading-example">Example</div>
+			<div class="example-block">
+	    		<pre><code> // Asuming current working directory is: 
+ //   /my/current/working/folder
+
+ var foo = myfs.cwd();
+ // foo = /my/current/working/folder
+    // gets the current working directory
+
+ var example = myfs.cwd("../");
+ // foo = /my/current/working
+    // will back up to "working" directory
+
+    var example = myfs.cwd("foo/bar"); 
+ // will tack onto the end /my/working/folder/foo/bar
+</code></pre>
+	        </div>
+	    </div>
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.npath.dirname"></a><a name="dirname"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		dirname (<span class="method-arguments">Vpath</span>, <span class="method-arguments method-arg-optional">addTrailingSlash</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">npath.js</span>
+						    		<span class="member-line-number">163</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Returns the path to the parent folder that the item resides within.</p>
+<pre><code>    npath.dirname("/foo/bar/bob.txt") --&gt; "/foo/bar"
+  npath.dirname("/foo/sally/yoyo/boob") --&gt; "/foo/sally/yoyo"
+</code></pre>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">Vpath</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The path to parse.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">addTrailingSlash</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">boolean</span>
+				
+                                        <span class="flag optional">optional</span>
+                                        
+							<span class="default-value">
+      				 		 	false
+       						 </span>
+       			
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>Add a trailing slass to the result.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"><p>The path to the file/folder.</p></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.npath.ext"></a><a name="ext"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		ext (<span class="method-arguments">Vpath</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">npath.js</span>
+						    		<span class="member-line-number">189</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Just the bare, base extension (no dot)</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">Vpath</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The path to parse.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"><p>The extension</p></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.npath.extname"></a><a name="extname"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		extname (<span class="method-arguments">Vpath</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">npath.js</span>
+						    		<span class="member-line-number">177</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Yes, this includes the dot.</p>
+<pre><code>    npath.extname("/foo/bar/bob.txt") --&gt; ".txt"
+  npath.extname("/foo/sally/yoyo/boob") --&gt; ""
+</code></pre>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">Vpath</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The path to parse.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"><p>The extension (if exists), including the dot.</p></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.npath.format"></a><a name="format"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		format (<span class="method-arguments">obj</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">npath.js</span>
+						    		<span class="member-line-number">322</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>The opposite of path.parse().</p>
+<p>Combines the elements of an object into a string. </p>
+<p>Passthrough to nodejs's "format" method. See <a href="https://nodejs.org/api/path.html#pathformatpathobject">nodejs docs</a> for additional examples and details.</p>
+<p>One addition we do is <a href="#clean">clean</a> the results.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">obj</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">object</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The object containing some of the required keys to formulate a path.</p>
+       						 </div>
+       			
+						        	
+						        	
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">obj properties</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">dir</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">object</span>
+				
+                                        <span class="flag optional">optional</span>
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The directory path.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">root</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">object</span>
+				
+                                        <span class="flag optional">optional</span>
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>Used when "dir" is not provided.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">base</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">object</span>
+				
+                                        <span class="flag optional">optional</span>
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The file name with ext.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">name</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">object</span>
+				
+                                        <span class="flag optional">optional</span>
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>Name and ext are use when "base" not provided.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">ext</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">object</span>
+				
+                                        <span class="flag optional">optional</span>
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>Name and ext are use when "base" not provided.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">type</span>
+					</div>
+			      	     	<div class="member"><p>The string representaiton of the object.</p></div>
+				
+
+					
+								<div class="member">
+			<div class="heading-example">Example</div>
+			<div class="example-block">
+	    		<pre><code>    var foo = myfs.format({
+        root : "/",
+        dir : "/home/user/dir",
+        base : "file.txt",
+        ext : ".txt",
+        name : "file"
+    })
+    // foo = /home/user/dir/file.txt
+</code></pre>
+	        </div>
+	    </div>
+
+							    
+					<div class="seeAlsoBlock">
+						<div class="heading-seeAlso">See Also</div>
+						<ul>
+							
+							<li><p><a href="#join">join</a> (array-based alternative)</p></li>
+					
+							<li><p><a href="https://nodejs.org/api/path.html#pathformatpathobject">nodejs docs for "format"</a></p></li>
+					
+						</ul>
+					</div>
+				
+
+							</div>
+						</div>
+				<a name="myfs.npath.isAbsolute"></a><a name="isAbsolute"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		isAbsolute (<span class="method-arguments">Vpath</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">npath.js</span>
+						    		<span class="member-line-number">201</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Determines if path is an absolute path.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">Vpath</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The path to parse.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">Boolean</span>
+					</div>
+			      	     	<div class="member"></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.npath.join"></a><a name="join"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		join (<span class="method-arguments">paths</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">npath.js</span>
+						    		<span class="member-line-number">344</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Joins path segments and resolves relativity.</p>
+<pre><code>    path.join('/foo', 'bar', 'baz/asdf', 'quux', '..')
+    Returns: '/foo/bar/baz/asdf'
+</code></pre>
+<p>Passthrough to nodejs's "join" method. See <a href="https://nodejs.org/api/path.html#pathjoinpaths">nodejs docs</a> for additional examples and details.</p>
+<p>One addition we do is <a href="#clean">clean</a> the results.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">paths</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string|array</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p><strong>If string</strong>: Send in as many arguments as you want as strings, each will be a segment in the result. <strong>If array</strong>: Each item in the array will be a segment of the result.</p>
+<p>Interally we use the native nodejs path.join feaure -- so review that for details on the rules for combining what is provided.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+
+					
+								
+
+							    
+					<div class="seeAlsoBlock">
+						<div class="heading-seeAlso">See Also</div>
+						<ul>
+							
+							<li><p><a href="https://nodejs.org/api/path.html#pathjoinpaths">nodejs doc for "join"</a></p></li>
+					
+						</ul>
+					</div>
+				
+
+							</div>
+						</div>
+				<a name="myfs.npath.name"></a><a name="name"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		name (<span class="method-arguments">path</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">npath.js</span>
+						    		<span class="member-line-number">147</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<pre><code>    npath.name("/foo/bar/bob.txt") --&gt; "bob"
+</code></pre>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">path</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The full path</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"><p>The last portion of a path, generally the "filename" but without the extension.</p></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.npath.normalize"></a><a name="normalize"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		normalize (<span class="method-arguments">Vpath</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">npath.js</span>
+						    		<span class="member-line-number">220</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Resolves ".." and "." portions of a path.
+Reduces double slashes to single (e.g. // -&gt; /  )
+Forces back-slashes to forward slashes (e.g. \ -&gt; /  )</p>
+<p>Retains trailing slash if exists.</p>
+<pre><code>  npath.normalize("/foo/////bar") --&gt; "/foo/bar"
+  npath.normalize("/foo/bar/../boob") --&gt; "/foo/boob"
+  npath.normalize("./foo/") --&gt; "/current/working/dir/foo/"
+</code></pre>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">Vpath</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The path to parse.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.npath.parse"></a><a name="parse"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		parse (<span class="method-arguments">Vpath</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">npath.js</span>
+						    		<span class="member-line-number">256</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Extracts basic path and file parts.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">Vpath</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The path to parse.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">object</span>
+					</div>
+			      	     	<div class="member"><p>An object containing the following properties:</p>
+<pre><code>path.parse('/home/user/dir/file.txt')
+
+// Yeilds:
+
+{
+    // (traditional node proerties)
+    root    : "/",
+    dir     : "/home/user/dir",
+    base    : "file.txt",
+    ext     : ".txt",
+    name    : "file"
+
+    // additional "for my brain" labels:
+    ext2        : "txt"         // no dot
+    extension   : "txt"         // no dot (alias to above)
+    basename    : "file"    
+    filename    : "file.txt"
+    parent      : "/home/user/dir"
+    path        : "/home/user/dir/file.txt"     // the original source path string
+    src         : "/home/user/dir/file.txt"     // same as above
+}
+</code></pre></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.npath.relative"></a><a name="relative"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		relative (<span class="method-arguments method-arg-optional">from</span>, <span class="method-arguments method-arg-optional">to</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">npath.js</span>
+						    		<span class="member-line-number">286</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Creates a relative path between <code>from</code> adn <code>to</code>.</p>
+<pre><code>    path.relative('/data/orandea/test/aaa', '/data/orandea/impl/bbb')
+    // Returns: '../../impl/bbb'
+</code></pre>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">from</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        <span class="flag optional">optional</span>
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>When null, the cwd is used for this value.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">to</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        <span class="flag optional">optional</span>
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>When null, the cwd is used for this value.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"><p>The relative path between <code>from</code> and <code>to</code></p></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.npath.removeTrailingSlash"></a><a name="removeTrailingSlash"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		removeTrailingSlash (<span class="method-arguments">path</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">npath.js</span>
+						    		<span class="member-line-number">398</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Removes a trailing slash from path (if exists).</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">path</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>path</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.npath.resolve"></a><a name="resolve"></a>
+
+						<div class="member"  >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		resolve (<span class="method-arguments method-arg-optional">path...</span>) 
+                                    
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">npath.js</span>
+						    		<span class="member-line-number">386</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Same as Node's path.resolve, with the additional helper so that provided arguments are cleaned.</p>
+<p>See: <a href="https://nodejs.org/api/path.html#pathresolvepaths">node.path.resolve</a></p>
+<p>Generates an absolute path based on the provided arguments.</p>
+<p>When ANY argument begins with a slash, (e.g. "/b"), it is assumed that is the root that should be resolved, and arguments that exist to the left of that argument will get ignored.</p>
+<p>If an absolute path is not resolved after constructing all arguments, the CWD is inserted.</p>
+<pre><code>    resolve("a", "b", "c"); // yields: "/current/working/dir/a/b/c"
+</code></pre>
+<p>Agin, path construction occurs from right &lt; to &lt; left</p>
+<pre><code>    resolve("/a", "b", "c"); // yields: "/a/b/c"
+</code></pre>
+<p>If an absolute path is resolved during construction, the items to the left are ignored.</p>
+<pre><code>    resolve("a", "/b", "c"); // yields: "/b/c" ("a" is ignored)
+</code></pre>
+<p>Relative paths are automatically resolved:</p>
+<pre><code>    resolve("/a", "../b", "c"); // yields "/a/c"
+</code></pre>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">path...</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        <span class="flag optional">optional</span>
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>All arguments are evaluated as paths for construction.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">string</span>
+					</div>
+			      	     	<div class="member"></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				<a name="myfs.npath.swapExt"></a><a name="swapExt"></a>
+
+						<div class="member" data-access="private" >
+
+							<div class="member-name clearfix">
+								<span class="member-name-left">
+						    		swapExt (<span class="method-arguments">path</span>, <span class="method-arguments">newExt</span>) 
+                                    <span class="flag private">private</span>  <!-- public private protected -->
+						    	</span>
+								<span class="member-name-right">
+						    		<span class="member-file">npath.js</span>
+						    		<span class="member-line-number">470</span>
+						    	</span>
+						    </div>
+
+
+						   	<div class="member-description">
+                                
+                                
+								<p>Changes a path's extension. Can apply to a basic filename or a full path.</p>
+
+					
+								
+			    	<div class="part-parameters">
+				    	
+				    	<div class="heading-part">Parameters</div>
+				    	
+				    	<div class="member">
+                            <div class="member-block-group">
+
+							    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">path</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The original path.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+                            <div class="member-block"  >
+                            
+                                <div class="member-block-left">
+                                    
+                                    <span class="member-name">newExt</span>
+                                    
+                                </div>
+
+                                <div class="member-block-center">
+                                <span class="member-name-right">
+                                
+                                </span>
+                                    <div class="param-description">
+                                        
+							<span class="type">string</span>
+				
+                                        
+                                        
+                                        
+									
+							<div class="member-description">
+      				 		 	<p>The new extenion to use.</p>
+       						 </div>
+       			
+						        	
+						        	
+					
+                                    </div>
+                                </div>
+
+
+                            </div>
+				    
+
+							</div>
+						</div>
+				
+					</div>
+			
+
+							    
+			       		 	<div class="heading-returns">Returns		
+						<span class="type">sring</span>
+					</div>
+			      	     	<div class="member"><p>The new path.</p></div>
+				
+
+					
+								
+
+							    
+
+							</div>
+						</div>
+				
+				            </div>
+						
+						
+		    </div>
+		
+		</div>
+
+		<div class="footer">Generated by <a href="http://www.documon.net" target="_blank">Documon</a></div>
+
+	</body>
+
+
+</html>

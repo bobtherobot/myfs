@@ -41,18 +41,18 @@ github: https://github.com/sindresorhus/opn
 
 The app name is platform dependent. Don't hard code it in reusable modules. For example, Chrome is google chrome on macOS, google-chrome on Linux and chrome on Windows.
 
-@param {array} [opts.wait=true] - Wait for the opened app to exit before fulfilling the promise. If false it's fulfilled immediately when opening the app.
+@param {boolean} [opts.wait=true] - Wait for the opened app to exit before fulfilling the promise. If false it's fulfilled immediately when opening the app.
 
 On Windows you have to explicitly specify an app for it to be able to wait.
 
 @returns {promise}
  */
 
-'use strict';
+
 const path = require('path');
 const childProcess = require('child_process');
 
-module.exports = (target, opts) => {
+function launch (target, opts) {
 	if (typeof target !== 'string') {
 		return Promise.reject(new Error('Expected a `target`'));
 	}
@@ -141,3 +141,5 @@ module.exports = (target, opts) => {
 
 	return Promise.resolve(cp);
 };
+
+module.exports = launch;
